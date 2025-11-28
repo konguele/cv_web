@@ -26,7 +26,10 @@ import {
   Smile,
   Menu,
   X,
-  Shuffle
+  Shuffle,
+  CheckCircle,
+  AlertCircle,
+  Loader2
 } from 'lucide-react';
 
 // --- DATA ---
@@ -449,6 +452,9 @@ export default function App() {
   const [selectedHobby, setSelectedHobby] = useState(null); 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [randomImages, setRandomImages] = useState([]);
+  
+  // FORM STATE
+  const [formStatus, setFormStatus] = useState("idle"); // idle, submitting, success, error
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -470,6 +476,34 @@ export default function App() {
         document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus("submitting");
+    
+    const formData = new FormData(e.target);
+    
+    try {
+        const response = await fetch("https://formspree.io/f/mvgjlzll", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            setFormStatus("success");
+            e.target.reset(); // Limpiar formulario
+            // Volver a estado idle después de 5 segundos para permitir otro envío si se desea
+            setTimeout(() => setFormStatus("idle"), 5000);
+        } else {
+            setFormStatus("error");
+        }
+    } catch (error) {
+        setFormStatus("error");
+    }
+  };
 
   const visibleExperience = expandedExperience ? experience : experience.slice(0, 3);
 
@@ -1002,18 +1036,59 @@ export default function App() {
                       </div>
                    </div>
 
-                   {/* Mock Contact Form */}
-                   <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                   {/* Contact Form Updated */}
+                   <form className="space-y-4" onSubmit={handleSubmit}>
                       <div>
-                         <label className="block text-xs font-mono text-gray-500 mb-1 ml-2">NOMBRE</label>
-                         <input type="text" className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" placeholder="Recruiter / Empresa" />
+                         <label htmlFor="name" className="block text-xs font-mono text-gray-500 mb-1 ml-2">NOMBRE</label>
+                         <input 
+                            id="name"
+                            name="name"
+                            required
+                            type="text" 
+                            className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
+                            placeholder="Recruiter / Empresa" 
+                         />
                       </div>
+                      
+                      {/* Campo Email Añadido */}
                       <div>
-                         <label className="block text-xs font-mono text-gray-500 mb-1 ml-2">MENSAJE</label>
-                         <textarea rows="4" className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" placeholder="Hola Juanjo, me gustaría hablar sobre..." />
+                         <label htmlFor="email" className="block text-xs font-mono text-gray-500 mb-1 ml-2">TU EMAIL</label>
+                         <input 
+                            id="email"
+                            name="email"
+                            required
+                            type="email" 
+                            className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
+                            placeholder="tu@email.com" 
+                         />
                       </div>
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 py-3 rounded-full font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all">
-                         Enviar Mensaje
+
+                      <div>
+                         <label htmlFor="message" className="block text-xs font-mono text-gray-500 mb-1 ml-2">MENSAJE</label>
+                         <textarea 
+                            id="message"
+                            name="message"
+                            required
+                            rows="4" 
+                            className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
+                            placeholder="Hola Juanjo, me gustaría hablar sobre..." 
+                         />
+                      </div>
+                      
+                      <button 
+                        type="submit" 
+                        disabled={formStatus === 'submitting' || formStatus === 'success'}
+                        className={`w-full py-3 rounded-full font-bold transition-all flex items-center justify-center gap-2
+                            ${formStatus === 'success' ? 'bg-green-600 text-white cursor-default' : ''}
+                            ${formStatus === 'error' ? 'bg-red-600 text-white' : ''}
+                            ${formStatus === 'submitting' ? 'bg-gray-600 cursor-wait' : ''}
+                            ${formStatus === 'idle' ? 'bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]' : ''}
+                        `}
+                      >
+                         {formStatus === 'idle' && 'Enviar Mensaje'}
+                         {formStatus === 'submitting' && <><Loader2 className="animate-spin" size={20} /> Enviando...</>}
+                         {formStatus === 'success' && <><CheckCircle size={20} /> ¡Mensaje Enviado!</>}
+                         {formStatus === 'error' && <><AlertCircle size={20} /> Error al enviar. Reintentar.</>}
                       </button>
                    </form>
                 </div>
@@ -1029,5 +1104,4 @@ export default function App() {
       </footer>
     </div>
   );
-
 }

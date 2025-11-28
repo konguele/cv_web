@@ -595,7 +595,7 @@ export default function App() {
               <a href="#contacto" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all transform hover:-translate-y-1 text-center">
                 Contactar
               </a>
-              <a href="/downloads/CV Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
+              <a href="/downloads/CV_Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
                 <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 Descargar CV
               </a>
@@ -1104,4 +1104,5 @@ export default function App() {
       </footer>
     </div>
   );
+
 }

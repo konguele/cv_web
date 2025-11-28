@@ -40,13 +40,12 @@ const languages = [
   { code: 'ch', label: 'DE', flag: 'https://flagcdn.com/w40/ch.png', path: '/ch/' },
 ];
 
-// CORRECCIÓN 1: Nombres exactos según tu captura de pantalla (mezcla de jpg y png, todo minúsculas)
 const carouselSourceImages = [
   "/images/carrusel1.jpg",
   "/images/carrusel2.jpg",
   "/images/carrusel3.jpg",
   "/images/carrusel4.jpg",
-  "/images/carrusel5.png", // Nota: este es PNG
+  "/images/carrusel5.png",
   "/images/carrusel6.jpg",
   "/images/carrusel7.jpg",
   "/images/carrusel8.jpg",
@@ -275,7 +274,50 @@ const softSkills = [
   "Adaptabilidad"
 ];
 
-// --- COMPONENTS ---
+// --- HELPER COMPONENTS ---
+
+// COMPONENTE DE OPTIMIZACIÓN: Carga diferida de secciones
+const LazyLoadSection = ({ id, children, className = "" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    // Usamos Intersection Observer para detectar cuando la sección se acerca al viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Dejar de observar una vez cargado
+        }
+      },
+      { 
+        rootMargin: '200px', // Cargar 200px antes de que entre en pantalla
+        threshold: 0.1 
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (observer) observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <section id={id} ref={ref} className={`${className} transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      {isVisible ? (
+        children
+      ) : (
+        // Placeholder ligero mientras no es visible
+        <div className="py-24 flex items-center justify-center">
+          <div className="w-full max-w-md h-32 bg-white/5 animate-pulse rounded-3xl" />
+        </div>
+      )}
+    </section>
+  );
+};
 
 const SEOHead = () => {
   useEffect(() => {
@@ -454,27 +496,31 @@ export default function App() {
   const [randomImages, setRandomImages] = useState([]);
   
   // FORM STATE
-  const [formStatus, setFormStatus] = useState("idle"); // idle, submitting, success, error
+  const [formStatus, setFormStatus] = useState("idle"); 
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    // Scroll listener optimizado
+    const handleScroll = () => {
+        if (window.scrollY > 50 && !scrolled) setScrolled(true);
+        if (window.scrollY <= 50 && scrolled) setScrolled(false);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Seleccionar aleatoriamente 4 imágenes al montar
+    // Aleatorizar imágenes una sola vez al cargar
     const shuffled = [...carouselSourceImages].sort(() => 0.5 - Math.random());
     setRandomImages(shuffled.slice(0, 4));
 
-    // Bloquear scroll cuando el menú móvil está abierto
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []); // Dependencias vacías para que solo ocurra al montar
+
+  // Efecto separado para el bloqueo de scroll (UI lógica)
+  useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-        document.body.style.overflow = 'unset';
-    };
+    return () => { document.body.style.overflow = 'unset'; };
   }, [mobileMenuOpen]);
 
   const handleSubmit = async (e) => {
@@ -487,15 +533,12 @@ export default function App() {
         const response = await fetch("https://formspree.io/f/mvgjlzll", {
             method: "POST",
             body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
         });
         
         if (response.ok) {
             setFormStatus("success");
-            e.target.reset(); // Limpiar formulario
-            // Volver a estado idle después de 5 segundos para permitir otro envío si se desea
+            e.target.reset(); 
             setTimeout(() => setFormStatus("idle"), 5000);
         } else {
             setFormStatus("error");
@@ -506,7 +549,6 @@ export default function App() {
   };
 
   const visibleExperience = expandedExperience ? experience : experience.slice(0, 3);
-
   const menuItems = ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Libros', 'Contacto'];
 
   return (
@@ -577,7 +619,7 @@ export default function App() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - SIN LAZY LOAD (Debe ser inmediato) */}
       <header className="relative z-10 min-h-screen flex items-center justify-center pt-20">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
@@ -595,7 +637,7 @@ export default function App() {
               <a href="#contacto" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all transform hover:-translate-y-1 text-center">
                 Contactar
               </a>
-              <a href="/downloads/CV_Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
+              <a href="/downloads/CV Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
                 <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 Descargar CV
               </a>
@@ -606,7 +648,6 @@ export default function App() {
              <div className="relative w-72 h-auto bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col items-center p-6 z-20 transform rotate-[-5deg] hover:rotate-0 transition-all duration-500 group">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-purple-500 to-blue-500 mb-6 p-1 group-hover:scale-105 transition-transform">
                    <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
-                      {/* IMAGEN DE PORTADA ACTUALIZADA */}
                       <img src="/images/portada.jpg" alt="Juanjo" className="w-full h-full object-cover rounded-full" />
                    </div>
                 </div>
@@ -649,8 +690,8 @@ export default function App() {
         </div>
       </header>
 
-      {/* ABOUT SECTION */}
-      <section id="sobre-mi" className="py-24 relative z-10">
+      {/* ABOUT SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="sobre-mi" className="py-24 relative z-10">
         <div className="container mx-auto px-6">
           <SectionTitle>Sobre Mí</SectionTitle>
           
@@ -684,7 +725,7 @@ export default function App() {
                   </button>
                 </GlassCard>
 
-                {/* Hobbies Section Updated */}
+                {/* Hobbies Section */}
                 <h3 className="text-xl font-bold mt-8 mb-4 flex items-center gap-2">
                    <Heart className="text-red-500" size={20} /> Mis Intereses
                 </h3>
@@ -767,7 +808,6 @@ export default function App() {
              <h3 className="text-xl font-bold mb-6 flex items-center justify-center gap-2 text-gray-300">
                 <Shuffle size={20} className="text-purple-400"/> Galería Aleatoria
              </h3>
-             {/* CORRECCIÓN 3: Optimización de carga (lazy loading) */}
              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {randomImages.map((imgSrc, idx) => (
                    <div key={idx} className="aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/5 shadow-2xl group relative hover:border-purple-500/30 transition-all">
@@ -784,10 +824,10 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </LazyLoadSection>
 
-      {/* EXPERIENCE SECTION */}
-      <section id="experiencia" className="py-24 bg-black/30 relative">
+      {/* EXPERIENCE SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="experiencia" className="py-24 bg-black/30 relative">
         <div className="container mx-auto px-6">
           <SectionTitle>Trayectoria Profesional</SectionTitle>
           
@@ -868,10 +908,10 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </LazyLoadSection>
 
-      {/* EDUCATION SECTION */}
-      <section id="estudios" className="py-24 relative z-10">
+      {/* EDUCATION SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="estudios" className="py-24 relative z-10">
         <div className="container mx-auto px-6">
            <SectionTitle>Estudios & Certificaciones</SectionTitle>
            
@@ -907,10 +947,10 @@ export default function App() {
               </div>
            </div>
         </div>
-      </section>
+      </LazyLoadSection>
 
-      {/* PROJECTS SECTION */}
-      <section id="proyectos" className="py-24 bg-black/30">
+      {/* PROJECTS SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="proyectos" className="py-24 bg-black/30">
         <div className="container mx-auto px-6">
           <SectionTitle>Side Projects & Emprendimiento</SectionTitle>
           <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16">
@@ -957,10 +997,10 @@ export default function App() {
             ))}
           </div>
         </div>
-      </section>
+      </LazyLoadSection>
 
-      {/* BOOKS SECTION */}
-      <section id="libros" className="py-24 relative z-10 overflow-hidden">
+      {/* BOOKS SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="libros" className="py-24 relative z-10 overflow-hidden">
          <div className="container mx-auto px-6">
             <SectionTitle>Libros Publicados</SectionTitle>
             <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
@@ -977,9 +1017,7 @@ export default function App() {
                     className="block group relative"
                   >
                      <div className="absolute inset-0 rounded-[2rem] overflow-hidden z-0">
-                        {/* CORRECCIÓN 3: Lazy load */}
                         <img src={book.image} alt={book.title} loading="lazy" className="w-full h-full object-cover opacity-30 blur-md scale-110 transition-transform duration-500 group-hover:scale-125" />
-                        {/* CORRECCIÓN 2: Capa más clara para ver la portada (antes /90, ahora /40-/60) */}
                         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-900/60" />
                      </div>
                      
@@ -999,12 +1037,12 @@ export default function App() {
                ))}
             </div>
          </div>
-      </section>
+      </LazyLoadSection>
 
       <div id="skills" />
 
-      {/* CONTACT SECTION */}
-      <section id="contacto" className="py-24 bg-gradient-to-t from-black via-black/90 to-transparent">
+      {/* CONTACT SECTION - WRAPPED IN LAZY LOAD */}
+      <LazyLoadSection id="contacto" className="py-24 bg-gradient-to-t from-black via-black/90 to-transparent">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
              <GlassCard className="p-8 md:p-12 border-purple-500/20 shadow-[0_0_50px_rgba(100,0,200,0.1)]">
@@ -1050,7 +1088,6 @@ export default function App() {
                          />
                       </div>
                       
-                      {/* Campo Email Añadido */}
                       <div>
                          <label htmlFor="email" className="block text-xs font-mono text-gray-500 mb-1 ml-2">TU EMAIL</label>
                          <input 
@@ -1095,14 +1132,13 @@ export default function App() {
              </GlassCard>
           </div>
         </div>
-      </section>
+      </LazyLoadSection>
 
       {/* FOOTER */}
       <footer className="py-8 border-t border-white/5 text-center text-gray-600 text-sm">
          <p className="font-medium text-gray-500">Impulsado por la pasión, definido por la perseverancia. Creando el futuro, línea a línea.</p>
-         <p className="text-xs mt-2 text-gray-700">© {new Date().getFullYear()} Juanjo García Manzano</p>
+         <p className="text-xs mt-2 text-gray-700">© {new Date().getFullYear()} Juan José García Manzano</p>
       </footer>
     </div>
   );
-
 }

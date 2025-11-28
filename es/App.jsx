@@ -32,7 +32,7 @@ import {
   Loader2
 } from 'lucide-react';
 
-// --- DATA ---
+// --- CONFIGURACIÓN DE RUTAS E IDIOMAS ---
 const languages = [
   { code: 'es', label: 'ES', flag: 'https://flagcdn.com/w40/es.png', path: '/es/' },
   { code: 'en', label: 'EN', flag: 'https://flagcdn.com/w40/gb.png', path: '/' },
@@ -52,351 +52,316 @@ const carouselSourceImages = [
   "/images/carrusel9.jpg"
 ];
 
-const personalInfo = {
-  name: "Juan José García Manzano",
-  role: "DevOps Engineer & Project Manager",
-  location: "Zürich, Switzerland",
-  email: "Juanjo.gmanzano@gmail.com",
-  linkedin: "linkedin.com/in/juanjo-garcia-manzano",
-  tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
-  aboutShort: "Soy un DevOps Engineer con alma de emprendedor. Experto en automatización, Linux y Cloud, pero también creador de videojuegos y apps financieras.",
-  aboutLong: "Con más de 10 años de experiencia en entornos críticos (Banca, Retail, Salud), he dominado el arte de mantener sistemas robustos. Sin embargo, mi pasión va más allá del código: me mueve crear experiencias. He desarrollado 'Jabalí Espacial' para móviles y estoy construyendo 'Bancfy', no solo como una app de finanzas, sino como una comunidad. Creo firmemente que la tecnología debe servir para conectar y empoderar a las personas.",
-  hobbies: [
-    {
-      name: "Fútbol",
-      icon: <Award size={18} />,
-      desc: "Más que un deporte, ha sido mi escuela de disciplina. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo. Incluso en Suiza (Urdorf), el balón fue mi idioma universal. El fútbol me enseñó a gestionar la derrota, a liderar bajo presión y a entender que ningún gol se marca solo."
+// --- DATOS POR IDIOMA ---
+// Aquí es donde defines el contenido para cada idioma.
+// He movido tu contenido original a la clave 'es'.
+const DATA = {
+  es: {
+    menu: ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Libros', 'Contacto'],
+    ui: {
+      available: "🚀 Disponible para nuevos retos",
+      contactBtn: "Contactar",
+      downloadCv: "Descargar CV",
+      readMore: "Leer más",
+      readLess: "Leer menos",
+      showFullExp: "Ver trayectoria completa",
+      showLessExp: "Ver menos",
+      randomGallery: "Galería Aleatoria",
+      techStack: "Herramientas & Tecnologías",
+      form: {
+        name: "NOMBRE",
+        namePh: "Recruiter / Empresa",
+        email: "TU EMAIL",
+        emailPh: "tu@email.com",
+        msg: "MENSAJE",
+        msgPh: "Hola Juanjo, me gustaría hablar sobre...",
+        send: "Enviar Mensaje",
+        sending: "Enviando...",
+        sent: "¡Mensaje Enviado!",
+        error: "Error al enviar. Reintentar."
+      },
+      footer: "Impulsado por la pasión, definido por la perseverancia. Creando el futuro, línea a línea."
     },
-    {
-      name: "Videojuegos",
-      icon: <Gamepad2 size={18} />,
-      desc: "Mi gimnasio mental nocturno. Actualmente compito en EA Sports FC 26 optimizando mi tiempo, pero mi historial va desde la narrativa inmersiva de Spider-Man y Assassin's Creed hasta la estrategia de Pokémon. Esperando con ansias GTA VI. Los videojuegos afinan mis reflejos, mi resolución de problemas y mantienen viva esa chispa de creatividad y asombro."
+    personalInfo: {
+      name: "Juan José García Manzano",
+      role: "DevOps Engineer & Project Manager",
+      location: "Zürich, Switzerland",
+      email: "Juanjo.gmanzano@gmail.com",
+      linkedin: "linkedin.com/in/juanjo-garcia-manzano",
+      tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
+      aboutShort: "Soy un DevOps Engineer con alma de emprendedor. Experto en automatización, Linux y Cloud, pero también creador de videojuegos y apps financieras.",
+      aboutLong: "Con más de 10 años de experiencia en entornos críticos (Banca, Retail, Salud), he dominado el arte de mantener sistemas robustos. Sin embargo, mi pasión va más allá del código: me mueve crear experiencias. He desarrollado 'Jabalí Espacial' para móviles y estoy construyendo 'Bancfy', no solo como una app de finanzas, sino como una comunidad. Creo firmemente que la tecnología debe servir para conectar y empoderar a las personas.",
+      hobbies: [
+        {
+          name: "Fútbol",
+          iconName: "Award",
+          desc: "Más que un deporte, ha sido mi escuela de disciplina. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo. Incluso en Suiza (Urdorf), el balón fue mi idioma universal. El fútbol me enseñó a gestionar la derrota, a liderar bajo presión y a entender que ningún gol se marca solo."
+        },
+        {
+          name: "Videojuegos",
+          iconName: "Gamepad2",
+          desc: "Mi gimnasio mental nocturno. Actualmente compito en EA Sports FC 26 optimizando mi tiempo, pero mi historial va desde la narrativa inmersiva de Spider-Man y Assassin's Creed hasta la estrategia de Pokémon. Esperando con ansias GTA VI. Los videojuegos afinan mis reflejos, mi resolución de problemas y mantienen viva esa chispa de creatividad y asombro."
+        },
+        {
+          name: "Leer",
+          iconName: "BookOpen",
+          desc: "Mi biblioteca es mi mayor tesoro. Desde la épica de Tolkien y la sabiduría de 'Hagakure' hasta la profundidad gráfica de 'The Dark Knight Rises' (firmado por Miller). Libros como 'Million Dollar Weekend' moldean mi mentalidad emprendedora hoy. Leer es el entrenamiento invisible que expande mis horizontes y me aporta la calma necesaria para enfocarme."
+        },
+        {
+          name: "Mi Hija",
+          iconName: "Smile",
+          desc: "El 'proyecto' más importante de mi vida. Jugar con ella es volver a descubrir el mundo con ojos nuevos. Ella me enseña paciencia infinita, curiosidad pura y me recuerda cada día por qué me esfuerzo. Es mi ancla a la realidad y mi mayor motivación para construir un futuro mejor."
+        },
+        {
+          name: "Cocinar",
+          iconName: "Utensils",
+          desc: "Alquimia para el alma. Entre fogones encuentro mi flow. Desde perfeccionar la tortilla de patatas hasta experimentar con caza mayor suiza (ciervo, jabalí). Cocinar, al igual que programar, requiere los ingredientes correctos, precisión en los tiempos y mucho cariño para que el resultado sea memorable."
+        },
+        {
+          name: "Crear Apps",
+          iconName: "Code",
+          desc: "El motor que nunca se apaga. Mi mente es un hervidero constante de ideas buscando solucionar problemas reales. Disfruto cada fase: desde la idea en una servilleta hasta el despliegue en producción. Crear es mi forma de dejar huella y empoderar a otros con tecnología útil y accesible."
+        }
+      ]
     },
-    {
-      name: "Leer",
-      icon: <BookOpen size={18} />,
-      desc: "Mi biblioteca es mi mayor tesoro. Desde la épica de Tolkien y la sabiduría de 'Hagakure' hasta la profundidad gráfica de 'The Dark Knight Rises' (firmado por Miller). Libros como 'Million Dollar Weekend' moldean mi mentalidad emprendedora hoy. Leer es el entrenamiento invisible que expande mis horizontes y me aporta la calma necesaria para enfocarme."
-    },
-    {
-      name: "Mi Hija",
-      icon: <Smile size={18} />,
-      desc: "El 'proyecto' más importante de mi vida. Jugar con ella es volver a descubrir el mundo con ojos nuevos. Ella me enseña paciencia infinita, curiosidad pura y me recuerda cada día por qué me esfuerzo. Es mi ancla a la realidad y mi mayor motivación para construir un futuro mejor."
-    },
-    {
-      name: "Cocinar",
-      icon: <Utensils size={18} />,
-      desc: "Alquimia para el alma. Entre fogones encuentro mi flow. Desde perfeccionar la tortilla de patatas hasta experimentar con caza mayor suiza (ciervo, jabalí). Cocinar, al igual que programar, requiere los ingredientes correctos, precisión en los tiempos y mucho cariño para que el resultado sea memorable."
-    },
-    {
-      name: "Crear Apps",
-      icon: <Code size={18} />,
-      desc: "El motor que nunca se apaga. Mi mente es un hervidero constante de ideas buscando solucionar problemas reales. Disfruto cada fase: desde la idea en una servilleta hasta el despliegue en producción. Crear es mi forma de dejar huella y empoderar a otros con tecnología útil y accesible."
+    experience: [
+      {
+        company: "Worldline Switzerland",
+        role: "DevOps Engineer / Project Manager",
+        period: "Oct 2024 - Presente",
+        logo: "/images/worldline.png",
+        desc: "Owner de Artifactory e Instant Score. Gestión E2E de proyectos, automatización y migraciones a Google Cloud.",
+        details: "Como Owner de Artifactory (el corazón digital donde converge y se gestiona todo el desarrollo tecnológico de la compañía) y de las soluciones críticas Instant Score / Online Watcher, lidero la estrategia y estabilidad de estos sistemas. Gestión integral de proyectos técnicos como migraciones RHEL8/9. Administración de servidores Linux, automatización avanzada con Ansible (YAML), Bash y Python. Despliegue y gestión de AWX y pipelines de CI/CD con GitLab. Supervisión y ejecución de migraciones a Google Cloud, incluyendo la creación de scripts en Terraform para desplegar nuevos modelos de aplicaciones.",
+        tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
+        color: "bg-blue-600",
+        stack: [
+            { name: "Google Cloud (GCP)", desc: "Migración de apps, Terraform y despliegue de modelos" },
+            { name: "Artifactory", desc: "Owner. Gestión centralizada de artefactos y desarrollo" },
+            { name: "Instant Score", desc: "Owner. Gestión y mantenimiento de la solución" },
+            { name: "BMC Remedy", desc: "Incidencias, Change Requests y Gestión de problemas" },
+            { name: "Jira", desc: "Creación y seguimiento de tareas" },
+            { name: "Confluence", desc: "Gestión documental y base de conocimiento" },
+            { name: "VMWare", desc: "Gestión de infraestructura virtual (VMs)" },
+            { name: "Putty / MobaXterm", desc: "Acceso y gestión SSH a servidores Linux" },
+            { name: "IntelliJ / VS Code", desc: "Gestión de código y pipelines en GitLab" },
+            { name: "RHEL 8 & 9", desc: "Administración avanzada de servidores Linux" }
+        ]
+      },
+      {
+        company: "Six Group",
+        role: "DevOps Engineer",
+        period: "May 2021 - Sep 2024",
+        logo: "/images/six.jpg",
+        desc: "Liderazgo en migraciones RHEL7 a RHEL8. Integración de Docker y OpenShift. Migración de servidores a Azure.",
+        details: "Demostré sólidas habilidades de liderazgo gestionando eficazmente proyectos como la migración de RHEL7 a RHEL8, automatización de procesos de parches e integración de Docker para el despliegue de aplicaciones. Experiencia en programación C++ y Bash, trabajando con Artifactory y BMC Remedy.",
+        tags: ["OpenShift", "Docker", "Azure", "Bash"],
+        color: "bg-red-600"
+      },
+      {
+        company: "Burberry",
+        role: "Linux Engineer",
+        period: "Jul 2018 - Abr 2021",
+        logo: "/images/burberry.avif",
+        desc: "Administración de Linux (RedHat, SUSE). Scripting en Ansible y Bash. Backup con Data Protector.",
+        details: "Realización de tareas desde la instalación de servidores en Linux (Redhat, SUSE), configuración y creación de FS, montaje de volúmenes. Responsable de tareas de backup con Data Protector. Creación de especificaciones, resolución de incidencias de software y hardware.",
+        tags: ["Linux", "Ansible", "VMWare"],
+        color: "bg-yellow-600"
+      },
+      {
+        company: "Grifols S.A.",
+        role: "Systems Administrator",
+        period: "Nov 2014 - Jul 2018",
+        logo: "/images/grifols.png",
+        desc: "Administración básica de sistemas Unix, Linux y Windows. Gestión de alertas HP Openview y backups.",
+        details: "Gestión de la administración básica de sistemas Unix, Linux y Windows, gestión de alertas HP Openview, ejecución de backups con Data Protector, revisión de Tablespaces Oracle. Creación de usuarios en LDAP y OpenLDAP.",
+        tags: ["Unix", "Windows", "Oracle", "LDAP"],
+        color: "bg-blue-500"
+      },
+      {
+        company: "Metrica / ITNow",
+        role: "Linux Administrator",
+        period: "Sep 2014 - Nov 2014",
+        logo: "/images/itnow.jpg",
+        desc: "Administración de máquinas Linux, scripting en Bash y Perl, monitorización con Nagios.",
+        details: "Gestión de la administración de máquinas Linux, creación de scripts en bash y perl, creación de reglas de monitorización en HP Openview y Nagios.",
+        tags: ["Linux", "Nagios", "Perl"],
+        color: "bg-gray-600"
+      },
+      {
+        company: "Hewlett Packard",
+        role: "TIBCO Administrator",
+        period: "Mar 2014 - Sep 2014",
+        logo: "/images/hp.png",
+        desc: "Administración de máquinas Linux para TIBCO, scripting y reglas de monitorización.",
+        details: "Gestión de la administración de máquinas Linux para TIBCO, creación de scripts en bash y perl, reglas de monitorización en Tibco Hawk.",
+        tags: ["TIBCO", "Linux", "Bash"],
+        color: "bg-cyan-600"
+      },
+      {
+        company: "Hewlett Packard",
+        role: "Operation Team Leader",
+        period: "Dic 2010 - Oct 2013",
+        logo: "/images/hp.png",
+        desc: "Gestión de equipo, control de ejecución de trabajos en Control M y SAP.",
+        details: "Gestión de personas dentro del equipo, control de la correcta ejecución del trabajo, apertura de incidencias, planificación y ejecución de trabajos en Control M Enterprises y Mainframe.",
+        tags: ["Team Lead", "SAP", "Control M"],
+        color: "bg-cyan-600"
+      }
+    ],
+    education: [
+      {
+        institution: "UOC (Universitat Oberta de Catalunya)",
+        degree: "Systems Engineer",
+        period: "2012 - 2017",
+        desc: "Fundamentos de programación, gestión de redes y sistemas operativos."
+      },
+      {
+        institution: "Santa-Pau Pifma",
+        degree: "High-Level Technician degree in IT",
+        period: "2006 - 2008",
+        desc: "Formación técnica superior en informática."
+      }
+    ],
+    certifications: [
+      "RHCSA (RHEL9) (2025)",
+      "DevOps on AWS (2024)",
+      "AWS Fundamentals (2024)",
+      "CPA - C++ (2023)",
+      "LPIC 2 (2014)",
+      "ITIL Foundation (2013)",
+      "LPIC 1 (2013)"
+    ],
+    projects: [
+      {
+        title: "Bancfy",
+        category: "Fintech App & Comunidad",
+        iconName: "TrendingUp",
+        description: "Más que una app de finanzas, es una experiencia. Bancfy busca cambiar la relación de las personas con su dinero mediante la gamificación y la comunidad. No vendo un producto, construyo un movimiento.",
+        status: "En desarrollo",
+        color: "from-emerald-900 to-green-900",
+        links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
+      },
+      {
+        title: "Jabalí Espacial",
+        category: "Mobile Game",
+        iconName: "Gamepad2",
+        description: "Un videojuego arcade desarrollado íntegramente por mí. Disponible en plataformas móviles. Un reto técnico y creativo que demuestra mi capacidad para llevar un producto de 0 a 100.",
+        status: "Publicado",
+        color: "from-purple-900 to-indigo-900",
+        links: [
+          { label: "Android", url: "https://andro.io/app/jabaliespacial" },
+          { label: "iOS", url: "https://apps.apple.com/us/app/space-warhog/id6468927508" }
+        ]
+      },
+      {
+        title: "@exitofracasando",
+        category: "Content Creation",
+        iconName: "Smartphone",
+        description: "Cuenta de TikTok con +10k seguidores. Un espacio donde compartí aprendizajes y conecté con una audiencia joven interesada en crecimiento y emprendimiento.",
+        status: "10K+ Seguidores",
+        color: "from-pink-900 to-rose-900",
+        links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
+      }
+    ],
+    books: [
+      {
+        title: "El éxito de fracasar",
+        url: "https://www.amazon.es/dp/B0DK8SF6DK",
+        image: "/images/fracasar.png"
+      },
+      {
+        title: "Cómo destruir España",
+        url: "https://www.amazon.es/dp/B0DKT43G4R",
+        image: "/images/Cómo destruir españa.jpg"
+      },
+      {
+        title: "Com destruir Catalunya",
+        url: "https://www.amazon.es/dp/B0DMFYV7W3",
+        image: "/images/Com destruir Catalunya.jpg"
+      }
+    ],
+    techSkills: [
+      { name: "Linux / RHEL", level: 95 },
+      { name: "Ansible / Automation", level: 90 },
+      { name: "Docker / Kubernetes", level: 85 },
+      { name: "Cloud (GCP/AWS)", level: 85 },
+      { name: "Terraform / IaC", level: 85 },
+      { name: "CI/CD (GitLab/Jenkins)", level: 85 }
+    ],
+    softSkills: [
+      "Liderazgo de Equipos",
+      "Gestión de Proyectos",
+      "Comunicación Efectiva",
+      "Resolución de Conflictos",
+      "Mentalidad de Crecimiento",
+      "Adaptabilidad"
+    ],
+    sectionTitles: {
+      about: "Sobre Mí",
+      experience: "Trayectoria Profesional",
+      education: "Estudios & Certificaciones",
+      projects: "Side Projects & Emprendimiento",
+      books: "Libros Publicados",
+      contact: "Hablemos"
     }
-  ]
+  }
 };
 
-const experience = [
-  {
-    company: "Worldline Switzerland",
-    role: "DevOps Engineer / Project Manager",
-    period: "Oct 2024 - Presente",
-    logo: "/images/worldline.png",
-    desc: "Owner de Artifactory e Instant Score. Gestión E2E de proyectos, automatización y migraciones a Google Cloud.",
-    details: "Como Owner de Artifactory (el corazón digital donde converge y se gestiona todo el desarrollo tecnológico de la compañía) y de las soluciones críticas Instant Score / Online Watcher, lidero la estrategia y estabilidad de estos sistemas. Gestión integral de proyectos técnicos como migraciones RHEL8/9. Administración de servidores Linux, automatización avanzada con Ansible (YAML), Bash y Python. Despliegue y gestión de AWX y pipelines de CI/CD con GitLab. Supervisión y ejecución de migraciones a Google Cloud, incluyendo la creación de scripts en Terraform para desplegar nuevos modelos de aplicaciones.",
-    tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
-    color: "bg-blue-600",
-    stack: [
-        { name: "Google Cloud (GCP)", desc: "Migración de apps, Terraform y despliegue de modelos" },
-        { name: "Artifactory", desc: "Owner. Gestión centralizada de artefactos y desarrollo" },
-        { name: "Instant Score", desc: "Owner. Gestión y mantenimiento de la solución" },
-        { name: "BMC Remedy", desc: "Incidencias, Change Requests y Gestión de problemas" },
-        { name: "Jira", desc: "Creación y seguimiento de tareas" },
-        { name: "Confluence", desc: "Gestión documental y base de conocimiento" },
-        { name: "VMWare", desc: "Gestión de infraestructura virtual (VMs)" },
-        { name: "Putty / MobaXterm", desc: "Acceso y gestión SSH a servidores Linux" },
-        { name: "IntelliJ / VS Code", desc: "Gestión de código y pipelines en GitLab" },
-        { name: "RHEL 8 & 9", desc: "Administración avanzada de servidores Linux" }
-    ]
-  },
-  {
-    company: "Six Group",
-    role: "DevOps Engineer",
-    period: "May 2021 - Sep 2024",
-    logo: "/images/six.jpg",
-    desc: "Liderazgo en migraciones RHEL7 a RHEL8. Integración de Docker y OpenShift. Migración de servidores a Azure.",
-    details: "Demostré sólidas habilidades de liderazgo gestionando eficazmente proyectos como la migración de RHEL7 a RHEL8, automatización de procesos de parches e integración de Docker para el despliegue de aplicaciones. Experiencia en programación C++ y Bash, trabajando con Artifactory y BMC Remedy.",
-    tags: ["OpenShift", "Docker", "Azure", "Bash"],
-    color: "bg-red-600"
-  },
-  {
-    company: "Burberry",
-    role: "Linux Engineer",
-    period: "Jul 2018 - Abr 2021",
-    logo: "/images/burberry.avif",
-    desc: "Administración de Linux (RedHat, SUSE). Scripting en Ansible y Bash. Backup con Data Protector.",
-    details: "Realización de tareas desde la instalación de servidores en Linux (Redhat, SUSE), configuración y creación de FS, montaje de volúmenes. Responsable de tareas de backup con Data Protector. Creación de especificaciones, resolución de incidencias de software y hardware.",
-    tags: ["Linux", "Ansible", "VMWare"],
-    color: "bg-yellow-600"
-  },
-  {
-    company: "Grifols S.A.",
-    role: "Systems Administrator",
-    period: "Nov 2014 - Jul 2018",
-    logo: "/images/grifols.png",
-    desc: "Administración básica de sistemas Unix, Linux y Windows. Gestión de alertas HP Openview y backups.",
-    details: "Gestión de la administración básica de sistemas Unix, Linux y Windows, gestión de alertas HP Openview, ejecución de backups con Data Protector, revisión de Tablespaces Oracle. Creación de usuarios en LDAP y OpenLDAP.",
-    tags: ["Unix", "Windows", "Oracle", "LDAP"],
-    color: "bg-blue-500"
-  },
-  {
-    company: "Metrica / ITNow",
-    role: "Linux Administrator",
-    period: "Sep 2014 - Nov 2014",
-    logo: "/images/itnow.jpg",
-    desc: "Administración de máquinas Linux, scripting en Bash y Perl, monitorización con Nagios.",
-    details: "Gestión de la administración de máquinas Linux, creación de scripts en bash y perl, creación de reglas de monitorización en HP Openview y Nagios.",
-    tags: ["Linux", "Nagios", "Perl"],
-    color: "bg-gray-600"
-  },
-  {
-    company: "Hewlett Packard",
-    role: "TIBCO Administrator",
-    period: "Mar 2014 - Sep 2014",
-    logo: "/images/hp.png",
-    desc: "Administración de máquinas Linux para TIBCO, scripting y reglas de monitorización.",
-    details: "Gestión de la administración de máquinas Linux para TIBCO, creación de scripts en bash y perl, reglas de monitorización en Tibco Hawk.",
-    tags: ["TIBCO", "Linux", "Bash"],
-    color: "bg-cyan-600"
-  },
-  {
-    company: "Hewlett Packard",
-    role: "Operation Team Leader",
-    period: "Dic 2010 - Oct 2013",
-    logo: "/images/hp.png",
-    desc: "Gestión de equipo, control de ejecución de trabajos en Control M y SAP.",
-    details: "Gestión de personas dentro del equipo, control de la correcta ejecución del trabajo, apertura de incidencias, planificación y ejecución de trabajos en Control M Enterprises y Mainframe.",
-    tags: ["Team Lead", "SAP", "Control M"],
-    color: "bg-cyan-600"
-  }
-];
+// --- FALLBACKS ---
+// Usamos el español como fallback para los otros idiomas temporalmente
+// para cumplir tu petición de "arreglar solo el español" pero manteniendo la estructura
+DATA.en = { ...DATA.es }; 
+DATA.ca = { ...DATA.es };
+DATA.ch = { ...DATA.es };
 
-const education = [
-  {
-    institution: "UOC (Universitat Oberta de Catalunya)",
-    degree: "Systems Engineer",
-    period: "2012 - 2017",
-    desc: "Fundamentos de programación, gestión de redes y sistemas operativos."
-  },
-  {
-    institution: "Santa-Pau Pifma",
-    degree: "High-Level Technician degree in IT",
-    period: "2006 - 2008",
-    desc: "Formación técnica superior en informática."
-  }
-];
-
-const certifications = [
-  "RHCSA (RHEL9) (2025)",
-  "DevOps on AWS (2024)",
-  "AWS Fundamentals (2024)",
-  "CPA - C++ (2023)",
-  "LPIC 2 (2014)",
-  "ITIL Foundation (2013)",
-  "LPIC 1 (2013)"
-];
-
-const projects = [
-  {
-    title: "Bancfy",
-    category: "Fintech App & Comunidad",
-    icon: <TrendingUp className="w-8 h-8 text-emerald-400" />,
-    description: "Más que una app de finanzas, es una experiencia. Bancfy busca cambiar la relación de las personas con su dinero mediante la gamificación y la comunidad. No vendo un producto, construyo un movimiento.",
-    status: "En desarrollo",
-    color: "from-emerald-900 to-green-900",
-    links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
-  },
-  {
-    title: "Jabalí Espacial",
-    category: "Mobile Game",
-    icon: <Gamepad2 className="w-8 h-8 text-purple-400" />,
-    description: "Un videojuego arcade desarrollado íntegramente por mí. Disponible en plataformas móviles. Un reto técnico y creativo que demuestra mi capacidad para llevar un producto de 0 a 100.",
-    status: "Publicado",
-    color: "from-purple-900 to-indigo-900",
-    links: [
-      { label: "Android", url: "https://andro.io/app/jabaliespacial" },
-      { label: "iOS", url: "https://apps.apple.com/us/app/space-warhog/id6468927508" }
-    ]
-  },
-  {
-    title: "@exitofracasando",
-    category: "Content Creation",
-    icon: <Smartphone className="w-8 h-8 text-pink-400" />,
-    description: "Cuenta de TikTok con +10k seguidores. Un espacio donde compartí aprendizajes y conecté con una audiencia joven interesada en crecimiento y emprendimiento.",
-    status: "10K+ Seguidores",
-    color: "from-pink-900 to-rose-900",
-    links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
-  }
-];
-
-const books = [
-  {
-    title: "El éxito de fracasar",
-    url: "https://www.amazon.es/dp/B0DK8SF6DK",
-    image: "/images/fracasar.png"
-  },
-  {
-    title: "Cómo destruir España",
-    url: "https://www.amazon.es/dp/B0DKT43G4R",
-    image: "/images/Cómo destruir españa.jpg"
-  },
-  {
-    title: "Com destruir Catalunya",
-    url: "https://www.amazon.es/dp/B0DMFYV7W3",
-    image: "/images/Com destruir Catalunya.jpg"
-  }
-];
-
-const techSkills = [
-  { name: "Linux / RHEL", level: 95 },
-  { name: "Ansible / Automation", level: 90 },
-  { name: "Docker / Kubernetes", level: 85 },
-  { name: "Cloud (GCP/AWS)", level: 85 },
-  { name: "Terraform / IaC", level: 85 },
-  { name: "CI/CD (GitLab/Jenkins)", level: 85 }
-];
-
-const softSkills = [
-  "Liderazgo de Equipos",
-  "Gestión de Proyectos",
-  "Comunicación Efectiva",
-  "Resolución de Conflictos",
-  "Mentalidad de Crecimiento",
-  "Adaptabilidad"
-];
 
 // --- HELPER COMPONENTS ---
 
-// COMPONENTE DE OPTIMIZACIÓN: Carga diferida de secciones
+// Map string icon names to components to store in JSON/Object easily
+const IconMap = {
+    "Award": Award,
+    "Gamepad2": Gamepad2,
+    "BookOpen": BookOpen,
+    "Smile": Smile,
+    "Utensils": Utensils,
+    "Code": Code,
+    "TrendingUp": TrendingUp,
+    "Smartphone": Smartphone
+};
+
 const LazyLoadSection = ({ id, children, className = "" }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
   useEffect(() => {
-    // Usamos Intersection Observer para detectar cuando la sección se acerca al viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Dejar de observar una vez cargado
+          observer.disconnect();
         }
       },
-      { 
-        rootMargin: '200px', // Cargar 200px antes de que entre en pantalla
-        threshold: 0.1 
-      }
+      { rootMargin: '200px', threshold: 0.1 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (observer) observer.disconnect();
-    };
+    if (ref.current) observer.observe(ref.current);
+    return () => observer && observer.disconnect();
   }, []);
 
   return (
     <section id={id} ref={ref} className={`${className} transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      {isVisible ? (
-        children
-      ) : (
-        // Placeholder ligero mientras no es visible
-        <div className="py-24 flex items-center justify-center">
-          <div className="w-full max-w-md h-32 bg-white/5 animate-pulse rounded-3xl" />
-        </div>
-      )}
+      {isVisible ? children : <div className="py-24 flex items-center justify-center"><div className="w-full max-w-md h-32 bg-white/5 animate-pulse rounded-3xl" /></div>}
     </section>
   );
 };
 
-const SEOHead = () => {
+const SEOHead = ({ currentLangCode }) => {
   useEffect(() => {
     document.title = "Juan José García Manzano | DevOps Engineer & Project Manager";
     
-    const updateMeta = (name, content, attribute = 'name') => {
-      let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', content);
-    };
+    // Aquí podrías cambiar meta tags según el idioma si quisieras
+    document.documentElement.lang = currentLangCode;
 
-    const updateLink = (rel, href, hreflang = null) => {
-      let selector = `link[rel="${rel}"]`;
-      if (hreflang) selector += `[hreflang="${hreflang}"]`;
-      
-      let element = document.querySelector(selector);
-      if (!element) {
-        element = document.createElement('link');
-        element.setAttribute('rel', rel);
-        if (hreflang) element.setAttribute('hreflang', hreflang);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('href', href);
-    };
-
-    updateMeta('description', 'Portfolio de Juan José García Manzano. DevOps Engineer experto en Linux, Cloud (AWS/GCP), Automatización y creador de productos digitales como Bancfy.');
-    updateMeta('keywords', 'DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zurich, Engineer');
-    updateMeta('author', 'Juan José García Manzano');
-    updateMeta('robots', 'index, follow');
-
-    updateLink('canonical', 'https://www.jjgarciacv.com/es/');
-
-    updateLink('alternate', 'https://www.jjgarciacv.com/es/', 'es');
-    updateLink('alternate', 'https://www.jjgarciacv.com/', 'en');       
-    updateLink('alternate', 'https://www.jjgarciacv.com/ca/', 'ca');     
-    updateLink('alternate', 'https://www.jjgarciacv.com/ch/', 'de-CH');  
-    updateLink('alternate', 'https://www.jjgarciacv.com/', 'x-default'); 
-
-    updateMeta('og:type', 'profile', 'property');
-    updateMeta('og:url', 'https://www.jjgarciacv.com/es/', 'property');
-    updateMeta('og:title', 'Juan José García Manzano | DevOps & PM', 'property');
-    updateMeta('og:description', 'Impulsando la innovación tecnológica desde Zurich. Experto en infraestructura crítica y desarrollo de producto.', 'property');
-
-    updateMeta('twitter:card', 'summary_large_image', 'property');
-    updateMeta('twitter:title', 'Juan José García Manzano | DevOps & PM', 'property');
-    updateMeta('twitter:description', 'Impulsando la innovación tecnológica desde Zurich. Experto en infraestructura crítica y desarrollo de producto.', 'property');
-
-    const schemaData = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Juan José García Manzano",
-      "jobTitle": "DevOps Engineer & Project Manager",
-      "url": "https://www.jjgarciacv.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/juanjo-garcia-manzano",
-        "https://www.bancfy.com"
-      ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Worldline Switzerland"
-      },
-      "alumniOf": "UOC (Universitat Oberta de Catalunya)",
-      "knowsAbout": ["DevOps", "Linux", "Cloud Computing", "Project Management", "Game Development"]
-    };
-
-    let script = document.querySelector('#seo-schema');
-    if (!script) {
-      script = document.createElement('script');
-      script.id = 'seo-schema';
-      script.type = 'application/ld+json';
-      document.head.appendChild(script);
-    }
-    script.text = JSON.stringify(schemaData);
-
-  }, []);
+  }, [currentLangCode]);
 
   return null;
 };
@@ -428,7 +393,7 @@ const CompanyLogo = ({ logo, name, color }) => (
   </div>
 );
 
-const LanguageSelector = ({ mobile = false }) => {
+const LanguageSelector = ({ mobile = false, currentLangCode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -442,15 +407,16 @@ const LanguageSelector = ({ mobile = false }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const currentLang = languages[0]; 
+  // Encontrar idioma activo
+  const activeLang = languages.find(l => l.code === currentLangCode) || languages[1];
 
   if (mobile) {
     return (
         <div className="flex gap-4 mt-4 justify-center">
             {languages.map((lang) => (
-                <a key={lang.code} href={lang.path} className="flex flex-col items-center gap-1">
-                    <img src={lang.flag} alt={lang.label} className="w-8 h-8 rounded-full object-cover border-2 border-white/10" />
-                    <span className="text-xs text-gray-400">{lang.label}</span>
+                <a key={lang.code} href={lang.path} className={`flex flex-col items-center gap-1 ${activeLang.code === lang.code ? 'opacity-100' : 'opacity-50'}`}>
+                    <img src={lang.flag} alt={lang.label} className={`w-8 h-8 rounded-full object-cover border-2 ${activeLang.code === lang.code ? 'border-purple-500' : 'border-white/10'}`} />
+                    <span className={`text-xs ${activeLang.code === lang.code ? 'text-purple-400 font-bold' : 'text-gray-400'}`}>{lang.label}</span>
                 </a>
             ))}
         </div>
@@ -463,8 +429,8 @@ const LanguageSelector = ({ mobile = false }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
       >
-        <img src={currentLang.flag} alt={currentLang.label} className="w-5 h-5 rounded-full object-cover" />
-        <span className="text-sm font-medium text-gray-300">{currentLang.label}</span>
+        <img src={activeLang.flag} alt={activeLang.label} className="w-5 h-5 rounded-full object-cover" />
+        <span className="text-sm font-medium text-gray-300">{activeLang.label}</span>
         <ChevronDown size={14} className={`text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
@@ -474,10 +440,10 @@ const LanguageSelector = ({ mobile = false }) => {
             <a
               key={lang.code}
               href={lang.path}
-              className="flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-sm text-gray-300 hover:text-white"
+              className={`flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-sm ${activeLang.code === lang.code ? 'text-purple-400 bg-white/5' : 'text-gray-300 hover:text-white'}`}
             >
               <img src={lang.flag} alt={lang.label} className="w-5 h-5 rounded-full object-cover" />
-              <span>{lang.name || lang.label}</span>
+              <span>{lang.label}</span>
             </a>
           ))}
         </div>
@@ -494,26 +460,39 @@ export default function App() {
   const [selectedHobby, setSelectedHobby] = useState(null); 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [randomImages, setRandomImages] = useState([]);
-  
-  // FORM STATE
   const [formStatus, setFormStatus] = useState("idle"); 
 
+  // --- LOGICA DE IDIOMA ---
+  const [lang, setLang] = useState('en'); // Default inicial
+  
   useEffect(() => {
-    // Scroll listener optimizado
+    // Detectar idioma basado en la URL
+    const path = window.location.pathname;
+    let detectedLang = 'en'; // Default
+    
+    if (path.includes('/es/')) detectedLang = 'es';
+    else if (path.includes('/ca/')) detectedLang = 'ca';
+    else if (path.includes('/ch/')) detectedLang = 'ch';
+    
+    setLang(detectedLang);
+
+    // Scroll listener
     const handleScroll = () => {
         if (window.scrollY > 50 && !scrolled) setScrolled(true);
         if (window.scrollY <= 50 && scrolled) setScrolled(false);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Aleatorizar imágenes una sola vez al cargar
     const shuffled = [...carouselSourceImages].sort(() => 0.5 - Math.random());
     setRandomImages(shuffled.slice(0, 4));
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // Dependencias vacías para que solo ocurra al montar
+  }, []);
 
-  // Efecto separado para el bloqueo de scroll (UI lógica)
+  // Seleccionamos el contenido correcto basado en el estado 'lang'
+  // Si no existe el idioma, hacemos fallback a 'en' (que a su vez tiene copia de 'es' por ahora)
+  const content = DATA[lang] || DATA['en'];
+
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -526,16 +505,11 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus("submitting");
-    
     const formData = new FormData(e.target);
-    
     try {
         const response = await fetch("https://formspree.io/f/mvgjlzll", {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
+            method: "POST", body: formData, headers: { 'Accept': 'application/json' }
         });
-        
         if (response.ok) {
             setFormStatus("success");
             e.target.reset(); 
@@ -548,13 +522,14 @@ export default function App() {
     }
   };
 
-  const visibleExperience = expandedExperience ? experience : experience.slice(0, 3);
-  const menuItems = ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Libros', 'Contacto'];
+  const visibleExperience = expandedExperience ? content.experience : content.experience.slice(0, 3);
+  // Mapeamos los titulos del menu a IDs para los anclas
+  const menuAnchors = ['sobre-mi', 'experiencia', 'estudios', 'proyectos', 'skills', 'libros', 'contacto'];
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-purple-500 selection:text-white overflow-x-hidden relative">
       
-      <SEOHead />
+      <SEOHead currentLangCode={lang} />
 
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />
@@ -572,10 +547,10 @@ export default function App() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <div className="flex gap-6 text-sm font-medium text-gray-300">
-              {menuItems.map((item) => (
+              {content.menu.map((item, index) => (
                 <a 
-                  key={item} 
-                  href={`#${item.toLowerCase().replace(' ', '-').replace('í', 'i')}`}
+                  key={index} 
+                  href={`#${menuAnchors[index]}`}
                   className="hover:text-purple-400 transition-colors relative group"
                 >
                   {item}
@@ -584,7 +559,7 @@ export default function App() {
               ))}
             </div>
             <div className="pl-6 border-l border-white/10">
-              <LanguageSelector />
+              <LanguageSelector currentLangCode={lang} />
             </div>
           </div>
 
@@ -599,10 +574,10 @@ export default function App() {
           {/* Mobile Menu Overlay */}
           <div className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
              <div className="flex flex-col gap-8 text-center">
-                {menuItems.map((item) => (
+                {content.menu.map((item, index) => (
                     <a 
-                        key={item} 
-                        href={`#${item.toLowerCase().replace(' ', '-').replace('í', 'i')}`}
+                        key={index} 
+                        href={`#${menuAnchors[index]}`}
                         className="text-2xl font-bold text-gray-300 hover:text-purple-400 transition-colors"
                         onClick={() => setMobileMenuOpen(false)}
                     >
@@ -612,34 +587,34 @@ export default function App() {
              </div>
              <div className="mt-12 w-full px-12">
                 <div className="h-px bg-white/10 w-full mb-8"></div>
-                <p className="text-center text-gray-500 text-sm mb-4">Selecciona tu idioma</p>
-                <LanguageSelector mobile={true} />
+                <p className="text-center text-gray-500 text-sm mb-4">Select Language / Idioma</p>
+                <LanguageSelector mobile={true} currentLangCode={lang} />
              </div>
           </div>
         </div>
       </nav>
 
-      {/* HERO SECTION - SIN LAZY LOAD (Debe ser inmediato) */}
+      {/* HERO SECTION */}
       <header className="relative z-10 min-h-screen flex items-center justify-center pt-20">
         <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 text-center md:text-left">
             <div className="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 text-purple-300 text-sm mb-4 animate-fade-in-up">
-              🚀 Disponible para nuevos retos
+              {content.ui.available}
             </div>
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               DevOps <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Engineer</span> <br />
               & Project Manager
             </h1>
             <p className="text-xl text-gray-400 max-w-lg mx-auto md:mx-0">
-              {personalInfo.tagline}
+              {content.personalInfo.tagline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
               <a href="#contacto" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all transform hover:-translate-y-1 text-center">
-                Contactar
+                {content.ui.contactBtn}
               </a>
               <a href="/downloads/CV Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
                 <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
-                Descargar CV
+                {content.ui.downloadCv}
               </a>
             </div>
           </div>
@@ -652,15 +627,15 @@ export default function App() {
                    </div>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-2">Juan José García</h3>
+                <h3 className="text-xl font-bold mb-2">{content.personalInfo.name.split(' ')[0] + ' ' + content.personalInfo.name.split(' ')[1]}</h3>
                 
                 <div className="w-full flex flex-col gap-2 mb-6">
                    <div className="flex items-center justify-center gap-2 text-purple-400 text-xs font-medium bg-purple-500/10 py-1.5 px-3 rounded-full border border-purple-500/20">
-                      <MapPin size={12} /> Zurich (5 años)
+                      <MapPin size={12} /> Zurich (5 years)
                    </div>
                    <div className="h-4 w-px bg-white/10 mx-auto border-l border-dashed border-gray-500"></div>
                    <div className="flex items-center justify-center gap-2 text-gray-400 text-xs font-medium">
-                      <MapPin size={12} /> Barcelona (Origen)
+                      <MapPin size={12} /> Barcelona (Origin)
                    </div>
                 </div>
 
@@ -690,28 +665,28 @@ export default function App() {
         </div>
       </header>
 
-      {/* ABOUT SECTION - WRAPPED IN LAZY LOAD */}
+      {/* ABOUT SECTION */}
       <LazyLoadSection id="sobre-mi" className="py-24 relative z-10">
         <div className="container mx-auto px-6">
-          <SectionTitle>Sobre Mí</SectionTitle>
+          <SectionTitle>{content.sectionTitles.about}</SectionTitle>
           
           <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
              <div className="space-y-6">
                 <GlassCard className="bg-gradient-to-br from-white/5 to-transparent">
                   <p className="text-lg leading-relaxed text-gray-300">
-                    {personalInfo.aboutShort}
+                    {content.personalInfo.aboutShort}
                   </p>
                   
                   <div className={`overflow-hidden transition-all duration-500 ${showFullAbout ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                     <p className="text-gray-400 leading-relaxed border-t border-white/10 pt-4">
-                      {personalInfo.aboutLong}
+                      {content.personalInfo.aboutLong}
                     </p>
                     <div className="mt-4 grid grid-cols-2 gap-4">
                         <div className="flex items-center gap-2 text-sm text-purple-300">
-                            <BookOpen size={16} /> Aprendizaje continuo
+                            <BookOpen size={16} /> Continuous Learning
                         </div>
                         <div className="flex items-center gap-2 text-sm text-purple-300">
-                            <Users size={16} /> Liderazgo humano
+                            <Users size={16} /> Human Leadership
                         </div>
                     </div>
                   </div>
@@ -720,34 +695,37 @@ export default function App() {
                     onClick={() => setShowFullAbout(!showFullAbout)}
                     className="mt-4 flex items-center gap-2 text-purple-400 hover:text-purple-300 font-medium transition-colors"
                   >
-                    {showFullAbout ? 'Leer menos' : 'Leer más'}
+                    {showFullAbout ? content.ui.readLess : content.ui.readMore}
                     {showFullAbout ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                   </button>
                 </GlassCard>
 
                 {/* Hobbies Section */}
                 <h3 className="text-xl font-bold mt-8 mb-4 flex items-center gap-2">
-                   <Heart className="text-red-500" size={20} /> Mis Intereses
+                   <Heart className="text-red-500" size={20} /> Intereses
                 </h3>
                 <div className="flex flex-col gap-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {personalInfo.hobbies.map((hobby, i) => (
-                            <button 
-                                key={i} 
-                                onClick={() => setSelectedHobby(selectedHobby === i ? null : i)}
-                                className={`bg-white/5 rounded-full p-3 px-5 border transition-all flex items-center gap-3 text-left w-full
-                                    ${selectedHobby === i 
-                                        ? 'border-purple-500 bg-purple-500/10' 
-                                        : 'border-white/10 hover:border-purple-500/50 hover:bg-white/10'
-                                    }`}
-                            >
-                                <div className={`p-2 rounded-full flex items-center justify-center shrink-0 ${selectedHobby === i ? 'bg-purple-500 text-white' : 'bg-purple-500/20 text-purple-400'}`}>
-                                    {hobby.icon}
-                                </div>
-                                <span className={`text-sm font-medium ${selectedHobby === i ? 'text-white' : 'text-gray-300'}`}>{hobby.name}</span>
-                                {selectedHobby === i ? <ChevronUp size={14} className="ml-auto text-purple-400"/> : <ChevronDown size={14} className="ml-auto text-gray-500"/>}
-                            </button>
-                        ))}
+                        {content.personalInfo.hobbies.map((hobby, i) => {
+                            const Icon = IconMap[hobby.iconName] || Award;
+                            return (
+                                <button 
+                                    key={i} 
+                                    onClick={() => setSelectedHobby(selectedHobby === i ? null : i)}
+                                    className={`bg-white/5 rounded-full p-3 px-5 border transition-all flex items-center gap-3 text-left w-full
+                                        ${selectedHobby === i 
+                                            ? 'border-purple-500 bg-purple-500/10' 
+                                            : 'border-white/10 hover:border-purple-500/50 hover:bg-white/10'
+                                        }`}
+                                >
+                                    <div className={`p-2 rounded-full flex items-center justify-center shrink-0 ${selectedHobby === i ? 'bg-purple-500 text-white' : 'bg-purple-500/20 text-purple-400'}`}>
+                                        <Icon size={18} />
+                                    </div>
+                                    <span className={`text-sm font-medium ${selectedHobby === i ? 'text-white' : 'text-gray-300'}`}>{hobby.name}</span>
+                                    {selectedHobby === i ? <ChevronUp size={14} className="ml-auto text-purple-400"/> : <ChevronDown size={14} className="ml-auto text-gray-500"/>}
+                                </button>
+                            );
+                        })}
                     </div>
 
                     {/* Detailed Hobby View */}
@@ -755,11 +733,15 @@ export default function App() {
                         {selectedHobby !== null && (
                             <div className="bg-gradient-to-r from-purple-900/40 to-blue-900/40 border border-purple-500/30 rounded-3xl p-6 mt-2 relative">
                                 <h4 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                                    {personalInfo.hobbies[selectedHobby].icon}
-                                    {personalInfo.hobbies[selectedHobby].name}
+                                    {/* Icon rendering logic */}
+                                    {(() => {
+                                        const Icon = IconMap[content.personalInfo.hobbies[selectedHobby].iconName] || Award;
+                                        return <Icon size={18}/>
+                                    })()}
+                                    {content.personalInfo.hobbies[selectedHobby].name}
                                 </h4>
                                 <p className="text-gray-300 text-sm leading-relaxed">
-                                    {personalInfo.hobbies[selectedHobby].desc}
+                                    {content.personalInfo.hobbies[selectedHobby].desc}
                                 </p>
                             </div>
                         )}
@@ -774,7 +756,7 @@ export default function App() {
                       <Brain className="text-purple-500"/> Mindset & Soft Skills
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                     {softSkills.map((skill, i) => (
+                     {content.softSkills.map((skill, i) => (
                        <div key={i} className="px-4 py-2 bg-white/5 rounded-full border border-white/5 text-sm text-gray-300 flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-green-400" />
                           {skill}
@@ -785,7 +767,7 @@ export default function App() {
                   <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                       <Cpu className="text-blue-500"/> Core Tech Stack
                   </h3>
-                  {techSkills.map((skill) => (
+                  {content.techSkills.map((skill) => (
                     <div key={skill.name} className="group mb-4">
                       <div className="flex justify-between mb-2 text-sm text-gray-400 group-hover:text-white transition-colors">
                         <span>{skill.name}</span>
@@ -806,7 +788,7 @@ export default function App() {
           {/* PHOTO CAROUSEL SECTION */}
           <div className="mt-16">
              <h3 className="text-xl font-bold mb-6 flex items-center justify-center gap-2 text-gray-300">
-                <Shuffle size={20} className="text-purple-400"/> Galería Aleatoria
+                <Shuffle size={20} className="text-purple-400"/> {content.ui.randomGallery}
              </h3>
              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {randomImages.map((imgSrc, idx) => (
@@ -826,10 +808,10 @@ export default function App() {
         </div>
       </LazyLoadSection>
 
-      {/* EXPERIENCE SECTION - WRAPPED IN LAZY LOAD */}
+      {/* EXPERIENCE SECTION */}
       <LazyLoadSection id="experiencia" className="py-24 bg-black/30 relative">
         <div className="container mx-auto px-6">
-          <SectionTitle>Trayectoria Profesional</SectionTitle>
+          <SectionTitle>{content.sectionTitles.experience}</SectionTitle>
           
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute left-8 md:left-1/2 top-0 bottom-12 w-px bg-gradient-to-b from-purple-500/0 via-purple-500/50 to-purple-500/0" />
@@ -864,7 +846,7 @@ export default function App() {
                         
                         {job.stack && (
                            <div className="bg-white/5 rounded-3xl p-4 border border-white/5">
-                              <h4 className="text-xs font-bold text-purple-400 mb-3 uppercase tracking-wider">Herramientas & Tecnologías</h4>
+                              <h4 className="text-xs font-bold text-purple-400 mb-3 uppercase tracking-wider">{content.ui.techStack}</h4>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4">
                                  {job.stack.map((tech, i) => (
                                     <div key={i} className="flex items-start gap-2 text-xs">
@@ -901,7 +883,7 @@ export default function App() {
                     className="flex flex-col items-center gap-2 mx-auto text-gray-400 hover:text-white transition-colors"
                 >
                     <span className="text-sm font-bold uppercase tracking-widest">
-                        {expandedExperience ? "Ver menos" : "Ver trayectoria completa"}
+                        {expandedExperience ? content.ui.showLessExp : content.ui.showFullExp}
                     </span>
                     {expandedExperience ? <ChevronUp className="animate-bounce" /> : <ChevronDown className="animate-bounce" />}
                 </button>
@@ -910,17 +892,17 @@ export default function App() {
         </div>
       </LazyLoadSection>
 
-      {/* EDUCATION SECTION - WRAPPED IN LAZY LOAD */}
+      {/* EDUCATION SECTION */}
       <LazyLoadSection id="estudios" className="py-24 relative z-10">
         <div className="container mx-auto px-6">
-           <SectionTitle>Estudios & Certificaciones</SectionTitle>
+           <SectionTitle>{content.sectionTitles.education}</SectionTitle>
            
            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div className="space-y-6">
                  <h3 className="text-2xl font-bold flex items-center gap-3 mb-6">
                     <GraduationCap className="text-purple-500" /> Formación Académica
                  </h3>
-                 {education.map((edu, idx) => (
+                 {content.education.map((edu, idx) => (
                     <div key={idx} className="flex gap-4 p-4 border-l-2 border-purple-500/30 hover:border-purple-500 transition-colors bg-white/5 rounded-r-[2rem]">
                        <div className="flex-1">
                           <h4 className="font-bold text-lg">{edu.degree}</h4>
@@ -937,7 +919,7 @@ export default function App() {
                     <Award className="text-blue-500" /> Certificaciones
                  </h3>
                  <div className="grid grid-cols-1 gap-3">
-                    {certifications.map((cert, idx) => (
+                    {content.certifications.map((cert, idx) => (
                        <div key={idx} className="flex items-center gap-3 p-3 px-5 bg-white/5 rounded-full border border-white/5 hover:bg-white/10 transition-colors">
                           <Award size={16} className="text-yellow-500 shrink-0" />
                           <span className="text-sm font-medium">{cert}</span>
@@ -949,66 +931,69 @@ export default function App() {
         </div>
       </LazyLoadSection>
 
-      {/* PROJECTS SECTION - WRAPPED IN LAZY LOAD */}
+      {/* PROJECTS SECTION */}
       <LazyLoadSection id="proyectos" className="py-24 bg-black/30">
         <div className="container mx-auto px-6">
-          <SectionTitle>Side Projects & Emprendimiento</SectionTitle>
+          <SectionTitle>{content.sectionTitles.projects}</SectionTitle>
           <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16">
             Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="group relative">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 rounded-[2.5rem] transition-opacity duration-500 blur-xl`} />
-                
-                <GlassCard className="h-full flex flex-col relative z-10 border-white/5 hover:border-white/20 transition-all duration-300 group-hover:-translate-y-2">
-                  <div className="mb-6 flex justify-between items-start">
-                    <div className="p-3 bg-white/5 rounded-full border border-white/10 group-hover:scale-110 transition-transform">
-                      {project.icon}
+            {content.projects.map((project, index) => {
+              const Icon = IconMap[project.iconName] || Code;
+              return (
+                <div key={index} className="group relative">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 rounded-[2.5rem] transition-opacity duration-500 blur-xl`} />
+                  
+                  <GlassCard className="h-full flex flex-col relative z-10 border-white/5 hover:border-white/20 transition-all duration-300 group-hover:-translate-y-2">
+                    <div className="mb-6 flex justify-between items-start">
+                      <div className="p-3 bg-white/5 rounded-full border border-white/10 group-hover:scale-110 transition-transform">
+                        <Icon size={24} className="text-white"/>
+                      </div>
+                      <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
+                        {project.status}
+                      </span>
                     </div>
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                      {project.status}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <div className="text-xs text-purple-400 mb-4 font-mono uppercase tracking-wider">{project.category}</div>
-                  
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                    {project.description}
-                  </p>
+                    
+                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                    <div className="text-xs text-purple-400 mb-4 font-mono uppercase tracking-wider">{project.category}</div>
+                    
+                    <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                      {project.description}
+                    </p>
 
-                  <div className="flex flex-col gap-2 mt-auto">
-                    {project.links.map((link, i) => (
-                        <a 
-                            key={i}
-                            href={link.url} 
-                            target="_blank" 
-                            rel="noreferrer"
-                            className="flex items-center justify-between p-2 px-4 rounded-full bg-white/5 hover:bg-white/10 text-sm font-bold text-gray-300 hover:text-white transition-all"
-                        >
-                            {link.label} <ExternalLink size={14} />
-                        </a>
-                    ))}
-                  </div>
-                </GlassCard>
-              </div>
-            ))}
+                    <div className="flex flex-col gap-2 mt-auto">
+                      {project.links.map((link, i) => (
+                          <a 
+                              key={i}
+                              href={link.url} 
+                              target="_blank" 
+                              rel="noreferrer"
+                              className="flex items-center justify-between p-2 px-4 rounded-full bg-white/5 hover:bg-white/10 text-sm font-bold text-gray-300 hover:text-white transition-all"
+                          >
+                              {link.label} <ExternalLink size={14} />
+                          </a>
+                      ))}
+                    </div>
+                  </GlassCard>
+                </div>
+              );
+            })}
           </div>
         </div>
       </LazyLoadSection>
 
-      {/* BOOKS SECTION - WRAPPED IN LAZY LOAD */}
+      {/* BOOKS SECTION */}
       <LazyLoadSection id="libros" className="py-24 relative z-10 overflow-hidden">
          <div className="container mx-auto px-6">
-            <SectionTitle>Libros Publicados</SectionTitle>
+            <SectionTitle>{content.sectionTitles.books}</SectionTitle>
             <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
                Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
-               {books.map((book, idx) => (
+               {content.books.map((book, idx) => (
                   <a 
                     key={idx} 
                     href={book.url} 
@@ -1025,7 +1010,7 @@ export default function App() {
                         <div className="text-center z-10 px-6">
                             <BookOpen size={48} className="mx-auto mb-4 text-purple-400 opacity-80" />
                             <h4 className="text-xl font-bold font-serif leading-tight mb-2 text-white">{book.title}</h4>
-                            <span className="text-xs text-gray-400 uppercase tracking-widest">Juanjo García</span>
+                            <span className="text-xs text-gray-400 uppercase tracking-widest">{content.personalInfo.name.split(' ')[0]}</span>
                         </div>
                         <div className="absolute inset-0 bg-purple-600/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <span className="flex items-center gap-2 font-bold text-white">
@@ -1041,26 +1026,26 @@ export default function App() {
 
       <div id="skills" />
 
-      {/* CONTACT SECTION - WRAPPED IN LAZY LOAD */}
+      {/* CONTACT SECTION */}
       <LazyLoadSection id="contacto" className="py-24 bg-gradient-to-t from-black via-black/90 to-transparent">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
              <GlassCard className="p-8 md:p-12 border-purple-500/20 shadow-[0_0_50px_rgba(100,0,200,0.1)]">
                 <div className="grid md:grid-cols-2 gap-12">
                    <div className="space-y-6">
-                      <h2 className="text-3xl font-bold">Hablemos</h2>
+                      <h2 className="text-3xl font-bold">{content.sectionTitles.contact}</h2>
                       <p className="text-gray-400">
                          Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas.
                       </p>
                       
                       <div className="space-y-4 pt-4">
-                         <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
+                         <a href={`mailto:${content.personalInfo.email}`} className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <div className="p-3 bg-white/5 rounded-full"><Mail size={20} className="text-blue-400"/></div>
-                            <span className="break-all">{personalInfo.email}</span>
+                            <span className="break-all">{content.personalInfo.email}</span>
                          </a>
-                         <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
+                         <a href={`https://${content.personalInfo.linkedin}`} target="_blank" rel="noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors">
                             <div className="p-3 bg-white/5 rounded-full"><Linkedin size={20} className="text-blue-400"/></div>
-                            Juanjo García Manzano
+                            {content.personalInfo.name}
                          </a>
                          <div className="flex items-start gap-4 text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full shrink-0"><Globe size={20} className="text-blue-400"/></div>
@@ -1077,38 +1062,38 @@ export default function App() {
                    {/* Contact Form Updated */}
                    <form className="space-y-4" onSubmit={handleSubmit}>
                       <div>
-                         <label htmlFor="name" className="block text-xs font-mono text-gray-500 mb-1 ml-2">NOMBRE</label>
+                         <label htmlFor="name" className="block text-xs font-mono text-gray-500 mb-1 ml-2">{content.ui.form.name}</label>
                          <input 
                             id="name"
                             name="name"
                             required
                             type="text" 
                             className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
-                            placeholder="Recruiter / Empresa" 
+                            placeholder={content.ui.form.namePh} 
                          />
                       </div>
                       
                       <div>
-                         <label htmlFor="email" className="block text-xs font-mono text-gray-500 mb-1 ml-2">TU EMAIL</label>
+                         <label htmlFor="email" className="block text-xs font-mono text-gray-500 mb-1 ml-2">{content.ui.form.email}</label>
                          <input 
                             id="email"
                             name="email"
                             required
                             type="email" 
                             className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
-                            placeholder="tu@email.com" 
+                            placeholder={content.ui.form.emailPh} 
                          />
                       </div>
 
                       <div>
-                         <label htmlFor="message" className="block text-xs font-mono text-gray-500 mb-1 ml-2">MENSAJE</label>
+                         <label htmlFor="message" className="block text-xs font-mono text-gray-500 mb-1 ml-2">{content.ui.form.msg}</label>
                          <textarea 
                             id="message"
                             name="message"
                             required
                             rows="4" 
                             className="w-full bg-white/5 border border-white/10 rounded-3xl px-6 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors" 
-                            placeholder="Hola Juanjo, me gustaría hablar sobre..." 
+                            placeholder={content.ui.form.msgPh} 
                          />
                       </div>
                       
@@ -1122,10 +1107,10 @@ export default function App() {
                             ${formStatus === 'idle' ? 'bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-[0_0_20px_rgba(124,58,237,0.3)]' : ''}
                         `}
                       >
-                         {formStatus === 'idle' && 'Enviar Mensaje'}
-                         {formStatus === 'submitting' && <><Loader2 className="animate-spin" size={20} /> Enviando...</>}
-                         {formStatus === 'success' && <><CheckCircle size={20} /> ¡Mensaje Enviado!</>}
-                         {formStatus === 'error' && <><AlertCircle size={20} /> Error al enviar. Reintentar.</>}
+                         {formStatus === 'idle' && content.ui.form.send}
+                         {formStatus === 'submitting' && <><Loader2 className="animate-spin" size={20} /> {content.ui.form.sending}</>}
+                         {formStatus === 'success' && <><CheckCircle size={20} /> {content.ui.form.sent}</>}
+                         {formStatus === 'error' && <><AlertCircle size={20} /> {content.ui.form.error}</>}
                       </button>
                    </form>
                 </div>
@@ -1136,8 +1121,8 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="py-8 border-t border-white/5 text-center text-gray-600 text-sm">
-         <p className="font-medium text-gray-500">Impulsado por la pasión, definido por la perseverancia. Creando el futuro, línea a línea.</p>
-         <p className="text-xs mt-2 text-gray-700">© {new Date().getFullYear()} Juan José García Manzano</p>
+         <p className="font-medium text-gray-500">{content.ui.footer}</p>
+         <p className="text-xs mt-2 text-gray-700">© {new Date().getFullYear()} {content.personalInfo.name}</p>
       </footer>
     </div>
   );

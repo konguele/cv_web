@@ -82,7 +82,6 @@ const DATA = {
         error: "Error al enviar. Reintentar."
       }
     },
-    // Nuevos textos para la tarjeta y títulos internos
     profileCard: {
       location1: "Zúrich (5 años)",
       location2: "Barcelona (Origen)",
@@ -96,11 +95,19 @@ const DATA = {
       coreStack: "Core Tech Stack",
       projects: "Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías.",
       books: "Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon.",
-      contact: "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas."
+      contact: "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas.",
+      // NUEVO: Títulos de secciones específicas
+      academic: "Formación Académica",
+      certifications: "Certificaciones",
+      // NUEVO: Items de About Me
+      continuousLearning: "Aprendizaje Continuo",
+      humanLeadership: "Liderazgo Humano"
     },
     personalInfo: {
       name: "Juan José García Manzano",
+      bookAuthor: "Juan José García", // Nombre para libros
       role: "DevOps Engineer & Project Manager",
+      email: "Juanjo.gmanzano@gmail.com",
       tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
       aboutShort: "Soy un DevOps Engineer con alma de emprendedor. Experto en automatización, Linux y Cloud, pero también creador de videojuegos y apps financieras.",
       aboutLong: "Con más de 10 años de experiencia en entornos críticos (Banca, Retail, Salud), he dominado el arte de mantener sistemas robustos. Sin embargo, mi pasión va más allá del código: me mueve crear experiencias. He desarrollado 'Jabalí Espacial' para móviles y estoy construyendo 'Bancfy', no solo como una app de finanzas, sino como una comunidad. Creo firmemente que la tecnología debe servir para conectar y empoderar a las personas.",
@@ -137,6 +144,13 @@ const DATA = {
         }
       ]
     },
+    // NUEVO: Idiomas hablados
+    spokenLanguages: [
+      { label: "Español", level: "Nativo" },
+      { label: "Catalán", level: "Nativo" },
+      { label: "Inglés", level: "C1 (Avanzado)" },
+      { label: "Alemán", level: "A1 (Básico)" }
+    ],
     experience: [
       {
         company: "Worldline Switzerland",
@@ -218,13 +232,13 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Grado en Ingeniería Informática", // CAMBIADO
+        degree: "Grado en Ingeniería Informática", 
         period: "2012 - 2017",
         desc: "Fundamentos de programación, gestión de redes y sistemas operativos."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "CFGS de Telecomunicaciones y Sist. Informáticos", // CAMBIADO
+        degree: "CFGS de Telecomunicaciones y Sist. Informáticos",
         period: "2006 - 2008",
         desc: "Formación técnica superior en informática (ASI)."
       }
@@ -353,11 +367,17 @@ const DATA = {
       coreStack: "Core Tech Stack",
       projects: "My passion is not limited to the office. I love building products from scratch, generating community, and exploring new technologies.",
       books: "Sharing knowledge is another one of my passions. Here you can find my latest publications available on Amazon.",
-      contact: "I am always open to discussing new opportunities, product ideas, or technical collaborations."
+      contact: "I am always open to discussing new opportunities, product ideas, or technical collaborations.",
+      academic: "Academic Background",
+      certifications: "Certifications",
+      continuousLearning: "Continuous Learning",
+      humanLeadership: "Human Leadership"
     },
     personalInfo: {
       name: "Juan José García Manzano",
+      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
+      email: "Juanjo.gmanzano@gmail.com",
       tagline: "Merging the robustness of Linux infrastructure with the creativity of product development.",
       aboutShort: "I am a DevOps Engineer with an entrepreneurial soul. Expert in automation, Linux, and Cloud, but also a creator of video games and financial apps.",
       aboutLong: "With over 10 years of experience in critical environments (Banking, Retail, Healthcare), I have mastered the art of maintaining robust systems. However, my passion goes beyond code: I am driven by creating experiences. I developed 'Space Warhog' for mobile and am building 'Bancfy', not just as a finance app, but as a community. I firmly believe that technology should serve to connect and empower people.",
@@ -394,6 +414,12 @@ const DATA = {
         }
       ]
     },
+    spokenLanguages: [
+      { label: "Spanish", level: "Native" },
+      { label: "Catalan", level: "Native" },
+      { label: "English", level: "C1 (Advanced)" },
+      { label: "German", level: "A1 (Basic)" }
+    ],
     experience: [
       {
         company: "Worldline Switzerland",
@@ -611,11 +637,17 @@ const DATA = {
       coreStack: "Stack Tecnològic Principal",
       projects: "La meva passió no es limita a l'oficina. M'encanta construir productes des de zero, generar comunitat i explorar noves tecnologies.",
       books: "Compartir coneixement és una altra de les meves passions. Aquí pots trobar les meves últimes publicacions disponibles a Amazon.",
-      contact: "Estic sempre obert a discutir noves oportunitats, idees de producte o col·laboracions tècniques."
+      contact: "Estic sempre obert a discutir noves oportunitats, idees de producte o col·laboracions tècniques.",
+      academic: "Formació Acadèmica",
+      certifications: "Certificacions",
+      continuousLearning: "Aprenentatge Continu",
+      humanLeadership: "Lideratge Humà"
     },
     personalInfo: {
       name: "Juan José García Manzano",
+      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
+      email: "Juanjo.gmanzano@gmail.com",
       tagline: "Unint la solidesa de la infraestructura Linux amb la creativitat del desenvolupament de producte.",
       aboutShort: "Soc un DevOps Engineer amb ànima d'emprenedor. Expert en automatització, Linux i Cloud, però també creador de videojocs i apps financeres.",
       aboutLong: "Amb més de 10 anys d'experiència en entorns crítics (Banca, Retail, Salut), he dominat l'art de mantenir sistemes robustos. No obstant això, la meva passió va més enllà del codi: em mou crear experiències. He desenvolupat 'Jabalí Espacial' per a mòbils i estic construint 'Bancfy', no només com una app de finances, sinó com una comunitat. Crec fermament que la tecnologia ha de servir per connectar i empoderar les persones.",
@@ -652,6 +684,12 @@ const DATA = {
         }
       ]
     },
+    spokenLanguages: [
+      { label: "Espanyol", level: "Natiu" },
+      { label: "Català", level: "Natiu" },
+      { label: "Anglès", level: "C1 (Avançat)" },
+      { label: "Alemany", level: "A1 (Bàsic)" }
+    ],
     experience: [
       {
         company: "Worldline Switzerland",
@@ -869,11 +907,17 @@ const DATA = {
       coreStack: "Core Tech Stack",
       projects: "Meine Leidenschaft beschränkt sich nicht auf das Büro. Ich liebe es, Produkte von Grund auf neu zu entwickeln und Gemeinschaften zu bilden.",
       books: "Wissen zu teilen ist eine weitere meiner Leidenschaften. Hier finden Sie meine neuesten Veröffentlichungen auf Amazon.",
-      contact: "Ich bin immer offen für Gespräche über neue Möglichkeiten, Produktideen oder technische Zusammenarbeit."
+      contact: "Ich bin immer offen für Gespräche über neue Möglichkeiten, Produktideen oder technische Zusammenarbeit.",
+      academic: "Ausbildung",
+      certifications: "Zertifizierungen",
+      continuousLearning: "Lebenslanges Lernen",
+      humanLeadership: "Menschliche Führung"
     },
     personalInfo: {
       name: "Juan José García Manzano",
+      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
+      email: "Juanjo.gmanzano@gmail.com",
       tagline: "Die Robustheit von Linux-Infrastruktur mit der Kreativität der Produktentwicklung verbinden.",
       aboutShort: "Ich bin ein DevOps Engineer mit einer unternehmerischen Seele. Experte für Automatisierung, Linux und Cloud, aber auch Schöpfer von Videospielen und Finanz-Apps.",
       aboutLong: "Mit mehr als 10 Jahren Erfahrung in kritischen Umgebungen (Banken, Einzelhandel, Gesundheitswesen) beherrsche ich die Kunst, robuste Systeme zu warten. Meine Leidenschaft geht jedoch über den Code hinaus: Mich treibt es an, Erlebnisse zu schaffen. Ich habe 'Space Warhog' für Mobilgeräte entwickelt und baue 'Bancfy' auf, nicht nur als Finanz-App, sondern als Community. Ich glaube fest daran, dass Technologie dazu dienen sollte, Menschen zu verbinden und zu befähigen.",
@@ -910,6 +954,12 @@ const DATA = {
         }
       ]
     },
+    spokenLanguages: [
+      { label: "Spanisch", level: "Muttersprache" },
+      { label: "Katalanisch", level: "Muttersprache" },
+      { label: "Englisch", level: "C1 (Fortgeschritten)" },
+      { label: "Deutsch", level: "A1 (Grundkenntnisse)" }
+    ],
     experience: [
       {
         company: "Worldline Switzerland",
@@ -1474,10 +1524,10 @@ export default function App() {
                     </p>
                     <div className="mt-4 grid grid-cols-2 gap-4">
                         <div className="flex items-center gap-2 text-sm text-purple-300">
-                            <BookOpen size={16} /> Continuous Learning
+                            <BookOpen size={16} /> {content.sectionIntros.continuousLearning}
                         </div>
                         <div className="flex items-center gap-2 text-sm text-purple-300">
-                            <Users size={16} /> Human Leadership
+                            <Users size={16} /> {content.sectionIntros.humanLeadership}
                         </div>
                     </div>
                   </div>
@@ -1691,7 +1741,7 @@ export default function App() {
            <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div className="space-y-6">
                  <h3 className="text-2xl font-bold flex items-center gap-3 mb-6">
-                    <GraduationCap className="text-purple-500" /> {lang === 'en' ? 'Academic Background' : 'Formación Académica'}
+                    <GraduationCap className="text-purple-500" /> {content.sectionIntros.academic}
                  </h3>
                  {content.education.map((edu, idx) => (
                     <div key={idx} className="flex gap-4 p-4 border-l-2 border-purple-500/30 hover:border-purple-500 transition-colors bg-white/5 rounded-r-[2rem]">
@@ -1707,7 +1757,7 @@ export default function App() {
 
               <div className="space-y-6">
                  <h3 className="text-2xl font-bold flex items-center gap-3 mb-6">
-                    <Award className="text-blue-500" /> {lang === 'en' ? 'Certifications' : 'Certificaciones'}
+                    <Award className="text-blue-500" /> {content.sectionIntros.certifications}
                  </h3>
                  <div className="grid grid-cols-1 gap-3">
                     {content.certifications.map((cert, idx) => (
@@ -1801,7 +1851,7 @@ export default function App() {
                         <div className="text-center z-10 px-6">
                             <BookOpen size={48} className="mx-auto mb-4 text-purple-400 opacity-80" />
                             <h4 className="text-xl font-bold font-serif leading-tight mb-2 text-white">{book.title}</h4>
-                            <span className="text-xs text-gray-400 uppercase tracking-widest">{content.personalInfo.name.split(' ')[0]}</span>
+                            <span className="text-xs text-gray-400 uppercase tracking-widest">{content.personalInfo.bookAuthor}</span>
                         </div>
                         <div className="absolute inset-0 bg-purple-600/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <span className="flex items-center gap-2 font-bold text-white">
@@ -1841,10 +1891,9 @@ export default function App() {
                          <div className="flex items-start gap-4 text-gray-300">
                             <div className="p-3 bg-white/5 rounded-full shrink-0"><Globe size={20} className="text-blue-400"/></div>
                             <div className="space-y-1 text-sm pt-1">
-                               <p><span className="text-white font-semibold">Español:</span> Nativo</p>
-                               <p><span className="text-white font-semibold">Catalán:</span> Nativo</p>
-                               <p><span className="text-white font-semibold">Inglés:</span> C1 (Avanzado)</p>
-                               <p><span className="text-white font-semibold">Alemán:</span> A1 (Básico)</p>
+                               {content.spokenLanguages.map((lang, idx) => (
+                                 <p key={idx}><span className="text-white font-semibold">{lang.label}:</span> {lang.level}</p>
+                               ))}
                             </div>
                          </div>
                       </div>

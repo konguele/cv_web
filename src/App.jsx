@@ -68,6 +68,7 @@ const DATA = {
       showLessExp: "Ver menos",
       randomGallery: "Galería Aleatoria",
       techStack: "Herramientas & Tecnologías",
+      footer: "Impulsado por la pasión, definido por la perseverancia. Creando el futuro, línea a línea.",
       form: {
         name: "NOMBRE",
         namePh: "Recruiter / Empresa",
@@ -79,15 +80,27 @@ const DATA = {
         sending: "Enviando...",
         sent: "¡Mensaje Enviado!",
         error: "Error al enviar. Reintentar."
-      },
-      footer: "Impulsado por la pasión, definido por la perseverancia. Creando el futuro, línea a línea."
+      }
+    },
+    // Nuevos textos para la tarjeta y títulos internos
+    profileCard: {
+      location1: "Zúrich (5 años)",
+      location2: "Barcelona (Origen)",
+      tagCode: "Code",
+      tagOps: "Ops",
+      tagGame: "Game"
+    },
+    sectionIntros: {
+      interests: "Intereses",
+      mindset: "Mindset & Soft Skills",
+      coreStack: "Core Tech Stack",
+      projects: "Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías.",
+      books: "Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon.",
+      contact: "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas."
     },
     personalInfo: {
       name: "Juan José García Manzano",
       role: "DevOps Engineer & Project Manager",
-      location: "Zürich, Switzerland",
-      email: "Juanjo.gmanzano@gmail.com",
-      linkedin: "linkedin.com/in/juanjo-garcia-manzano",
       tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
       aboutShort: "Soy un DevOps Engineer con alma de emprendedor. Experto en automatización, Linux y Cloud, pero también creador de videojuegos y apps financieras.",
       aboutLong: "Con más de 10 años de experiencia en entornos críticos (Banca, Retail, Salud), he dominado el arte de mantener sistemas robustos. Sin embargo, mi pasión va más allá del código: me mueve crear experiencias. He desarrollado 'Jabalí Espacial' para móviles y estoy construyendo 'Bancfy', no solo como una app de finanzas, sino como una comunidad. Creo firmemente que la tecnología debe servir para conectar y empoderar a las personas.",
@@ -95,32 +108,32 @@ const DATA = {
         {
           name: "Fútbol",
           iconName: "Award",
-          desc: "Más que un deporte, ha sido mi escuela de disciplina. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo. Incluso en Suiza (Urdorf), el balón fue mi idioma universal. El fútbol me enseñó a gestionar la derrota, a liderar bajo presión y a entender que ningún gol se marca solo."
+          desc: "Más que un deporte, ha sido mi escuela de disciplina. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo. Incluso en Suiza (Urdorf), el balón fue mi idioma universal."
         },
         {
           name: "Videojuegos",
           iconName: "Gamepad2",
-          desc: "Mi gimnasio mental nocturno. Actualmente compito en EA Sports FC 26 optimizando mi tiempo, pero mi historial va desde la narrativa inmersiva de Spider-Man y Assassin's Creed hasta la estrategia de Pokémon. Esperando con ansias GTA VI. Los videojuegos afinan mis reflejos, mi resolución de problemas y mantienen viva esa chispa de creatividad y asombro."
+          desc: "Mi gimnasio mental nocturno. Compito en EA Sports FC y disfruto narrativas inmersivas. Los videojuegos afinan mis reflejos y resolución de problemas."
         },
         {
           name: "Leer",
           iconName: "BookOpen",
-          desc: "Mi biblioteca es mi mayor tesoro. Desde la épica de Tolkien y la sabiduría de 'Hagakure' hasta la profundidad gráfica de 'The Dark Knight Rises' (firmado por Miller). Libros como 'Million Dollar Weekend' moldean mi mentalidad emprendedora hoy. Leer es el entrenamiento invisible que expande mis horizontes y me aporta la calma necesaria para enfocarme."
+          desc: "Mi biblioteca es mi mayor tesoro. Libros como 'Million Dollar Weekend' moldean mi mentalidad. Leer expande mis horizontes y me aporta foco."
         },
         {
           name: "Mi Hija",
           iconName: "Smile",
-          desc: "El 'proyecto' más importante de mi vida. Jugar con ella es volver a descubrir el mundo con ojos nuevos. Ella me enseña paciencia infinita, curiosidad pura y me recuerda cada día por qué me esfuerzo. Es mi ancla a la realidad y mi mayor motivación para construir un futuro mejor."
+          desc: "El proyecto más importante. Ella me enseña paciencia infinita y curiosidad pura. Es mi ancla a la realidad y mi mayor motivación."
         },
         {
           name: "Cocinar",
           iconName: "Utensils",
-          desc: "Alquimia para el alma. Entre fogones encuentro mi flow. Desde perfeccionar la tortilla de patatas hasta experimentar con caza mayor suiza (ciervo, jabalí). Cocinar, al igual que programar, requiere los ingredientes correctos, precisión en los tiempos y mucho cariño para que el resultado sea memorable."
+          desc: "Alquimia para el alma. Entre fogones encuentro mi flow, desde la tortilla de patatas hasta la caza mayor suiza."
         },
         {
           name: "Crear Apps",
           iconName: "Code",
-          desc: "El motor que nunca se apaga. Mi mente es un hervidero constante de ideas buscando solucionar problemas reales. Disfruto cada fase: desde la idea en una servilleta hasta el despliegue en producción. Crear es mi forma de dejar huella y empoderar a otros con tecnología útil y accesible."
+          desc: "El motor que nunca se apaga. Disfruto cada fase: desde la idea en una servilleta hasta el despliegue en producción."
         }
       ]
     },
@@ -131,20 +144,14 @@ const DATA = {
         period: "Oct 2024 - Presente",
         logo: "/images/worldline.png",
         desc: "Owner de Artifactory e Instant Score. Gestión E2E de proyectos, automatización y migraciones a Google Cloud.",
-        details: "Como Owner de Artifactory (el corazón digital donde converge y se gestiona todo el desarrollo tecnológico de la compañía) y de las soluciones críticas Instant Score / Online Watcher, lidero la estrategia y estabilidad de estos sistemas. Gestión integral de proyectos técnicos como migraciones RHEL8/9. Administración de servidores Linux, automatización avanzada con Ansible (YAML), Bash y Python. Despliegue y gestión de AWX y pipelines de CI/CD con GitLab. Supervisión y ejecución de migraciones a Google Cloud, incluyendo la creación de scripts en Terraform para desplegar nuevos modelos de aplicaciones.",
+        details: "Owner de Artifactory y soluciones críticas. Gestión integral de proyectos técnicos, administración Linux, automatización con Ansible y migraciones a GCP.",
         tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "Migración de apps, Terraform y despliegue de modelos" },
-            { name: "Artifactory", desc: "Owner. Gestión centralizada de artefactos y desarrollo" },
-            { name: "Instant Score", desc: "Owner. Gestión y mantenimiento de la solución" },
-            { name: "BMC Remedy", desc: "Incidencias, Change Requests y Gestión de problemas" },
-            { name: "Jira", desc: "Creación y seguimiento de tareas" },
-            { name: "Confluence", desc: "Gestión documental y base de conocimiento" },
-            { name: "VMWare", desc: "Gestión de infraestructura virtual (VMs)" },
-            { name: "Putty / MobaXterm", desc: "Acceso y gestión SSH a servidores Linux" },
-            { name: "IntelliJ / VS Code", desc: "Gestión de código y pipelines en GitLab" },
-            { name: "RHEL 8 & 9", desc: "Administración avanzada de servidores Linux" }
+            { name: "Google Cloud (GCP)", desc: "Migración de apps, Terraform" },
+            { name: "Artifactory", desc: "Owner. Gestión de artefactos" },
+            { name: "Ansible", desc: "Automatización avanzada" },
+            { name: "RHEL 8 & 9", desc: "Administración servidores" }
         ]
       },
       {
@@ -152,8 +159,8 @@ const DATA = {
         role: "DevOps Engineer",
         period: "May 2021 - Sep 2024",
         logo: "/images/six.jpg",
-        desc: "Liderazgo en migraciones RHEL7 a RHEL8. Integración de Docker y OpenShift. Migración de servidores a Azure.",
-        details: "Demostré sólidas habilidades de liderazgo gestionando eficazmente proyectos como la migración de RHEL7 a RHEL8, automatización de procesos de parches e integración de Docker para el despliegue de aplicaciones. Experiencia en programación C++ y Bash, trabajando con Artifactory y BMC Remedy.",
+        desc: "Liderazgo en migraciones RHEL. Integración de Docker y OpenShift. Migración a Azure.",
+        details: "Gestión de migraciones RHEL7 a RHEL8, automatización de parches e integración de Docker/OpenShift.",
         tags: ["OpenShift", "Docker", "Azure", "Bash"],
         color: "bg-red-600"
       },
@@ -162,8 +169,8 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Abr 2021",
         logo: "/images/burberry.avif",
-        desc: "Administración de Linux (RedHat, SUSE). Scripting en Ansible y Bash. Backup con Data Protector.",
-        details: "Realización de tareas desde la instalación de servidores en Linux (Redhat, SUSE), configuración y creación de FS, montaje de volúmenes. Responsable de tareas de backup con Data Protector. Creación de especificaciones, resolución de incidencias de software y hardware.",
+        desc: "Administración Linux (RedHat, SUSE). Scripting Ansible/Bash. Backup Data Protector.",
+        details: "Instalación y configuración de servidores, gestión de backups y resolución de incidencias.",
         tags: ["Linux", "Ansible", "VMWare"],
         color: "bg-yellow-600"
       },
@@ -172,9 +179,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Administración básica de sistemas Unix, Linux y Windows. Gestión de alertas HP Openview y backups.",
-        details: "Gestión de la administración básica de sistemas Unix, Linux y Windows, gestión de alertas HP Openview, ejecución de backups con Data Protector, revisión de Tablespaces Oracle. Creación de usuarios en LDAP y OpenLDAP.",
-        tags: ["Unix", "Windows", "Oracle", "LDAP"],
+        desc: "Admin sistemas Unix, Linux, Windows. Gestión alertas y backups.",
+        details: "Administración básica multisistema, HP Openview, Data Protector y Oracle.",
+        tags: ["Unix", "Windows", "Oracle"],
         color: "bg-blue-500"
       },
       {
@@ -182,8 +189,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Administración de máquinas Linux, scripting en Bash y Perl, monitorización con Nagios.",
-        details: "Gestión de la administración de máquinas Linux, creación de scripts en bash y perl, creación de reglas de monitorización en HP Openview y Nagios.",
+        desc: "Admin Linux, scripting Bash/Perl, monitorización Nagios.",
+        details: "Administración Linux, scripting y reglas de monitorización.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -192,8 +199,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Administración de máquinas Linux para TIBCO, scripting y reglas de monitorización.",
-        details: "Gestión de la administración de máquinas Linux para TIBCO, creación de scripts en bash y perl, reglas de monitorización en Tibco Hawk.",
+        desc: "Admin Linux para TIBCO, scripting y monitorización.",
+        details: "Administración Linux entorno TIBCO, scripting y Tibco Hawk.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -202,8 +209,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Dic 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Gestión de equipo, control de ejecución de trabajos en Control M y SAP.",
-        details: "Gestión de personas dentro del equipo, control de la correcta ejecución del trabajo, apertura de incidencias, planificación y ejecución de trabajos en Control M Enterprises y Mainframe.",
+        desc: "Gestión de equipo, Control M y SAP.",
+        details: "Gestión de equipo, control de ejecución de trabajos y planificación.",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -211,15 +218,15 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Systems Engineer",
+        degree: "Grado en Ingeniería Informática", // CAMBIADO
         period: "2012 - 2017",
         desc: "Fundamentos de programación, gestión de redes y sistemas operativos."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "High-Level Technician degree in IT",
+        degree: "CFGS de Telecomunicaciones y Sist. Informáticos", // CAMBIADO
         period: "2006 - 2008",
-        desc: "Formación técnica superior en informática."
+        desc: "Formación técnica superior en informática (ASI)."
       }
     ],
     certifications: [
@@ -236,16 +243,16 @@ const DATA = {
         title: "Bancfy",
         category: "Fintech App & Comunidad",
         iconName: "TrendingUp",
-        description: "Más que una app de finanzas, es una experiencia. Bancfy busca cambiar la relación de las personas con su dinero mediante la gamificación y la comunidad. No vendo un producto, construyo un movimiento.",
+        description: "Más que una app de finanzas, es una experiencia. Bancfy busca cambiar la relación de las personas con su dinero.",
         status: "En desarrollo",
         color: "from-emerald-900 to-green-900",
         links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
       },
       {
         title: "Jabalí Espacial",
-        category: "Mobile Game",
+        category: "Videojuego Móvil",
         iconName: "Gamepad2",
-        description: "Un videojuego arcade desarrollado íntegramente por mí. Disponible en plataformas móviles. Un reto técnico y creativo que demuestra mi capacidad para llevar un producto de 0 a 100.",
+        description: "Un videojuego arcade desarrollado íntegramente por mí. Un reto técnico y creativo.",
         status: "Publicado",
         color: "from-purple-900 to-indigo-900",
         links: [
@@ -255,9 +262,9 @@ const DATA = {
       },
       {
         title: "@exitofracasando",
-        category: "Content Creation",
+        category: "Creación de Contenido",
         iconName: "Smartphone",
-        description: "Cuenta de TikTok con +10k seguidores. Un espacio donde compartí aprendizajes y conecté con una audiencia joven interesada en crecimiento y emprendimiento.",
+        description: "Cuenta de TikTok con +10k seguidores sobre crecimiento y emprendimiento.",
         status: "10K+ Seguidores",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
@@ -319,6 +326,7 @@ const DATA = {
       showLessExp: "See Less",
       randomGallery: "Random Gallery",
       techStack: "Tools & Technologies",
+      footer: "Driven by passion, defined by perseverance. Creating the future, line by line.",
       form: {
         name: "NAME",
         namePh: "Recruiter / Company",
@@ -330,15 +338,26 @@ const DATA = {
         sending: "Sending...",
         sent: "Message Sent!",
         error: "Error sending. Retry."
-      },
-      footer: "Driven by passion, defined by perseverance. Creating the future, line by line."
+      }
+    },
+    profileCard: {
+      location1: "Zurich (5 years)",
+      location2: "Barcelona (Origin)",
+      tagCode: "Code",
+      tagOps: "Ops",
+      tagGame: "Game"
+    },
+    sectionIntros: {
+      interests: "My Interests",
+      mindset: "Mindset & Soft Skills",
+      coreStack: "Core Tech Stack",
+      projects: "My passion is not limited to the office. I love building products from scratch, generating community, and exploring new technologies.",
+      books: "Sharing knowledge is another one of my passions. Here you can find my latest publications available on Amazon.",
+      contact: "I am always open to discussing new opportunities, product ideas, or technical collaborations."
     },
     personalInfo: {
       name: "Juan José García Manzano",
       role: "DevOps Engineer & Project Manager",
-      location: "Zurich, Switzerland",
-      email: "Juanjo.gmanzano@gmail.com",
-      linkedin: "linkedin.com/in/juanjo-garcia-manzano",
       tagline: "Merging the robustness of Linux infrastructure with the creativity of product development.",
       aboutShort: "I am a DevOps Engineer with an entrepreneurial soul. Expert in automation, Linux, and Cloud, but also a creator of video games and financial apps.",
       aboutLong: "With over 10 years of experience in critical environments (Banking, Retail, Healthcare), I have mastered the art of maintaining robust systems. However, my passion goes beyond code: I am driven by creating experiences. I developed 'Space Warhog' for mobile and am building 'Bancfy', not just as a finance app, but as a community. I firmly believe that technology should serve to connect and empower people.",
@@ -346,32 +365,32 @@ const DATA = {
         {
           name: "Football",
           iconName: "Award",
-          desc: "More than a sport, it has been my school of discipline. Federated since age 6 (CEU Ciutat Meridiana, Santa Perpetua), I learned the value of sacrifice and teamwork. Even in Switzerland (Urdorf), the ball was my universal language. Football taught me to manage defeat, lead under pressure, and understand that no goal is scored alone."
+          desc: "More than a sport, it has been my school of discipline. Federated since age 6, I learned the value of sacrifice and teamwork. Even in Switzerland, the ball was my universal language."
         },
         {
           name: "Video Games",
           iconName: "Gamepad2",
-          desc: "My nightly mental gym. Currently competing in EA Sports FC 26 optimizing my time, but my history ranges from the immersive narrative of Spider-Man and Assassin's Creed to the strategy of Pokémon. Eagerly awaiting GTA VI. Video games refine my reflexes, problem-solving skills, and keep that spark of creativity and wonder alive."
+          desc: "My nightly mental gym. Currently competing in EA Sports FC. Video games refine my reflexes, problem-solving skills, and keep creativity alive."
         },
         {
           name: "Reading",
           iconName: "BookOpen",
-          desc: "My library is my greatest treasure. From Tolkien's epic and the wisdom of 'Hagakure' to the graphic depth of 'The Dark Knight Rises' (signed by Miller). Books like 'Million Dollar Weekend' shape my entrepreneurial mindset today. Reading is the invisible training that expands my horizons and brings me the calm needed to focus."
+          desc: "My library is my greatest treasure. Books like 'Million Dollar Weekend' shape my mindset. Reading expands my horizons and brings focus."
         },
         {
           name: "My Daughter",
           iconName: "Smile",
-          desc: "The most important 'project' of my life. Playing with her is rediscovering the world with fresh eyes. She teaches me infinite patience, pure curiosity, and reminds me every day why I strive. She is my anchor to reality and my greatest motivation to build a better future."
+          desc: "The most important 'project'. She teaches me infinite patience and pure curiosity. She is my anchor to reality and motivation."
         },
         {
           name: "Cooking",
           iconName: "Utensils",
-          desc: "Alchemy for the soul. Between stoves, I find my flow. From perfecting the Spanish potato omelet to experimenting with Swiss big game (deer, wild boar). Cooking, like programming, requires the right ingredients, precise timing, and a lot of care for the result to be memorable."
+          desc: "Alchemy for the soul. Between stoves, I find my flow. Cooking requires the right ingredients, precision, and care."
         },
         {
           name: "Creating Apps",
           iconName: "Code",
-          desc: "The engine that never turns off. My mind is a constant hive of ideas looking to solve real problems. I enjoy every phase: from the idea on a napkin to deployment in production. Creating is my way of leaving a mark and empowering others with useful and accessible technology."
+          desc: "The engine that never turns off. I enjoy every phase: from the idea on a napkin to deployment. Creating is my way of leaving a mark."
         }
       ]
     },
@@ -382,20 +401,14 @@ const DATA = {
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
         desc: "Owner of Artifactory and Instant Score. E2E project management, automation, and migrations to Google Cloud.",
-        details: "As Owner of Artifactory (the digital heart where all the company's technological development converges and is managed) and the critical solutions Instant Score / Online Watcher, I lead the strategy and stability of these systems. Integral management of technical projects such as RHEL8/9 migrations. Linux server administration, advanced automation with Ansible (YAML), Bash, and Python. Deployment and management of AWX and CI/CD pipelines with GitLab. Supervision and execution of migrations to Google Cloud, including creating Terraform scripts to deploy new application models.",
+        details: "Owner of Artifactory. Integral management of technical projects, Linux admin, Ansible automation, and GCP migrations.",
         tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "App migration, Terraform, and model deployment" },
-            { name: "Artifactory", desc: "Owner. Centralized artifact and development management" },
-            { name: "Instant Score", desc: "Owner. Solution management and maintenance" },
-            { name: "BMC Remedy", desc: "Incidents, Change Requests, and Problem Management" },
-            { name: "Jira", desc: "Task creation and tracking" },
-            { name: "Confluence", desc: "Document management and knowledge base" },
-            { name: "VMWare", desc: "Virtual infrastructure management (VMs)" },
-            { name: "Putty / MobaXterm", desc: "SSH access and management for Linux servers" },
-            { name: "IntelliJ / VS Code", desc: "Code management and GitLab pipelines" },
-            { name: "RHEL 8 & 9", desc: "Advanced Linux server administration" }
+            { name: "Google Cloud (GCP)", desc: "App migration, Terraform" },
+            { name: "Artifactory", desc: "Owner. Artifact management" },
+            { name: "Ansible", desc: "Advanced Automation" },
+            { name: "RHEL 8 & 9", desc: "Server Admin" }
         ]
       },
       {
@@ -404,7 +417,7 @@ const DATA = {
         period: "May 2021 - Sep 2024",
         logo: "/images/six.jpg",
         desc: "Leadership in RHEL7 to RHEL8 migrations. Docker and OpenShift integration. Server migration to Azure.",
-        details: "Demonstrated solid leadership skills effectively managing projects such as RHEL7 to RHEL8 migration, patch process automation, and Docker integration for application deployment. Experience in C++ and Bash programming, working with Artifactory and BMC Remedy.",
+        details: "Leadership in RHEL migrations, patch automation, and Docker/OpenShift integration.",
         tags: ["OpenShift", "Docker", "Azure", "Bash"],
         color: "bg-red-600"
       },
@@ -413,8 +426,8 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Apr 2021",
         logo: "/images/burberry.avif",
-        desc: "Linux Administration (RedHat, SUSE). Scripting in Ansible and Bash. Backup with Data Protector.",
-        details: "Performed tasks ranging from Linux server installation (Redhat, SUSE), configuration and FS creation, volume mounting. Responsible for backup tasks with Data Protector. Creation of specifications, resolution of software and hardware incidents.",
+        desc: "Linux Administration (RedHat, SUSE). Scripting in Ansible/Bash. Backup with Data Protector.",
+        details: "Server installation/config, backup management, and incident resolution.",
         tags: ["Linux", "Ansible", "VMWare"],
         color: "bg-yellow-600"
       },
@@ -423,9 +436,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Basic administration of Unix, Linux, and Windows systems. HP Openview alert management and backups.",
-        details: "Managed basic administration of Unix, Linux, and Windows systems, HP Openview alert management, execution of backups with Data Protector, Oracle Tablespaces review. User creation in LDAP and OpenLDAP.",
-        tags: ["Unix", "Windows", "Oracle", "LDAP"],
+        desc: "Basic administration of Unix, Linux, and Windows. HP Openview alerts and backups.",
+        details: "Basic multi-system admin, HP Openview, Data Protector, and Oracle.",
+        tags: ["Unix", "Windows", "Oracle"],
         color: "bg-blue-500"
       },
       {
@@ -433,8 +446,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Linux machine administration, scripting in Bash and Perl, monitoring with Nagios.",
-        details: "Managed Linux machine administration, created scripts in bash and perl, created monitoring rules in HP Openview and Nagios.",
+        desc: "Linux admin, scripting Bash/Perl, monitoring with Nagios.",
+        details: "Linux admin, scripting, and monitoring rules.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -443,18 +456,18 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Linux machine administration for TIBCO, scripting, and monitoring rules.",
-        details: "Managed Linux machine administration for TIBCO, created scripts in bash and perl, monitoring rules in Tibco Hawk.",
+        desc: "Linux admin for TIBCO, scripting, and monitoring.",
+        details: "Linux admin for TIBCO env, scripting, and Tibco Hawk.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
       {
         company: "Hewlett Packard",
         role: "Operation Team Leader",
-        period: "Dic 2010 - Oct 2013",
+        period: "Dec 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Team management, job execution control in Control M and SAP.",
-        details: "Managed people within the team, controlled correct job execution, opened incidents, planned and executed jobs in Control M Enterprises and Mainframe.",
+        desc: "Team management, Control M, and SAP.",
+        details: "Team management, job execution control, and planning.",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -487,7 +500,7 @@ const DATA = {
         title: "Bancfy",
         category: "Fintech App & Community",
         iconName: "TrendingUp",
-        description: "More than a finance app, it's an experience. Bancfy seeks to change people's relationship with their money through gamification and community. I don't sell a product, I build a movement.",
+        description: "More than a finance app, it's an experience. Bancfy seeks to change people's relationship with their money.",
         status: "In Development",
         color: "from-emerald-900 to-green-900",
         links: [{ label: "Official Web", url: "https://www.bancfy.com/es" }]
@@ -496,7 +509,7 @@ const DATA = {
         title: "Space Warhog",
         category: "Mobile Game",
         iconName: "Gamepad2",
-        description: "An arcade video game developed entirely by me. Available on mobile platforms. A technical and creative challenge that demonstrates my ability to take a product from 0 to 100.",
+        description: "An arcade video game developed entirely by me. A technical and creative challenge.",
         status: "Published",
         color: "from-purple-900 to-indigo-900",
         links: [
@@ -508,7 +521,7 @@ const DATA = {
         title: "@exitofracasando",
         category: "Content Creation",
         iconName: "Smartphone",
-        description: "TikTok account with +10k followers. A space where I shared learnings and connected with a young audience interested in growth and entrepreneurship.",
+        description: "TikTok account with +10k followers about growth and entrepreneurship.",
         status: "10K+ Followers",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
@@ -570,6 +583,7 @@ const DATA = {
       showLessExp: "Veure menys",
       randomGallery: "Galeria Aleatòria",
       techStack: "Eines i Tecnologies",
+      footer: "Impulsat per la passió, definit per la perseverança. Creant el futur, línia a línia.",
       form: {
         name: "NOM",
         namePh: "Recruiter / Empresa",
@@ -581,15 +595,27 @@ const DATA = {
         sending: "Enviant...",
         sent: "Missatge Enviat!",
         error: "Error en enviar. Reintentar."
-      },
-      footer: "Impulsat per la passió, definit per la perseverança. Creant el futur, línia a línia."
+      }
+    },
+    // Nuevos textos
+    profileCard: {
+      location1: "Zúrich (5 anys)",
+      location2: "Barcelona (Origen)",
+      tagCode: "Codi",
+      tagOps: "Ops",
+      tagGame: "Joc"
+    },
+    sectionIntros: {
+      interests: "Interessos",
+      mindset: "Mentalitat i Soft Skills",
+      coreStack: "Stack Tecnològic Principal",
+      projects: "La meva passió no es limita a l'oficina. M'encanta construir productes des de zero, generar comunitat i explorar noves tecnologies.",
+      books: "Compartir coneixement és una altra de les meves passions. Aquí pots trobar les meves últimes publicacions disponibles a Amazon.",
+      contact: "Estic sempre obert a discutir noves oportunitats, idees de producte o col·laboracions tècniques."
     },
     personalInfo: {
       name: "Juan José García Manzano",
       role: "DevOps Engineer & Project Manager",
-      location: "Zürich, Suïssa",
-      email: "Juanjo.gmanzano@gmail.com",
-      linkedin: "linkedin.com/in/juanjo-garcia-manzano",
       tagline: "Unint la solidesa de la infraestructura Linux amb la creativitat del desenvolupament de producte.",
       aboutShort: "Soc un DevOps Engineer amb ànima d'emprenedor. Expert en automatització, Linux i Cloud, però també creador de videojocs i apps financeres.",
       aboutLong: "Amb més de 10 anys d'experiència en entorns crítics (Banca, Retail, Salut), he dominat l'art de mantenir sistemes robustos. No obstant això, la meva passió va més enllà del codi: em mou crear experiències. He desenvolupat 'Jabalí Espacial' per a mòbils i estic construint 'Bancfy', no només com una app de finances, sinó com una comunitat. Crec fermament que la tecnologia ha de servir per connectar i empoderar les persones.",
@@ -597,32 +623,32 @@ const DATA = {
         {
           name: "Futbol",
           iconName: "Award",
-          desc: "Més que un esport, ha estat la meva escola de disciplina. Federat des dels 6 anys (CEU Ciutat Meridiana, Santa Perpètua), vaig aprendre el valor del sacrifici i el treball en equip. Fins i tot a Suïssa (Urdorf), la pilota va ser el meu idioma universal. El futbol em va ensenyar a gestionar la derrota, a liderar sota pressió i a entendre que cap gol es marca sol."
+          desc: "Més que un esport, ha estat la meva escola de disciplina. Federat des dels 6 anys (CEU Ciutat Meridiana), vaig aprendre el valor del sacrifici i el treball en equip."
         },
         {
           name: "Videojocs",
           iconName: "Gamepad2",
-          desc: "El meu gimnàs mental nocturn. Actualment competeixo en EA Sports FC 26 optimitzant el meu temps, però el meu historial va des de la narrativa immersiva de Spider-Man i Assassin's Creed fins a l'estratègia de Pokémon. Esperant amb ganes GTA VI. Els videojocs afinen els meus reflexos, la meva resolució de problemes i mantenen viva aquesta espurna de creativitat i sorpresa."
+          desc: "El meu gimnàs mental nocturn. Competeixo en EA Sports FC i gaudeixo de narratives immersives. Afinen els meus reflexos i resolució de problemes."
         },
         {
           name: "Llegir",
           iconName: "BookOpen",
-          desc: "La meva biblioteca és el meu tresor més gran. Des de l'èpica de Tolkien i la saviesa de 'Hagakure' fins a la profunditat gràfica de 'The Dark Knight Rises' (signat per Miller). Llibres com 'Million Dollar Weekend' modelen la meva mentalitat emprenedora avui. Llegir és l'entrenament invisible que expandeix els meus horitzons i m'aporta la calma necessària per enfocar-me."
+          desc: "La meva biblioteca és el meu tresor. Llibres com 'Million Dollar Weekend' modelen la meva mentalitat. Llegir m'aporta focus."
         },
         {
           name: "La meva Filla",
           iconName: "Smile",
-          desc: "El 'projecte' més important de la meva vida. Jugar amb ella és tornar a descobrir el món amb ulls nous. Ella m'ensenya paciència infinita, curiositat pura i em recorda cada dia per què m'esforço. És la meva àncora a la realitat i la meva motivació més gran per construir un futur millor."
+          desc: "El projecte més important. Ella m'ensenya paciència infinita i curiositat pura. És la meva àncora a la realitat."
         },
         {
           name: "Cuinar",
           iconName: "Utensils",
-          desc: "Alquímia per a l'ànima. Entre fogons trobo el meu flow. Des de perfeccionar la truita de patates fins a experimentar amb caça major suïssa (cérvol, senglar). Cuinar, igual que programar, requereix els ingredients correctes, precisió en els temps i molt d'amor perquè el resultat sigui memorable."
+          desc: "Alquímia per a l'ànima. Entre fogons trobo el meu flow, des de la truita de patates fins a la caça major suïssa."
         },
         {
           name: "Crear Apps",
           iconName: "Code",
-          desc: "El motor que mai s'apaga. La meva ment és un formiguer constant d'idees buscant solucionar problemes reals. Gaudeixo de cada fase: des de la idea en un tovalló fins al desplegament en producció. Crear és la meva forma de deixar empremta i empoderar els altres amb tecnologia útil i accessible."
+          desc: "El motor que mai s'apaga. Gaudeixo de cada fase: des de la idea en un tovalló fins al desplegament en producció."
         }
       ]
     },
@@ -633,20 +659,14 @@ const DATA = {
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
         desc: "Owner d'Artifactory i Instant Score. Gestió E2E de projectes, automatització i migracions a Google Cloud.",
-        details: "Com a Owner d'Artifactory (el cor digital on convergeix i es gestiona tot el desenvolupament tecnològic de la companyia) i de les solucions crítiques Instant Score / Online Watcher, lidero l'estratègia i estabilitat d'aquests sistemes. Gestió integral de projectes tècnics com migracions RHEL8/9. Administració de servidors Linux, automatització avançada amb Ansible (YAML), Bash i Python. Desplegament i gestió d'AWX i pipelines de CI/CD amb GitLab. Supervisió i execució de migracions a Google Cloud, incloent la creació de scripts en Terraform per desplegar nous models d'aplicacions.",
+        details: "Owner d'Artifactory. Gestió integral de projectes, admin Linux, automatització Ansible i migracions GCP.",
         tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "Migració d'apps, Terraform i desplegament de models" },
-            { name: "Artifactory", desc: "Owner. Gestió centralitzada d'artefactes i desenvolupament" },
-            { name: "Instant Score", desc: "Owner. Gestió i manteniment de la solució" },
-            { name: "BMC Remedy", desc: "Incidències, Change Requests i Gestió de problemes" },
-            { name: "Jira", desc: "Creació i seguiment de tasques" },
-            { name: "Confluence", desc: "Gestió documental i base de coneixement" },
-            { name: "VMWare", desc: "Gestió d'infraestructura virtual (VMs)" },
-            { name: "Putty / MobaXterm", desc: "Accés i gestió SSH a servidors Linux" },
-            { name: "IntelliJ / VS Code", desc: "Gestió de codi i pipelines a GitLab" },
-            { name: "RHEL 8 & 9", desc: "Administració avançada de servidors Linux" }
+            { name: "Google Cloud (GCP)", desc: "Migració d'apps, Terraform" },
+            { name: "Artifactory", desc: "Owner. Gestió d'artefactes" },
+            { name: "Ansible", desc: "Automatització avançada" },
+            { name: "RHEL 8 & 9", desc: "Administració servidors" }
         ]
       },
       {
@@ -654,8 +674,8 @@ const DATA = {
         role: "DevOps Engineer",
         period: "Maig 2021 - Set 2024",
         logo: "/images/six.jpg",
-        desc: "Lideratge en migracions RHEL7 a RHEL8. Integració de Docker i OpenShift. Migració de servidors a Azure.",
-        details: "Vaig demostrar sòlides habilitats de lideratge gestionant eficaçment projectes com la migració de RHEL7 a RHEL8, automatització de processos de pegats i integració de Docker per al desplegament d'aplicacions. Experiència en programació C++ i Bash, treballant amb Artifactory i BMC Remedy.",
+        desc: "Lideratge en migracions RHEL. Integració de Docker i OpenShift. Migració a Azure.",
+        details: "Lideratge en migracions RHEL, automatització de pegats i integració de Docker/OpenShift.",
         tags: ["OpenShift", "Docker", "Azure", "Bash"],
         color: "bg-red-600"
       },
@@ -664,8 +684,8 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Abr 2021",
         logo: "/images/burberry.avif",
-        desc: "Administració de Linux (RedHat, SUSE). Scripting en Ansible i Bash. Còpia de seguretat amb Data Protector.",
-        details: "Realització de tasques des de la instal·lació de servidors en Linux (Redhat, SUSE), configuració i creació de FS, muntatge de volums. Responsable de tasques de backup amb Data Protector. Creació d'especificacions, resolució d'incidències de software i hardware.",
+        desc: "Administració Linux (RedHat, SUSE). Scripting Ansible/Bash. Backup Data Protector.",
+        details: "Instal·lació servidors, gestió backups i resolució incidències.",
         tags: ["Linux", "Ansible", "VMWare"],
         color: "bg-yellow-600"
       },
@@ -674,9 +694,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Administració bàsica de sistemes Unix, Linux i Windows. Gestió d'alertes HP Openview i backups.",
-        details: "Gestió de l'administració bàsica de sistemes Unix, Linux i Windows, gestió d'alertes HP Openview, execució de backups amb Data Protector, revisió de Tablespaces Oracle. Creació d'usuaris a LDAP i OpenLDAP.",
-        tags: ["Unix", "Windows", "Oracle", "LDAP"],
+        desc: "Admin sistemes Unix, Linux, Windows. Gestió alertes i backups.",
+        details: "Admin bàsica multisistema, HP Openview, Data Protector i Oracle.",
+        tags: ["Unix", "Windows", "Oracle"],
         color: "bg-blue-500"
       },
       {
@@ -684,8 +704,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Set 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Administració de màquines Linux, scripting en Bash i Perl, monitorització amb Nagios.",
-        details: "Gestió de l'administració de màquines Linux, creació de scripts en bash i perl, creació de regles de monitorització en HP Openview i Nagios.",
+        desc: "Admin Linux, scripting Bash/Perl, monitorització Nagios.",
+        details: "Admin Linux, scripting i regles monitorització.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -694,8 +714,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Set 2014",
         logo: "/images/hp.png",
-        desc: "Administració de màquines Linux per a TIBCO, scripting i regles de monitorització.",
-        details: "Gestió de l'administració de màquines Linux per a TIBCO, creació de scripts en bash i perl, regles de monitorització en Tibco Hawk.",
+        desc: "Admin Linux per TIBCO, scripting i monitorització.",
+        details: "Admin Linux entorn TIBCO, scripting i Tibco Hawk.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -704,8 +724,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Des 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Gestió d'equip, control d'execució de treballs en Control M i SAP.",
-        details: "Gestió de persones dins de l'equip, control de la correcta execució del treball, obertura d'incidències, planificació i execució de treballs en Control M Enterprises i Mainframe.",
+        desc: "Gestió d'equip, Control M i SAP.",
+        details: "Gestió d'equip, control execució treballs i planificació.",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -713,15 +733,15 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Enginyeria de Sistemes",
+        degree: "Grau en Enginyeria Informàtica", // CAMBIADO
         period: "2012 - 2017",
         desc: "Fonaments de programació, gestió de xarxes i sistemes operatius."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "Tècnic Superior en ASI",
+        degree: "CFGS de Telecomunicacions i Sist. Informàtics", // CAMBIADO
         period: "2006 - 2008",
-        desc: "Formació tècnica superior en informàtica."
+        desc: "Formació tècnica superior en informàtica (ASI)."
       }
     ],
     certifications: [
@@ -738,16 +758,16 @@ const DATA = {
         title: "Bancfy",
         category: "Fintech App & Comunitat",
         iconName: "TrendingUp",
-        description: "Més que una app de finances, és una experiència. Bancfy busca canviar la relació de les persones amb els seus diners mitjançant la gamificació i la comunitat. No venc un producte, construeixo un moviment.",
+        description: "Més que una app de finances, és una experiència. Bancfy busca canviar la relació de les persones amb els seus diners.",
         status: "En desenvolupament",
         color: "from-emerald-900 to-green-900",
         links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
       },
       {
         title: "Jabalí Espacial",
-        category: "Mobile Game",
+        category: "Videojoc Mòbil",
         iconName: "Gamepad2",
-        description: "Un videojoc arcade desenvolupat íntegrament per mi. Disponible en plataformes mòbils. Un repte tècnic i creatiu que demostra la meva capacitat per portar un producte de 0 a 100.",
+        description: "Un videojoc arcade desenvolupat íntegrament per mi. Un repte tècnic i creatiu.",
         status: "Publicat",
         color: "from-purple-900 to-indigo-900",
         links: [
@@ -757,9 +777,9 @@ const DATA = {
       },
       {
         title: "@exitofracasando",
-        category: "Content Creation",
+        category: "Creació de Contingut",
         iconName: "Smartphone",
-        description: "Compte de TikTok amb +10k seguidors. Un espai on vaig compartir aprenentatges i vaig connectar amb una audiència jove interessada en creixement i emprenedoria.",
+        description: "Compte de TikTok amb +10k seguidors sobre creixement i emprenedoria.",
         status: "10K+ Seguidors",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
@@ -821,6 +841,7 @@ const DATA = {
       showLessExp: "Weniger anzeigen",
       randomGallery: "Zufällige Galerie",
       techStack: "Tools & Technologien",
+      footer: "Angetrieben von Leidenschaft, definiert durch Ausdauer. Die Zukunft gestalten, Zeile für Zeile.",
       form: {
         name: "NAME",
         namePh: "Recruiter / Firma",
@@ -832,15 +853,27 @@ const DATA = {
         sending: "Senden...",
         sent: "Nachricht Gesendet!",
         error: "Fehler beim Senden. Wiederholen."
-      },
-      footer: "Angetrieben von Leidenschaft, definiert durch Ausdauer. Die Zukunft gestalten, Zeile für Zeile."
+      }
+    },
+    // Nuevos textos traducidos
+    profileCard: {
+      location1: "Zürich (5 Jahre)",
+      location2: "Barcelona (Herkunft)",
+      tagCode: "Code",
+      tagOps: "Ops",
+      tagGame: "Game"
+    },
+    sectionIntros: {
+      interests: "Interessen",
+      mindset: "Mindset & Soft Skills",
+      coreStack: "Core Tech Stack",
+      projects: "Meine Leidenschaft beschränkt sich nicht auf das Büro. Ich liebe es, Produkte von Grund auf neu zu entwickeln und Gemeinschaften zu bilden.",
+      books: "Wissen zu teilen ist eine weitere meiner Leidenschaften. Hier finden Sie meine neuesten Veröffentlichungen auf Amazon.",
+      contact: "Ich bin immer offen für Gespräche über neue Möglichkeiten, Produktideen oder technische Zusammenarbeit."
     },
     personalInfo: {
       name: "Juan José García Manzano",
       role: "DevOps Engineer & Project Manager",
-      location: "Zürich, Schweiz",
-      email: "Juanjo.gmanzano@gmail.com",
-      linkedin: "linkedin.com/in/juanjo-garcia-manzano",
       tagline: "Die Robustheit von Linux-Infrastruktur mit der Kreativität der Produktentwicklung verbinden.",
       aboutShort: "Ich bin ein DevOps Engineer mit einer unternehmerischen Seele. Experte für Automatisierung, Linux und Cloud, aber auch Schöpfer von Videospielen und Finanz-Apps.",
       aboutLong: "Mit mehr als 10 Jahren Erfahrung in kritischen Umgebungen (Banken, Einzelhandel, Gesundheitswesen) beherrsche ich die Kunst, robuste Systeme zu warten. Meine Leidenschaft geht jedoch über den Code hinaus: Mich treibt es an, Erlebnisse zu schaffen. Ich habe 'Space Warhog' für Mobilgeräte entwickelt und baue 'Bancfy' auf, nicht nur als Finanz-App, sondern als Community. Ich glaube fest daran, dass Technologie dazu dienen sollte, Menschen zu verbinden und zu befähigen.",
@@ -848,32 +881,32 @@ const DATA = {
         {
           name: "Fußball",
           iconName: "Award",
-          desc: "Mehr als ein Sport, es war meine Schule der Disziplin. Seit meinem 6. Lebensjahr im Verein (CEU Ciutat Meridiana, Santa Perpetua), habe ich den Wert von Opferbereitschaft und Teamarbeit gelernt. Selbst in der Schweiz (Urdorf) war der Ball meine universelle Sprache. Fußball lehrte mich, mit Niederlagen umzugehen, unter Druck zu führen und zu verstehen, dass kein Tor alleine geschossen wird."
+          desc: "Mehr als ein Sport, meine Schule der Disziplin. Seit meinem 6. Lebensjahr im Verein, habe ich den Wert von Teamarbeit gelernt."
         },
         {
           name: "Videospiele",
           iconName: "Gamepad2",
-          desc: "Mein nächtliches mentales Fitnessstudio. Derzeit trete ich in EA Sports FC 26 an und optimiere meine Zeit, aber meine Geschichte reicht von der immersiven Erzählung von Spider-Man und Assassin's Creed bis zur Strategie von Pokémon. Ich warte gespannt auf GTA VI. Videospiele schärfen meine Reflexe, meine Problemlösungskompetenz und halten den Funken der Kreativität und des Staunens am Leben."
+          desc: "Mein nächtliches mentales Fitnessstudio. EA Sports FC und immersive Spiele. Schärft Reflexe und Problemlösung."
         },
         {
           name: "Lesen",
           iconName: "BookOpen",
-          desc: "Meine Bibliothek ist mein größter Schatz. Von Tolkiens Epos und der Weisheit von 'Hagakure' bis zur grafischen Tiefe von 'The Dark Knight Rises' (signiert von Miller). Bücher wie 'Million Dollar Weekend' prägen heute meine unternehmerische Denkweise. Lesen ist das unsichtbare Training, das meinen Horizont erweitert und mir die nötige Ruhe gibt, um mich zu fokussieren."
+          desc: "Meine Bibliothek ist mein größter Schatz. Bücher wie 'Million Dollar Weekend' prägen mich. Lesen bringt Fokus."
         },
         {
           name: "Meine Tochter",
           iconName: "Smile",
-          desc: "Das wichtigste 'Projekt' meines Lebens. Mit ihr zu spielen bedeutet, die Welt mit neuen Augen wiederzuentdecken. Sie lehrt mich unendliche Geduld, reine Neugier und erinnert mich jeden Tag daran, warum ich mich anstrenge. Sie ist mein Anker in der Realität und meine größte Motivation, eine bessere Zukunft zu bauen."
+          desc: "Das wichtigste 'Projekt'. Sie lehrt mich Geduld und Neugier. Sie ist mein Anker in der Realität."
         },
         {
           name: "Kochen",
           iconName: "Utensils",
-          desc: "Alchemie für die Seele. Zwischen den Herden finde ich meinen Flow. Von der Perfektionierung der spanischen Kartoffeltortilla bis zum Experimentieren mit Schweizer Großwild (Hirsch, Wildschwein). Kochen erfordert, wie Programmieren, die richtigen Zutaten, präzises Timing und viel Liebe, damit das Ergebnis unvergesslich wird."
+          desc: "Alchemie für die Seele. Kochen erfordert, wie Programmieren, die richtigen Zutaten und Präzision."
         },
         {
           name: "Apps Erstellen",
           iconName: "Code",
-          desc: "Der Motor, der niemals ausgeht. Mein Kopf ist ein ständiger Bienenstock von Ideen, die echte Probleme lösen wollen. Ich genieße jede Phase: von der Idee auf einer Serviette bis zur Bereitstellung in der Produktion. Etwas zu erschaffen ist meine Art, Spuren zu hinterlassen und andere mit nützlicher und zugänglicher Technologie zu befähigen."
+          desc: "Der Motor, der niemals ausgeht. Ich genieße jede Phase: von der Idee bis zur Produktion."
         }
       ]
     },
@@ -884,20 +917,14 @@ const DATA = {
         period: "Okt 2024 - Heute",
         logo: "/images/worldline.png",
         desc: "Owner von Artifactory und Instant Score. E2E-Projektmanagement, Automatisierung und Migrationen zu Google Cloud.",
-        details: "Als Owner von Artifactory (dem digitalen Herzstück, in dem die gesamte technologische Entwicklung des Unternehmens zusammenläuft und verwaltet wird) und den kritischen Lösungen Instant Score / Online Watcher leite ich die Strategie und Stabilität dieser Systeme. Integrales Management technischer Projekte wie RHEL8/9-Migrationen. Administration von Linux-Servern, fortgeschrittene Automatisierung mit Ansible (YAML), Bash und Python. Bereitstellung und Verwaltung von AWX und CI/CD-Pipelines mit GitLab. Überwachung und Durchführung von Migrationen zu Google Cloud, einschließlich der Erstellung von Terraform-Skripten zur Bereitstellung neuer Anwendungsmodelle.",
+        details: "Owner Artifactory. Integrales Management technischer Projekte, Linux-Admin, Ansible-Automatisierung und GCP-Migrationen.",
         tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "App-Migration, Terraform und Modellbereitstellung" },
-            { name: "Artifactory", desc: "Owner. Zentralisierte Artefakt- und Entwicklungsverwaltung" },
-            { name: "Instant Score", desc: "Owner. Lösungsmanagement und Wartung" },
-            { name: "BMC Remedy", desc: "Vorfälle, Change Requests und Problemmanagement" },
-            { name: "Jira", desc: "Aufgabenerstellung und -verfolgung" },
-            { name: "Confluence", desc: "Dokumentenmanagement und Wissensdatenbank" },
-            { name: "VMWare", desc: "Verwaltung virtueller Infrastruktur (VMs)" },
-            { name: "Putty / MobaXterm", desc: "SSH-Zugriff und Verwaltung für Linux-Server" },
-            { name: "IntelliJ / VS Code", desc: "Code-Management und GitLab-Pipelines" },
-            { name: "RHEL 8 & 9", desc: "Fortgeschrittene Linux-Server-Administration" }
+            { name: "Google Cloud (GCP)", desc: "App-Migration, Terraform" },
+            { name: "Artifactory", desc: "Owner. Artefaktverwaltung" },
+            { name: "Ansible", desc: "Fortgeschrittene Automatisierung" },
+            { name: "RHEL 8 & 9", desc: "Server-Administration" }
         ]
       },
       {
@@ -905,8 +932,8 @@ const DATA = {
         role: "DevOps Engineer",
         period: "Mai 2021 - Sep 2024",
         logo: "/images/six.jpg",
-        desc: "Führung bei RHEL7 zu RHEL8 Migrationen. Docker- und OpenShift-Integration. Servermigration zu Azure.",
-        details: "Demonstrierte solide Führungsqualitäten durch effektives Management von Projekten wie der Migration von RHEL7 zu RHEL8, Automatisierung von Patch-Prozessen und Docker-Integration für die Anwendungsbereitstellung. Erfahrung in C++ und Bash-Programmierung, Arbeit mit Artifactory und BMC Remedy.",
+        desc: "Führung bei RHEL-Migrationen. Docker- und OpenShift-Integration. Servermigration zu Azure.",
+        details: "Führung bei RHEL-Migrationen, Patch-Automatisierung und Docker/OpenShift-Integration.",
         tags: ["OpenShift", "Docker", "Azure", "Bash"],
         color: "bg-red-600"
       },
@@ -915,8 +942,8 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Apr 2021",
         logo: "/images/burberry.avif",
-        desc: "Linux-Administration (RedHat, SUSE). Scripting in Ansible und Bash. Backup mit Data Protector.",
-        details: "Durchführung von Aufgaben von der Installation von Linux-Servern (Redhat, SUSE), Konfiguration und FS-Erstellung bis hin zum Mounten von Volumes. Verantwortlich für Backup-Aufgaben mit Data Protector. Erstellung von Spezifikationen, Lösung von Software- und Hardwarevorfällen.",
+        desc: "Linux-Administration (RedHat, SUSE). Scripting Ansible/Bash. Backup mit Data Protector.",
+        details: "Serverinstallation, Backup-Management und Vorfalllösung.",
         tags: ["Linux", "Ansible", "VMWare"],
         color: "bg-yellow-600"
       },
@@ -925,9 +952,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Basisadministration von Unix-, Linux- und Windows-Systemen. HP Openview Alarmmanagement und Backups.",
-        details: "Verwaltete die Basisadministration von Unix-, Linux- und Windows-Systemen, HP Openview Alarmmanagement, Durchführung von Backups mit Data Protector, Überprüfung von Oracle Tablespaces. Benutzererstellung in LDAP und OpenLDAP.",
-        tags: ["Unix", "Windows", "Oracle", "LDAP"],
+        desc: "Basisadmin Unix, Linux, Windows. HP Openview und Backups.",
+        details: "Basis-Multisystem-Admin, HP Openview, Data Protector und Oracle.",
+        tags: ["Unix", "Windows", "Oracle"],
         color: "bg-blue-500"
       },
       {
@@ -935,8 +962,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Linux-Maschinenadministration, Scripting in Bash und Perl, Monitoring mit Nagios.",
-        details: "Verwaltete die Linux-Maschinenadministration, erstellte Skripte in Bash und Perl, erstellte Überwachungsregeln in HP Openview und Nagios.",
+        desc: "Linux-Admin, Scripting Bash/Perl, Monitoring Nagios.",
+        details: "Linux-Admin, Scripting und Überwachungsregeln.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -945,8 +972,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mär 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Linux-Maschinenadministration für TIBCO, Scripting und Überwachungsregeln.",
-        details: "Verwaltete die Linux-Maschinenadministration für TIBCO, erstellte Skripte in Bash und Perl, Überwachungsregeln in Tibco Hawk.",
+        desc: "Linux-Admin für TIBCO, Scripting und Monitoring.",
+        details: "Linux-Admin für TIBCO-Umgebung, Scripting und Tibco Hawk.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -955,8 +982,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Dez 2010 - Okt 2013",
         logo: "/images/hp.png",
-        desc: "Teammanagement, Jobausführungskontrolle in Control M und SAP.",
-        details: "Verwaltete Personen im Team, kontrollierte die korrekte Jobausführung, eröffnete Vorfälle, plante und führte Jobs in Control M Enterprises und Mainframe aus.",
+        desc: "Teammanagement, Control M und SAP.",
+        details: "Teammanagement, Jobausführungskontrolle und Planung.",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -964,13 +991,13 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Systems Engineer",
+        degree: "Systems Engineer", // Dejado en inglés como pediste duda, pero traducida descripción
         period: "2012 - 2017",
         desc: "Programmiergrundlagen, Netzwerkmanagement und Betriebssysteme."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "High-Level Technician degree in IT",
+        degree: "Höhere technische Ausbildung in Informatik", // Adaptación aproximada
         period: "2006 - 2008",
         desc: "Höhere technische Ausbildung in Informatik (ASI)."
       }
@@ -989,16 +1016,16 @@ const DATA = {
         title: "Bancfy",
         category: "Fintech App & Community",
         iconName: "TrendingUp",
-        description: "Mehr als eine Finanz-App, es ist ein Erlebnis. Bancfy versucht, die Beziehung der Menschen zu ihrem Geld durch Gamifizierung und Gemeinschaft zu verändern. Ich verkaufe kein Produkt, ich baue eine Bewegung.",
+        description: "Mehr als eine Finanz-App, ein Erlebnis. Bancfy versucht, die Beziehung der Menschen zu ihrem Geld zu verändern.",
         status: "In Entwicklung",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Offizielle Web", url: "https://www.bancfy.com/es" }]
+        links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
       },
       {
         title: "Space Warhog",
-        category: "Mobile Game",
+        category: "Mobiles Spiel",
         iconName: "Gamepad2",
-        description: "Ein Arcade-Videospiel, das vollständig von mir entwickelt wurde. Verfügbar auf mobilen Plattformen. Eine technische und kreative Herausforderung, die meine Fähigkeit zeigt, ein Produkt von 0 auf 100 zu bringen.",
+        description: "Ein Arcade-Videospiel, vollständig von mir entwickelt. Eine technische und kreative Herausforderung.",
         status: "Veröffentlicht",
         color: "from-purple-900 to-indigo-900",
         links: [
@@ -1010,7 +1037,7 @@ const DATA = {
         title: "@exitofracasando",
         category: "Content Creation",
         iconName: "Smartphone",
-        description: "TikTok-Account mit +10k Followern. Ein Raum, in dem ich Erkenntnisse teilte und mich mit einem jungen Publikum verband, das an Wachstum und Unternehmertum interessiert ist.",
+        description: "TikTok-Account mit +10k Followern über Wachstum und Unternehmertum.",
         status: "10K+ Follower",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
@@ -1395,26 +1422,26 @@ export default function App() {
                 
                 <div className="w-full flex flex-col gap-2 mb-6">
                    <div className="flex items-center justify-center gap-2 text-purple-400 text-xs font-medium bg-purple-500/10 py-1.5 px-3 rounded-full border border-purple-500/20">
-                      <MapPin size={12} /> Zurich (5 years)
+                      <MapPin size={12} /> {content.profileCard.location1}
                    </div>
                    <div className="h-4 w-px bg-white/10 mx-auto border-l border-dashed border-gray-500"></div>
                    <div className="flex items-center justify-center gap-2 text-gray-400 text-xs font-medium">
-                      <MapPin size={12} /> Barcelona (Origin)
+                      <MapPin size={12} /> {content.profileCard.location2}
                    </div>
                 </div>
 
                 <div className="w-full grid grid-cols-3 gap-2 mt-auto pt-4 border-t border-white/5">
                     <div className="flex flex-col items-center bg-white/5 p-2 rounded-2xl">
                         <Code size={16} className="mb-1 text-blue-400"/>
-                        <span className="text-[10px] mt-1">Code</span>
+                        <span className="text-[10px] mt-1">{content.profileCard.tagCode}</span>
                     </div>
                     <div className="flex flex-col items-center bg-white/5 p-2 rounded-2xl">
                         <Server size={16} className="mb-1 text-green-400"/>
-                        <span className="text-[10px] mt-1">Ops</span>
+                        <span className="text-[10px] mt-1">{content.profileCard.tagOps}</span>
                     </div>
                     <div className="flex flex-col items-center bg-white/5 p-2 rounded-2xl">
                         <Gamepad2 size={16} className="mb-1 text-purple-400"/>
-                        <span className="text-[10px] mt-1">Game</span>
+                        <span className="text-[10px] mt-1">{content.profileCard.tagGame}</span>
                     </div>
                 </div>
              </div>
@@ -1466,7 +1493,7 @@ export default function App() {
 
                 {/* Hobbies Section */}
                 <h3 className="text-xl font-bold mt-8 mb-4 flex items-center gap-2">
-                   <Heart className="text-red-500" size={20} /> {lang === 'en' ? 'My Interests' : 'Intereses'}
+                   <Heart className="text-red-500" size={20} /> {content.sectionIntros.interests}
                 </h3>
                 <div className="flex flex-col gap-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1517,7 +1544,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-2xl" />
                 <GlassCard className="relative">
                   <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                      <Brain className="text-purple-500"/> Mindset & Soft Skills
+                      <Brain className="text-purple-500"/> {content.sectionIntros.mindset}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                      {content.softSkills.map((skill, i) => (
@@ -1529,7 +1556,7 @@ export default function App() {
                   </div>
 
                   <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                      <Cpu className="text-blue-500"/> Core Tech Stack
+                      <Cpu className="text-blue-500"/> {content.sectionIntros.coreStack}
                   </h3>
                   {content.techSkills.map((skill) => (
                     <div key={skill.name} className="group mb-4">
@@ -1700,10 +1727,7 @@ export default function App() {
         <div className="container mx-auto px-6">
           <SectionTitle>{content.sectionTitles.projects}</SectionTitle>
           <p className="text-center text-gray-400 max-w-2xl mx-auto mb-16">
-            {lang === 'en' 
-                ? "My passion is not limited to the office. I love building products from scratch, generating community, and exploring new technologies." 
-                : "Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías."
-            }
+            {content.sectionIntros.projects}
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -1756,10 +1780,7 @@ export default function App() {
          <div className="container mx-auto px-6">
             <SectionTitle>{content.sectionTitles.books}</SectionTitle>
             <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
-               {lang === 'en' 
-                ? "Sharing knowledge is another one of my passions. Here you can find my latest publications available on Amazon." 
-                : "Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon."
-               }
+               {content.sectionIntros.books}
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -1805,10 +1826,7 @@ export default function App() {
                    <div className="space-y-6">
                       <h2 className="text-3xl font-bold">{content.sectionTitles.contact}</h2>
                       <p className="text-gray-400">
-                         {lang === 'en' 
-                            ? "I am always open to discussing new opportunities, product ideas, or technical collaborations."
-                            : "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas."
-                         }
+                         {content.sectionIntros.contact}
                       </p>
                       
                       <div className="space-y-4 pt-4">

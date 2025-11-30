@@ -52,11 +52,16 @@ const carouselSourceImages = [
   "/images/carrusel9.jpg"
 ];
 
-// --- DATOS MULTIDIOMA ---
+// --- DATOS MULTIDIOMA CON SEO ---
 
 const DATA = {
   // === ESPAÑOL ===
   es: {
+    seo: {
+      title: "Juan José García Manzano | Ingeniero DevOps & Project Manager",
+      description: "Portfolio de Juan José García Manzano. Ingeniero DevOps experto en Linux, Cloud (AWS/GCP), Automatización y creador de productos digitales como Bancfy.",
+      keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zurich, Ingeniero"
+    },
     menu: ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Libros', 'Contacto'],
     ui: {
       available: "🚀 Disponible para nuevos retos",
@@ -96,16 +101,14 @@ const DATA = {
       projects: "Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías.",
       books: "Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon.",
       contact: "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas.",
-      // NUEVO: Títulos de secciones específicas
       academic: "Formación Académica",
       certifications: "Certificaciones",
-      // NUEVO: Items de About Me
       continuousLearning: "Aprendizaje Continuo",
       humanLeadership: "Liderazgo Humano"
     },
     personalInfo: {
       name: "Juan José García Manzano",
-      bookAuthor: "Juan José García", // Nombre para libros
+      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
       email: "Juanjo.gmanzano@gmail.com",
       tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
@@ -144,7 +147,6 @@ const DATA = {
         }
       ]
     },
-    // NUEVO: Idiomas hablados
     spokenLanguages: [
       { label: "Español", level: "Nativo" },
       { label: "Catalán", level: "Nativo" },
@@ -329,6 +331,11 @@ const DATA = {
 
   // === ENGLISH ===
   en: {
+    seo: {
+      title: "Juan José García Manzano | DevOps Engineer & Project Manager",
+      description: "Portfolio of Juan José García Manzano. DevOps Engineer expert in Linux, Cloud (AWS/GCP), Automation, and creator of digital products like Bancfy.",
+      keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zurich, Engineer"
+    },
     menu: ['About Me', 'Experience', 'Education', 'Projects', 'Skills', 'Books', 'Contact'],
     ui: {
       available: "🚀 Available for new challenges",
@@ -598,6 +605,11 @@ const DATA = {
 
   // === CATALÀ (CATALAN) ===
   ca: {
+    seo: {
+      title: "Juan José García Manzano | Enginyer DevOps & Project Manager",
+      description: "Portfoli de Juan José García Manzano. Enginyer DevOps expert en Linux, Cloud (AWS/GCP), Automatització i creador de productes digitals com Bancfy.",
+      keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfoli, Juanjo Garcia, Bancfy, Zurich, Enginyer"
+    },
     menu: ['Sobre Mi', 'Experiència', 'Estudis', 'Projectes', 'Skills', 'Llibres', 'Contacte'],
     ui: {
       available: "🚀 Disponible per a nous reptes",
@@ -868,6 +880,11 @@ const DATA = {
 
   // === DEUTSCH (GERMAN) ===
   ch: {
+    seo: {
+      title: "Juan José García Manzano | DevOps Engineer & Project Manager",
+      description: "Portfolio von Juan José García Manzano. DevOps-Ingenieur, Experte für Linux, Cloud (AWS/GCP), Automatisierung und Schöpfer digitaler Produkte wie Bancfy.",
+      keywords: "DevOps, Linux, Projektmanager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zürich, Ingenieur"
+    },
     menu: ['Über Mich', 'Erfahrung', 'Ausbildung', 'Projekte', 'Skills', 'Bücher', 'Kontakt'],
     ui: {
       available: "🚀 Verfügbar für neue Herausforderungen",
@@ -1069,7 +1086,7 @@ const DATA = {
         description: "Mehr als eine Finanz-App, ein Erlebnis. Bancfy versucht, die Beziehung der Menschen zu ihrem Geld zu verändern.",
         status: "In Entwicklung",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
+        links: [{ label: "Offizielle Web", url: "https://www.bancfy.com/es" }]
       },
       {
         title: "Space Warhog",
@@ -1177,12 +1194,36 @@ const LazyLoadSection = ({ id, children, className = "" }) => {
   );
 };
 
-const SEOHead = ({ currentLangCode }) => {
+// COMPONENTE SEO ACTUALIZADO
+const SEOHead = ({ content }) => {
   useEffect(() => {
-    document.title = "Juan José García Manzano | DevOps Engineer & Project Manager";
-    document.documentElement.lang = currentLangCode;
+    if (!content || !content.seo) return;
 
-    // Actualizar metadatos básicos si fuera necesario
+    // Actualizar Title
+    document.title = content.seo.title;
+
+    // Helper para actualizar meta tags
+    const updateMeta = (name, contentStr, attribute = 'name') => {
+      let element = document.querySelector(`meta[${attribute}="${name}"]`);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, name);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', contentStr);
+    };
+
+    // Actualizar descripción y keywords
+    updateMeta('description', content.seo.description);
+    updateMeta('keywords', content.seo.keywords);
+    
+    // Open Graph
+    updateMeta('og:title', content.seo.title, 'property');
+    updateMeta('og:description', content.seo.description, 'property');
+    updateMeta('twitter:title', content.seo.title, 'property');
+    updateMeta('twitter:description', content.seo.description, 'property');
+
+    // Hreflang logic - Aseguramos que los links alternate estén correctos
     const updateLink = (rel, href, hreflang = null) => {
       let selector = `link[rel="${rel}"]`;
       if (hreflang) selector += `[hreflang="${hreflang}"]`;
@@ -1202,7 +1243,7 @@ const SEOHead = ({ currentLangCode }) => {
     updateLink('alternate', 'https://www.jjgarciacv.com/ca/', 'ca');     
     updateLink('alternate', 'https://www.jjgarciacv.com/ch/', 'de-CH');  
 
-  }, [currentLangCode]);
+  }, [content]); // Se ejecuta cuando el contenido (idioma) cambia
 
   return null;
 };
@@ -1370,7 +1411,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-purple-500 selection:text-white overflow-x-hidden relative">
       
-      <SEOHead currentLangCode={lang} />
+      {/* Pasamos el contenido completo para el SEO dinámico */}
+      <SEOHead content={content} />
 
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />

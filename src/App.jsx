@@ -122,33 +122,33 @@ const DATA = {
         {
           name: "Fútbol",
           iconName: "Award",
-          desc: "Más que un deporte, ha sido mi escuela de disciplina. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo. Incluso en Suiza (Urdorf), el balón fue mi idioma universal."
-        },
+          desc: "Más que un deporte, ha sido mi escuela de disciplina y resiliencia. Federado desde los 6 años (CEU Ciutat Meridiana, Santa Perpetua), aprendí el valor del sacrificio y el trabajo en equipo bajo presión. Incluso en Suiza (Urdorf), el balón fue mi idioma universal para superar barreras culturales."
+		},
         {
           name: "Videojuegos",
           iconName: "Gamepad2",
-          desc: "Mi gimnasio mental nocturno. Compito en EA Sports FC y disfruto narrativas inmersivas. Los videojuegos afinan mis reflejos y resolución de problemas."
-        },
+          desc: "Mi gimnasio mental. La competición en EA Sports FC y las narrativas inmersivas mantienen mis reflejos afilados y mi capacidad de resolución de problemas activa. Es el espacio donde entreno la toma de decisiones rápida y la estrategia en tiempo real."
+		},
         {
           name: "Leer",
           iconName: "BookOpen",
-          desc: "Mi biblioteca es mi mayor tesoro. Libros como 'Million Dollar Weekend' moldean mi mentalidad. Leer expande mis horizontes y me aporta foco."
-        },
+          desc: "Mi fuente de imaginación y foco. Me sumerjo en la profundidad de Tolkien, desde 'El Señor de los Anillos' hasta la complejidad de 'El Silmarillion'. Pasión que combino con la narrativa visual de mangas como Dragon Ball y cómics de Batman, Spiderman o Wolverine."
+		},
         {
           name: "Mi Hija",
           iconName: "Smile",
-          desc: "El proyecto más importante. Ella me enseña paciencia infinita y curiosidad pura. Es mi ancla a la realidad y mi mayor motivación."
-        },
+          desc: "El proyecto más vital. Ella me enseña cada día el significado de la paciencia infinita, la empatía y la curiosidad pura. Es mi ancla a la realidad, mi mayor motivación y quien me ayuda a mantener una perspectiva equilibrada y humana."
+		},
         {
           name: "Cocinar",
           iconName: "Utensils",
-          desc: "Alquimia para el alma. Entre fogones encuentro mi flow, desde la tortilla de patatas hasta la caza mayor suiza."
-        },
+          desc: "Alquimia y gestión de procesos. Entre fogones encuentro mi 'flow', aplicando precisión y creatividad tanto en una tortilla de patatas como en la caza mayor suiza. Cocinar refuerza mi capacidad de planificación y atención al detalle."
+		},
         {
           name: "Crear Apps",
           iconName: "Code",
-          desc: "El motor que nunca se apaga. Disfruto cada fase: desde la idea en una servilleta hasta el despliegue en producción."
-        }
+          desc: "El espíritu 'builder' que nunca descansa. Disfruto de la propiedad total del producto: desde conceptualizar la idea en una servilleta hasta su despliegue en producción. Es la práctica constante de convertir problemas en soluciones reales."
+		}
       ]
     },
     spokenLanguages: [
@@ -163,8 +163,8 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Presente",
         logo: "/images/worldline.png",
-        desc: "Gestión integral (E2E) de proyectos técnicos. Administración Linux, automatización Ansible/Python y Cloud.",
-        details: "Gestión integral (E2E) de proyectos técnicos como Artifactory, Instant Score y migraciones RHEL8/9. Administración de servidores Linux, automatización con Ansible (YAML), Bash y Python. Despliegue y gestión de AWX y pipelines CI/CD con GitLab. Creación y monitorización de trabajos en BMC Control-M. Supervisión de migraciones a Google Cloud. Soporte y mantenimiento de la aplicación Riskshield. Fuerte enfoque en eficiencia operativa, automatización y entrega continua.",
+        desc: "Service Owner de aplicaciones y gestión integral (E2E) de proyectos técnicos. Administración Linux, automatización Ansible/Python y Cloud.",
+        details: "Liderazgo técnico como Service Owner de Artifactory e Instant Score, garantizando la gestión integral (E2E) del ciclo de vida y la estabilidad de plataformas críticas. Especialista en administración de sistemas Linux y ejecución de migraciones complejas a RHEL 8/9. Impulso la eficiencia operativa mediante la automatización de infraestructura con Ansible, AWX, Bash y Python, y la orquestación de pipelines CI/CD en GitLab. Mi gestión abarca la supervisión de migraciones a Google Cloud, el control de flujos en BMC Control-M y el soporte de aplicaciones como Riskshield.",
         tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
@@ -400,32 +400,32 @@ const DATA = {
         {
           name: "Football",
           iconName: "Award",
-          desc: "More than a sport, it has been my school of discipline. Federated since age 6, I learned the value of sacrifice and teamwork. Even in Switzerland, the ball was my universal language."
+          desc: More than a sport, it has been my school of discipline and resilience. Playing at a club level since age 6 (CEU Ciutat Meridiana, Santa Perpetua), I learned the value of sacrifice and teamwork under pressure. Even in Switzerland (Urdorf), the ball was my universal language to overcome cultural barriers
         },
         {
           name: "Video Games",
           iconName: "Gamepad2",
-          desc: "My nightly mental gym. Currently competing in EA Sports FC. Video games refine my reflexes, problem-solving skills, and keep creativity alive."
+          desc: "My mental gym. Competing in EA Sports FC and exploring immersive narratives keep my reflexes sharp and my problem-solving skills active. It is where I train rapid decision-making and real-time strategy."
         },
         {
           name: "Reading",
           iconName: "BookOpen",
-          desc: "My library is my greatest treasure. Books like 'Million Dollar Weekend' shape my mindset. Reading expands my horizons and brings focus."
+          desc: "My source of imagination and focus. I dive into the depth of Tolkien, from 'The Lord of the Rings' to the complexity of 'The Silmarillion'. I combine this with a passion for visual storytelling in manga like Dragon Ball and comics involving Batman, Spiderman, or Wolverine."
         },
         {
           name: "My Daughter",
           iconName: "Smile",
-          desc: "The most important 'project'. She teaches me infinite patience and pure curiosity. She is my anchor to reality and motivation."
+          desc: "The most vital project. She teaches me the meaning of infinite patience, empathy, and pure curiosity every day. She is my anchor to reality, my greatest motivation, and helps me maintain a balanced perspective."
         },
         {
           name: "Cooking",
           iconName: "Utensils",
-          desc: "Alchemy for the soul. Between stoves, I find my flow. Cooking requires the right ingredients, precision, and care."
+          desc: "Alchemy and process management. I find my flow in the kitchen, applying precision and creativity to everything from a Spanish omelet to Swiss game meat. Cooking reinforces my planning skills and attention to detail."
         },
         {
           name: "Creating Apps",
           iconName: "Code",
-          desc: "The engine that never turns off. I enjoy every phase: from the idea on a napkin to deployment. Creating is my way of leaving a mark."
+          desc: "The builder spirit that never rests. I enjoy full product ownership: from conceptualizing an idea on a napkin to deploying it to production. It is the constant practice of turning problems into real solutions."
         }
       ]
     },
@@ -441,8 +441,8 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
-        desc: "End-to-end management of technical projects. Linux Admin, Ansible/Python automation and Cloud.",
-        details: "End-to-end management of technical projects such as Artifactory, Instant Score, and RHEL8/9 migrations. Administration of Linux servers, automation using Ansible (YAML), Bash, and Python. Deployment and management of AWX and CI/CD pipelines with GitLab. Job creation and monitoring in BMC Control-M. Oversight of small-scale migration projects to Google Cloud. Support and maintenance of the Riskshield application. Strong focus on operational efficiency, automation, and continuous delivery.",
+        desc: "Application Service Owner & E2E Technical Project Management. Linux Administration, Ansible/Python Automation, and Cloud.",
+        details: "Technical leadership as Service Owner for Artifactory and Instant Score, ensuring end-to-end (E2E) lifecycle management and operational stability of critical platforms. Specialist in Linux system administration and complex RHEL 8/9 migrations. Driving operational efficiency through infrastructure automation with Ansible, AWX, Bash, and Python, alongside CI/CD pipeline orchestration in GitLab. My role encompasses overseeing Google Cloud migrations, managing workflows in BMC Control-M, and providing support for applications like Riskshield.",
         tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
@@ -679,32 +679,32 @@ const DATA = {
         {
           name: "Futbol",
           iconName: "Award",
-          desc: "Més que un esport, ha estat la meva escola de disciplina. Federat des dels 6 anys (CEU Ciutat Meridiana), vaig aprendre el valor del sacrifici i el treball en equip."
+          desc: "Més que un esport, ha estat la meva escola de disciplina i resiliència. Federat des dels 6 anys (CEU Ciutat Meridiana, Santa Perpetua), vaig aprendre el valor del sacrifici i el treball en equip sota pressió. Fins i tot a Suïssa (Urdorf), la pilota va ser el meu idioma universal per superar barreres culturals."
         },
         {
           name: "Videojocs",
           iconName: "Gamepad2",
-          desc: "El meu gimnàs mental nocturn. Competeixo en EA Sports FC i gaudeixo de narratives immersives. Afinen els meus reflexos i resolució de problemes."
+          desc: "El meu gimnàs mental. La competició a EA Sports FC i les narratives immersives mantenen els meus reflexos esmolats i la meva capacitat de resolució de problemes activa. És l'espai on entreno la presa de decisions ràpida i l'estratègia."
         },
         {
           name: "Llegir",
           iconName: "BookOpen",
-          desc: "La meva biblioteca és el meu tresor. Llibres com 'Million Dollar Weekend' modelen la meva mentalitat. Llegir m'aporta focus."
+          desc: "La meva font d'imaginació i focus. Em submergeixo en la profunditat de Tolkien, des d''El Senyor dels Anells' fins a la complexitat d''El Silmaríl·lion'. Passió que combino amb la narrativa visual de mangues com Dragon Ball i còmics de Batman, Spiderman o Wolverine."
         },
         {
           name: "La meva Filla",
           iconName: "Smile",
-          desc: "El projecte més important. Ella m'ensenya paciència infinita i curiositat pura. És la meva àncora a la realitat."
+          desc: "El projecte més vital. Ella m'ensenyament cada dia el significat de la paciència infinita, l'empatia i la curiositat pura. És la meva àncora a la realitat, la meva major motivació i qui m'ajuda a mantenir una perspectiva equilibrada."
         },
         {
           name: "Cuinar",
           iconName: "Utensils",
-          desc: "Alquímia per a l'ànima. Entre fogons trobo el meu flow, des de la truita de patates fins a la caça major suïssa."
+          desc: "Alquímia i gestió de processos. Entre fogons trobo el meu 'flow', aplicant precisió i creativitat tant en una truita de patates com en la caça major suïssa. Cuinar reforça la meva capacitat de planificació i atenció al detall."
         },
         {
           name: "Crear Apps",
           iconName: "Code",
-          desc: "El motor que mai s'apaga. Gaudeixo de cada fase: des de la idea en un tovalló fins al desplegament en producció."
+          desc: "L'esperit 'builder' que mai descansa. Gaudeixo de la propietat total del producte: des de conceptualitzar la idea en un tovalló fins al seu desplegament a producció. És la pràctica constant de convertir problemes en solucions reals."
         }
       ]
     },
@@ -720,8 +720,8 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
-        desc: "Gestió integral (E2E) de projectes tècnics. Admin Linux, automatització Ansible/Python i Cloud.",
-        details: "Gestió integral (E2E) de projectes tècnics com Artifactory, Instant Score i migracions RHEL8/9. Administració de servidors Linux, automatització amb Ansible (YAML), Bash i Python. Desplegament i gestió d'AWX i pipelines CI/CD amb GitLab. Creació i monitorització de treballs a BMC Control-M. Supervisió de migracions a Google Cloud. Suport i manteniment de l'aplicació Riskshield. Fort enfocament en eficiència operativa, automatització i lliurament continu.",
+        desc: "Service Owner d'aplicacions i gestió integral (E2E) de projectes tècnics. Administració Linux, automatització Ansible/Python i Cloud.",
+        details: "Lideratge tècnic com a Service Owner d'Artifactory i Instant Score, garantint la gestió integral (E2E) del cicle de vida i l'estabilitat de plataformes crítiques. Especialista en administració de sistemes Linux i execució de migracions complexes a RHEL 8/9. Impulso l'eficiència operativa mitjançant l'automatització d'infraestructura amb Ansible, AWX, Bash i Python, i l'orquestració de pipelines CI/CD a GitLab. La meva gestió abasta la supervisió de migracions a Google Cloud, el control de fluxos a BMC Control-M i el suport d'aplicacions com Riskshield.",
         tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
@@ -958,32 +958,32 @@ const DATA = {
         {
           name: "Fußball",
           iconName: "Award",
-          desc: "Mehr als ein Sport, meine Schule der Disziplin. Seit meinem 6. Lebensjahr im Verein, habe ich den Wert von Teamarbeit gelernt."
+          desc: "Mehr als nur ein Sport – meine Schule für Disziplin und Resilienz. Als Vereinsspieler seit dem 6. Lebensjahr (CEU Ciutat Meridiana, Santa Perpetua) habe ich Opferbereitschaft und Teamarbeit unter Druck gelernt. Auch in der Schweiz (Urdorf) war der Ball meine universelle Sprache, um kulturelle Barrieren zu überwinden."
         },
         {
           name: "Videospiele",
           iconName: "Gamepad2",
-          desc: "Mein nächtliches mentales Fitnessstudio. EA Sports FC und immersive Spiele. Schärft Reflexe und Problemlösung."
+          desc: "Mein mentales Fitnessstudio. Der Wettbewerb in EA Sports FC und immersive Erzählungen halten meine Reflexe scharf und meine Problemlösungsfähigkeiten aktiv. Hier trainiere ich schnelle Entscheidungsfindung und Echtzeitstrategie."
         },
         {
           name: "Lesen",
           iconName: "BookOpen",
-          desc: "Meine Bibliothek ist mein größter Schatz. Bücher wie 'Million Dollar Weekend' prägen mich. Lesen bringt Fokus."
+          desc: "Meine Quelle für Fantasie und Fokus. Ich tauche tief in Tolkiens Welt ein, vom 'Herrn der Ringe' bis zur Komplexität des 'Silmarillion'. Diese Leidenschaft verbinde ich mit visuellen Erzählungen in Mangas wie Dragon Ball und Comics von Batman, Spiderman oder Wolverine."
         },
         {
           name: "Meine Tochter",
           iconName: "Smile",
-          desc: "Das wichtigste 'Projekt'. Sie lehrt mich Geduld und Neugier. Sie ist mein Anker in der Realität."
+          desc: "Das wichtigste Projekt überhaupt. Sie lehrt mich jeden Tag unendliche Geduld, Empathie und reine Neugier. Sie ist mein Anker in der Realität, meine größte Motivation und hilft mir, eine ausgeglichene Perspektive zu bewahren."
         },
         {
           name: "Kochen",
           iconName: "Utensils",
-          desc: "Alchemie für die Seele. Kochen erfordert, wie Programmieren, die richtigen Zutaten und Präzision."
+          desc: "Alchemie und Prozessmanagement. Am Herd finde ich meinen 'Flow' und wende Präzision und Kreativität an – von der spanischen Tortilla bis zum Schweizer Wildbret. Kochen stärkt meine Planungsfähigkeit und Liebe zum Detail."
         },
         {
           name: "Apps Erstellen",
           iconName: "Code",
-          desc: "Der Motor, der niemals ausgeht. Ich genieße jede Phase: von der Idee bis zur Produktion."
+          desc: "Der Builder-Spirit, der nie ruht. Ich genieße die volle Produktverantwortung: von der Idee auf einer Serviette bis zum Deployment in die Produktion. Es ist die ständige Praxis, Probleme in echte Lösungen zu verwandeln."
         }
       ]
     },
@@ -999,8 +999,8 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Okt 2024 - Heute",
         logo: "/images/worldline.png",
-        desc: "End-to-End-Management technischer Projekte. Linux Admin, Ansible/Python Automatisierung und Cloud.",
-        details: "End-to-End-Management technischer Projekte wie Artifactory, Instant Score und RHEL8/9-Migrationen. Administration von Linux-Servern, Automatisierung mit Ansible (YAML), Bash und Python. Bereitstellung und Verwaltung von AWX und CI/CD-Pipelines mit GitLab. Erstellung und Überwachung von Jobs in BMC Control-M. Überwachung von Migrationen in die Google Cloud. Support und Wartung der Riskshield-Anwendung. Starker Fokus auf operative Effizienz, Automatisierung und Continuous Delivery.",
+        desc: "Application Service Owner & E2E-Management technischer Projekte. Linux-Administration, Ansible/Python-Automatisierung und Cloud.",
+        details: "Technische Leitung als Service Owner für Artifactory und Instant Score mit Verantwortung für das ganzheitliche (E2E) Lebenszyklusmanagement und die Stabilität kritischer Plattformen. Spezialist für Linux-Systemadministration und komplexe RHEL 8/9-Migrationen. Förderung der operativen Effizienz durch Infrastrukturautomatisierung mit Ansible, AWX, Bash und Python sowie Orchestrierung von CI/CD-Pipelines in GitLab. Meine Tätigkeit umfasst die Überwachung von Migrationen in die Google Cloud, die Steuerung von Workflows in BMC Control-M und den Support für Anwendungen wie Riskshield.",
         tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
@@ -1519,7 +1519,7 @@ export default function App() {
               <a href="#contacto" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-bold hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-all transform hover:-translate-y-1 text-center">
                 {content.ui.contactBtn}
               </a>
-              <a href="/downloads/CV Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
+              <a href="/downloads/CV_Juanjo.pdf" download className="px-8 py-3 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center gap-2 group text-center">
                 <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
                 {content.ui.downloadCv}
               </a>

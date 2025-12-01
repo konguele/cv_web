@@ -29,7 +29,11 @@ import {
   Shuffle,
   CheckCircle,
   AlertCircle,
-  Loader2
+  Loader2,
+  Database,
+  Cloud,
+  Layers,
+  Shield
 } from 'lucide-react';
 
 // --- CONFIGURACIÓN DE IDIOMAS Y BANDERAS ---
@@ -159,15 +163,19 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Presente",
         logo: "/images/worldline.png",
-        desc: "Owner de Artifactory e Instant Score. Gestión E2E de proyectos, automatización y migraciones a Google Cloud.",
-        details: "Owner de Artifactory y soluciones críticas. Gestión integral de proyectos técnicos, administración Linux, automatización con Ansible y migraciones a GCP.",
-        tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
+        desc: "Gestión integral (E2E) de proyectos técnicos. Administración Linux, automatización Ansible/Python y Cloud.",
+        details: "Gestión integral (E2E) de proyectos técnicos como Artifactory, Instant Score y migraciones RHEL8/9. Administración de servidores Linux, automatización con Ansible (YAML), Bash y Python. Despliegue y gestión de AWX y pipelines CI/CD con GitLab. Creación y monitorización de trabajos en BMC Control-M. Supervisión de migraciones a Google Cloud. Soporte y mantenimiento de la aplicación Riskshield. Fuerte enfoque en eficiencia operativa, automatización y entrega continua.",
+        tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "Migración de apps, Terraform" },
+            { name: "Google Cloud (GCP)", desc: "Migración de apps" },
             { name: "Artifactory", desc: "Owner. Gestión de artefactos" },
-            { name: "Ansible", desc: "Automatización avanzada" },
-            { name: "RHEL 8 & 9", desc: "Administración servidores" }
+            { name: "Ansible & AWX", desc: "Automatización Avanzada" },
+            { name: "GitLab CI/CD", desc: "Pipelines & Deployments" },
+            { name: "Python & Bash", desc: "Scripting de sistemas" },
+            { name: "BMC Control-M", desc: "Job Scheduling" },
+            { name: "RHEL 8 & 9", desc: "Administración servidores" },
+            { name: "Riskshield", desc: "Soporte de aplicación" }
         ]
       },
       {
@@ -175,9 +183,9 @@ const DATA = {
         role: "DevOps Engineer",
         period: "May 2021 - Sep 2024",
         logo: "/images/six.jpg",
-        desc: "Liderazgo en migraciones RHEL. Integración de Docker y OpenShift. Migración a Azure.",
-        details: "Gestión de migraciones RHEL7 a RHEL8, automatización de parches e integración de Docker/OpenShift.",
-        tags: ["OpenShift", "Docker", "Azure", "Bash"],
+        desc: "Liderazgo en migraciones RHEL. Integración de Docker/OpenShift y migración a Azure.",
+        details: "Como profesional DevOps, demostré un fuerte liderazgo gestionando proyectos como la migración de RHEL7 a RHEL8, automatizando procesos de parches e integrando Docker para despliegues. Mi experiencia incluye programación en C++ y Bash, trabajo con Artifactory y BMC Remedy. Además, gestioné herramientas de contenedorización como Docker y Podman, plataformas de orquestación como OpenShift, migración de servidores on-premise a Azure y soluciones de monitorización como Splunk, asegurando operaciones eficientes.",
+        tags: ["OpenShift", "Docker", "Azure", "Splunk", "C++"],
         color: "bg-red-600"
       },
       {
@@ -185,9 +193,9 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Abr 2021",
         logo: "/images/burberry.avif",
-        desc: "Administración Linux (RedHat, SUSE). Scripting Ansible/Bash. Backup Data Protector.",
-        details: "Instalación y configuración de servidores, gestión de backups y resolución de incidencias.",
-        tags: ["Linux", "Ansible", "VMWare"],
+        desc: "Ingeniería Linux (RedHat, SUSE), Scripting y Backups.",
+        details: "Realización de tareas desde la instalación de servidores en Linux (Redhat, SUSE), configuración y creación de sistemas de ficheros (FS), montaje de volúmenes, gestión de usuarios. Creación de scripts en Ansible y Bash, resolución de incidencias, clusters y actualizaciones de sistemas/paquetes. Migraciones de servidores virtuales con VMWare. Responsable de tareas de backup con Data Protector, creación de especificaciones y resolución de incidencias de software y hardware.",
+        tags: ["Linux", "Ansible", "VMWare", "Data Protector"],
         color: "bg-yellow-600"
       },
       {
@@ -195,9 +203,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Admin sistemas Unix, Linux, Windows. Gestión alertas y backups.",
-        details: "Administración básica multisistema, HP Openview, Data Protector y Oracle.",
-        tags: ["Unix", "Windows", "Oracle"],
+        desc: "Administración multisistema (Unix, Linux, Windows), Backups y Virtualización.",
+        details: "Administración básica de sistemas Unix, Linux y Windows. Gestión de alertas con HP Openview, ejecución de backups con Data Protector, revisión de Oracle Tablespaces y sistemas de ficheros. Gestión de usuarios en LDAP. Orientado a Linux: instalación de aplicaciones, parches, scripting en Bash/Perl y resolución de incidencias. En virtualización, trabajo con VMWare (Vmotion, mantenimiento de hosts, migraciones de datastores).",
+        tags: ["Unix", "Windows", "Oracle", "VMWare"],
         color: "bg-blue-500"
       },
       {
@@ -205,8 +213,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Admin Linux, scripting Bash/Perl, monitorización Nagios.",
-        details: "Administración Linux, scripting y reglas de monitorización.",
+        desc: "Admin Linux, scripting Bash/Perl y monitorización.",
+        details: "Gestión y administración de máquinas Linux, creación de scripts en Bash y Perl. Creación de reglas de monitorización en HP Openview y Nagios. Liberación o expansión de espacio, creación de sistemas de ficheros y tablespaces.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -215,8 +223,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Admin Linux para TIBCO, scripting y monitorización.",
-        details: "Administración Linux entorno TIBCO, scripting y Tibco Hawk.",
+        desc: "Admin Linux para entornos TIBCO.",
+        details: "Administración de máquinas Linux para TIBCO, scripting en Bash y Perl. Creación de reglas de monitorización en HP Openview y Tibco Hawk. Despliegue de consolas de servicios y web.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -225,8 +233,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Dic 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Gestión de equipo, Control M y SAP.",
-        details: "Gestión de equipo, control de ejecución de trabajos y planificación.",
+        desc: "Liderazgo de equipo, Control M y SAP.",
+        details: "Gestión de personas dentro del equipo, control de la correcta ejecución del trabajo y de todos los sistemas. Apertura de incidencias, planificación y ejecución de trabajos en Control M Enterprises y Mainframe, lanzamiento de trabajos en SAP.",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -433,15 +441,19 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
-        desc: "Owner of Artifactory and Instant Score. E2E project management, automation, and migrations to Google Cloud.",
-        details: "Owner of Artifactory. Integral management of technical projects, Linux admin, Ansible automation, and GCP migrations.",
-        tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
+        desc: "End-to-end management of technical projects. Linux Admin, Ansible/Python automation and Cloud.",
+        details: "End-to-end management of technical projects such as Artifactory, Instant Score, and RHEL8/9 migrations. Administration of Linux servers, automation using Ansible (YAML), Bash, and Python. Deployment and management of AWX and CI/CD pipelines with GitLab. Job creation and monitoring in BMC Control-M. Oversight of small-scale migration projects to Google Cloud. Support and maintenance of the Riskshield application. Strong focus on operational efficiency, automation, and continuous delivery.",
+        tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "App migration, Terraform" },
+            { name: "Google Cloud (GCP)", desc: "App migration" },
             { name: "Artifactory", desc: "Owner. Artifact management" },
-            { name: "Ansible", desc: "Advanced Automation" },
-            { name: "RHEL 8 & 9", desc: "Server Admin" }
+            { name: "Ansible & AWX", desc: "Advanced Automation" },
+            { name: "GitLab CI/CD", desc: "Pipelines & Deployments" },
+            { name: "Python & Bash", desc: "System scripting" },
+            { name: "BMC Control-M", desc: "Job Scheduling" },
+            { name: "RHEL 8 & 9", desc: "Server Admin" },
+            { name: "Riskshield", desc: "App Support" }
         ]
       },
       {
@@ -449,9 +461,9 @@ const DATA = {
         role: "DevOps Engineer",
         period: "May 2021 - Sep 2024",
         logo: "/images/six.jpg",
-        desc: "Leadership in RHEL7 to RHEL8 migrations. Docker and OpenShift integration. Server migration to Azure.",
-        details: "Leadership in RHEL migrations, patch automation, and Docker/OpenShift integration.",
-        tags: ["OpenShift", "Docker", "Azure", "Bash"],
+        desc: "Leadership in RHEL migrations. Docker/OpenShift integration and Azure migration.",
+        details: "As a DevOps professional at Six Group, I demonstrate strong leadership skills while effectively managing projects such as migrating from RHEL7 to RHEL8, automating patch processes, and integrating Docker for application deployment. My expertise includes programming in C++ and Bash, working with Artifactory and BMC Remedy, and managing environments on RHEL7 and RHEL8. Additionally, I proficiently handle containerization tools like Docker and Podman, orchestration platforms like Openshift, migrate onprem servers to Azure and monitoring solutions like Splunk, ensuring smooth and efficient DevOps operations.",
+        tags: ["OpenShift", "Docker", "Azure", "Splunk", "C++"],
         color: "bg-red-600"
       },
       {
@@ -459,9 +471,9 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Apr 2021",
         logo: "/images/burberry.avif",
-        desc: "Linux Administration (RedHat, SUSE). Scripting in Ansible/Bash. Backup with Data Protector.",
-        details: "Server installation/config, backup management, and incident resolution.",
-        tags: ["Linux", "Ansible", "VMWare"],
+        desc: "Linux Engineering (RedHat, SUSE), Scripting and Backups.",
+        details: "I perform tasks from installing servers in Linux (Redhat, SUSE), configuring and creating FS, mounting volumes, expanding and reducing space... creating and modifying users, creating Ansible and Bash scripts, incidence troubleshooting, clusters, Systems and packages updates... Virtual servers migrations with VMWare. I also take responsibility for backup tasks with Data Protector. Creation of specifications, creation of schedules, solution of software and hardware incidents.",
+        tags: ["Linux", "Ansible", "VMWare", "Data Protector"],
         color: "bg-yellow-600"
       },
       {
@@ -469,9 +481,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Basic administration of Unix, Linux, and Windows. HP Openview alerts and backups.",
-        details: "Basic multi-system admin, HP Openview, Data Protector, and Oracle.",
-        tags: ["Unix", "Windows", "Oracle"],
+        desc: "Multi-system admin (Unix, Linux, Windows), Backups and Virtualization.",
+        details: "We manage the basic administration of Unix, Linux and Windows systems, manage alerts HP Openview, run backups with Data Protector, Oracle Tablespaces review, review of filesystems, creating users in LDAP and OpenLDAP. Being oriented to Linux, I install applications, update patches, create scripts in bash and perl and solve incidents. In terms of virtualization, I work with VMWare. We install servers from the data they provide, we add disk, memory, CPU... We perform some Vmotion, we put hosts in maintenance mode, we move servers to different datastores and / or hosts...",
+        tags: ["Unix", "Windows", "Oracle", "VMWare"],
         color: "bg-blue-500"
       },
       {
@@ -480,7 +492,7 @@ const DATA = {
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
         desc: "Linux admin, scripting Bash/Perl, monitoring with Nagios.",
-        details: "Linux admin, scripting, and monitoring rules.",
+        details: "We manage the administration of Linux machines, creating scripts in bash and perl, create monitoring rules in HP Openview and Nagios, release or expand space and create filesystems, creating tablespace.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -489,8 +501,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Linux admin for TIBCO, scripting, and monitoring.",
-        details: "Linux admin for TIBCO env, scripting, and Tibco Hawk.",
+        desc: "Linux admin for TIBCO environments.",
+        details: "We manage the administration of Linux machines for TIBCO, creating scripts in bash and perl, create monitoring rules in HP Openview, monitoring rules in Tibco Hawk, Another common tasks is deploy the services console and web.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -499,8 +511,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Dec 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Team management, Control M, and SAP.",
-        details: "Team management, job execution control, and planning.",
+        desc: "Team leadership, Control M and SAP.",
+        details: "Managing people who are within the team, control the correct execution of the work, control of the all systems, incident opening, planification and execution jobs at Control M Enterprises and Mainframe, launch jobs at SAP...",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -708,15 +720,19 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Oct 2024 - Present",
         logo: "/images/worldline.png",
-        desc: "Owner d'Artifactory i Instant Score. Gestió E2E de projectes, automatització i migracions a Google Cloud.",
-        details: "Owner d'Artifactory. Gestió integral de projectes, admin Linux, automatització Ansible i migracions GCP.",
-        tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
+        desc: "Gestió integral (E2E) de projectes tècnics. Admin Linux, automatització Ansible/Python i Cloud.",
+        details: "Gestió integral (E2E) de projectes tècnics com Artifactory, Instant Score i migracions RHEL8/9. Administració de servidors Linux, automatització amb Ansible (YAML), Bash i Python. Desplegament i gestió d'AWX i pipelines CI/CD amb GitLab. Creació i monitorització de treballs a BMC Control-M. Supervisió de migracions a Google Cloud. Suport i manteniment de l'aplicació Riskshield. Fort enfocament en eficiència operativa, automatització i lliurament continu.",
+        tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "Migració d'apps, Terraform" },
+            { name: "Google Cloud (GCP)", desc: "Migració d'apps" },
             { name: "Artifactory", desc: "Owner. Gestió d'artefactes" },
-            { name: "Ansible", desc: "Automatització avançada" },
-            { name: "RHEL 8 & 9", desc: "Administració servidors" }
+            { name: "Ansible & AWX", desc: "Automatització Avançada" },
+            { name: "GitLab CI/CD", desc: "Pipelines & Deployments" },
+            { name: "Python & Bash", desc: "Scripting de sistemes" },
+            { name: "BMC Control-M", desc: "Job Scheduling" },
+            { name: "RHEL 8 & 9", desc: "Administració servidors" },
+            { name: "Riskshield", desc: "Suport d'aplicació" }
         ]
       },
       {
@@ -724,9 +740,9 @@ const DATA = {
         role: "DevOps Engineer",
         period: "Maig 2021 - Set 2024",
         logo: "/images/six.jpg",
-        desc: "Lideratge en migracions RHEL. Integració de Docker i OpenShift. Migració a Azure.",
-        details: "Lideratge en migracions RHEL, automatització de pegats i integració de Docker/OpenShift.",
-        tags: ["OpenShift", "Docker", "Azure", "Bash"],
+        desc: "Lideratge en migracions RHEL. Integració de Docker/OpenShift i migració a Azure.",
+        details: "Com a professional DevOps, vaig demostrar un fort lideratge gestionant projectes com la migració de RHEL7 a RHEL8, automatitzant processos de pegats i integrant Docker per a desplegaments. La meva experiència inclou programació en C++ i Bash, treball amb Artifactory i BMC Remedy. A més, vaig gestionar eines de contenidorització com Docker i Podman, plataformes d'orquestració com OpenShift, migració de servidors on-premise a Azure i solucions de monitorització com Splunk, assegurant operacions eficients.",
+        tags: ["OpenShift", "Docker", "Azure", "Splunk", "C++"],
         color: "bg-red-600"
       },
       {
@@ -734,9 +750,9 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Abr 2021",
         logo: "/images/burberry.avif",
-        desc: "Administració Linux (RedHat, SUSE). Scripting Ansible/Bash. Backup Data Protector.",
-        details: "Instal·lació servidors, gestió backups i resolució incidències.",
-        tags: ["Linux", "Ansible", "VMWare"],
+        desc: "Enginyeria Linux (RedHat, SUSE), Scripting i Backups.",
+        details: "Realització de tasques des de la instal·lació de servidors en Linux (Redhat, SUSE), configuració i creació de sistemes de fitxers (FS), muntatge de volums, gestió d'usuaris. Creació de scripts en Ansible i Bash, resolució d'incidències, clústers i actualitzacions de sistemes/paquets. Migracions de servidors virtuals amb VMWare. Responsable de tasques de backup amb Data Protector, creació d'especificacions i resolució d'incidències de programari i maquinari.",
+        tags: ["Linux", "Ansible", "VMWare", "Data Protector"],
         color: "bg-yellow-600"
       },
       {
@@ -744,9 +760,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Admin sistemes Unix, Linux, Windows. Gestió alertes i backups.",
-        details: "Admin bàsica multisistema, HP Openview, Data Protector i Oracle.",
-        tags: ["Unix", "Windows", "Oracle"],
+        desc: "Administració multisistema (Unix, Linux, Windows), Backups i Virtualització.",
+        details: "Administració bàsica de sistemes Unix, Linux i Windows. Gestió d'alertes amb HP Openview, execució de backups amb Data Protector, revisió d'Oracle Tablespaces i sistemes de fitxers. Gestió d'usuaris a LDAP. Orientat a Linux: instal·lació d'aplicacions, pegats, scripting en Bash/Perl i resolució d'incidències. En virtualització, treball amb VMWare (Vmotion, manteniment de hosts, migracions de datastores).",
+        tags: ["Unix", "Windows", "Oracle", "VMWare"],
         color: "bg-blue-500"
       },
       {
@@ -754,8 +770,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Set 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Admin Linux, scripting Bash/Perl, monitorització Nagios.",
-        details: "Admin Linux, scripting i regles monitorització.",
+        desc: "Admin Linux, scripting Bash/Perl i monitorització.",
+        details: "Gestió i administració de màquines Linux, creació de scripts en Bash i Perl. Creació de regles de monitorització en HP Openview i Nagios. Alliberament o expansió d'espai, creació de sistemes de fitxers i tablespaces.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -764,8 +780,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mar 2014 - Set 2014",
         logo: "/images/hp.png",
-        desc: "Admin Linux per TIBCO, scripting i monitorització.",
-        details: "Admin Linux entorn TIBCO, scripting i Tibco Hawk.",
+        desc: "Admin Linux per a entorns TIBCO.",
+        details: "Administració de màquines Linux per a TIBCO, scripting en Bash i Perl. Creació de regles de monitorització en HP Openview i Tibco Hawk. Desplegament de consoles de serveis i web.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -774,8 +790,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Des 2010 - Oct 2013",
         logo: "/images/hp.png",
-        desc: "Gestió d'equip, Control M i SAP.",
-        details: "Gestió d'equip, control execució treballs i planificació.",
+        desc: "Lideratge d'equip, Control M i SAP.",
+        details: "Gestió de persones dins l'equip, control de la correcta execució del treball i de tots els sistemes. Obertura d'incidències, planificació i execució de treballs a Control M Enterprises i Mainframe, llançament de treballs a SAP...",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -783,13 +799,13 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Grau en Enginyeria Informàtica", // CAMBIADO
+        degree: "Grau en Enginyeria Informàtica",
         period: "2012 - 2017",
         desc: "Fonaments de programació, gestió de xarxes i sistemes operatius."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "CFGS de Telecomunicacions i Sist. Informàtics", // CAMBIADO
+        degree: "CFGS de Telecomunicacions i Sist. Informàtics",
         period: "2006 - 2008",
         desc: "Formació tècnica superior en informàtica (ASI)."
       }
@@ -983,15 +999,19 @@ const DATA = {
         role: "DevOps Engineer / Project Manager",
         period: "Okt 2024 - Heute",
         logo: "/images/worldline.png",
-        desc: "Owner von Artifactory und Instant Score. E2E-Projektmanagement, Automatisierung und Migrationen zu Google Cloud.",
-        details: "Owner Artifactory. Integrales Management technischer Projekte, Linux-Admin, Ansible-Automatisierung und GCP-Migrationen.",
-        tags: ["Product Owner", "Artifactory", "Google Cloud", "Ansible"],
+        desc: "End-to-End-Management technischer Projekte. Linux Admin, Ansible/Python Automatisierung und Cloud.",
+        details: "End-to-End-Management technischer Projekte wie Artifactory, Instant Score und RHEL8/9-Migrationen. Administration von Linux-Servern, Automatisierung mit Ansible (YAML), Bash und Python. Bereitstellung und Verwaltung von AWX und CI/CD-Pipelines mit GitLab. Erstellung und Überwachung von Jobs in BMC Control-M. Überwachung von Migrationen in die Google Cloud. Support und Wartung der Riskshield-Anwendung. Starker Fokus auf operative Effizienz, Automatisierung und Continuous Delivery.",
+        tags: ["Product Owner", "Artifactory", "GCP", "Ansible", "GitLab", "Python"],
         color: "bg-blue-600",
         stack: [
-            { name: "Google Cloud (GCP)", desc: "App-Migration, Terraform" },
+            { name: "Google Cloud (GCP)", desc: "App-Migration" },
             { name: "Artifactory", desc: "Owner. Artefaktverwaltung" },
-            { name: "Ansible", desc: "Fortgeschrittene Automatisierung" },
-            { name: "RHEL 8 & 9", desc: "Server-Administration" }
+            { name: "Ansible & AWX", desc: "Fortgeschrittene Automatisierung" },
+            { name: "GitLab CI/CD", desc: "Pipelines & Deployments" },
+            { name: "Python & Bash", desc: "System-Scripting" },
+            { name: "BMC Control-M", desc: "Job Scheduling" },
+            { name: "RHEL 8 & 9", desc: "Server-Administration" },
+            { name: "Riskshield", desc: "App-Support" }
         ]
       },
       {
@@ -999,9 +1019,9 @@ const DATA = {
         role: "DevOps Engineer",
         period: "Mai 2021 - Sep 2024",
         logo: "/images/six.jpg",
-        desc: "Führung bei RHEL-Migrationen. Docker- und OpenShift-Integration. Servermigration zu Azure.",
-        details: "Führung bei RHEL-Migrationen, Patch-Automatisierung und Docker/OpenShift-Integration.",
-        tags: ["OpenShift", "Docker", "Azure", "Bash"],
+        desc: "Führung bei RHEL-Migrationen. Docker- und OpenShift-Integration und Azure-Migration.",
+        details: "Als DevOps-Experte bei der Six Group habe ich Führungsqualitäten bei Projekten wie der Migration von RHEL7 auf RHEL8, der Automatisierung von Patch-Prozessen und der Integration von Docker gezeigt. Meine Expertise umfasst C++ und Bash-Programmierung, Artifactory und BMC Remedy. Außerdem verwaltete ich Container-Tools wie Docker und Podman, Orchestrierungsplattformen wie OpenShift, migrierte On-Premise-Server zu Azure und überwachte Lösungen wie Splunk.",
+        tags: ["OpenShift", "Docker", "Azure", "Splunk", "C++"],
         color: "bg-red-600"
       },
       {
@@ -1009,9 +1029,9 @@ const DATA = {
         role: "Linux Engineer",
         period: "Jul 2018 - Apr 2021",
         logo: "/images/burberry.avif",
-        desc: "Linux-Administration (RedHat, SUSE). Scripting Ansible/Bash. Backup mit Data Protector.",
-        details: "Serverinstallation, Backup-Management und Vorfalllösung.",
-        tags: ["Linux", "Ansible", "VMWare"],
+        desc: "Linux Engineering (RedHat, SUSE), Scripting und Backups.",
+        details: "Durchführung von Aufgaben von der Installation von Servern unter Linux (Redhat, SUSE), Konfiguration und Erstellung von Dateisystemen, Mounten von Volumes, Benutzerverwaltung. Erstellung von Ansible- und Bash-Skripten, Störungsbehebung, Clustern und System-/Paketaktualisierungen. Migration virtueller Server mit VMWare. Verantwortlich für Backup-Aufgaben mit Data Protector, Erstellung von Spezifikationen und Lösung von Software- und Hardwarevorfällen.",
+        tags: ["Linux", "Ansible", "VMWare", "Data Protector"],
         color: "bg-yellow-600"
       },
       {
@@ -1019,9 +1039,9 @@ const DATA = {
         role: "Systems Administrator",
         period: "Nov 2014 - Jul 2018",
         logo: "/images/grifols.png",
-        desc: "Basisadmin Unix, Linux, Windows. HP Openview und Backups.",
-        details: "Basis-Multisystem-Admin, HP Openview, Data Protector und Oracle.",
-        tags: ["Unix", "Windows", "Oracle"],
+        desc: "Multisystem-Admin (Unix, Linux, Windows), Backups und Virtualisierung.",
+        details: "Basisadministration von Unix, Linux und Windows-Systemen. Alert-Management mit HP Openview, Backups mit Data Protector, Überprüfung von Oracle Tablespaces und Dateisystemen. Benutzerverwaltung in LDAP. Linux-orientiert: Installation von Anwendungen, Patches, Scripting in Bash/Perl und Störungsbehebung. In der Virtualisierung Arbeit mit VMWare (Vmotion, Host-Wartung, Datastore-Migrationen).",
+        tags: ["Unix", "Windows", "Oracle", "VMWare"],
         color: "bg-blue-500"
       },
       {
@@ -1029,8 +1049,8 @@ const DATA = {
         role: "Linux Administrator",
         period: "Sep 2014 - Nov 2014",
         logo: "/images/itnow.jpg",
-        desc: "Linux-Admin, Scripting Bash/Perl, Monitoring Nagios.",
-        details: "Linux-Admin, Scripting und Überwachungsregeln.",
+        desc: "Linux-Admin, Scripting Bash/Perl, Monitoring mit Nagios.",
+        details: "Verwaltung und Administration von Linux-Maschinen, Erstellung von Skripten in Bash und Perl. Erstellung von Überwachungsregeln in HP Openview und Nagios. Freigabe oder Erweiterung von Speicherplatz, Erstellung von Dateisystemen und Tablespaces.",
         tags: ["Linux", "Nagios", "Perl"],
         color: "bg-gray-600"
       },
@@ -1039,8 +1059,8 @@ const DATA = {
         role: "TIBCO Administrator",
         period: "Mär 2014 - Sep 2014",
         logo: "/images/hp.png",
-        desc: "Linux-Admin für TIBCO, Scripting und Monitoring.",
-        details: "Linux-Admin für TIBCO-Umgebung, Scripting und Tibco Hawk.",
+        desc: "Linux-Admin für TIBCO-Umgebungen.",
+        details: "Administration von Linux-Maschinen für TIBCO, Scripting in Bash und Perl. Erstellung von Überwachungsregeln in HP Openview und Tibco Hawk. Bereitstellung von Service-Konsolen und Web.",
         tags: ["TIBCO", "Linux", "Bash"],
         color: "bg-cyan-600"
       },
@@ -1049,8 +1069,8 @@ const DATA = {
         role: "Operation Team Leader",
         period: "Dez 2010 - Okt 2013",
         logo: "/images/hp.png",
-        desc: "Teammanagement, Control M und SAP.",
-        details: "Teammanagement, Jobausführungskontrolle und Planung.",
+        desc: "Teamleitung, Control M und SAP.",
+        details: "Führung von Mitarbeitern im Team, Kontrolle der korrekten Arbeitsausführung und aller Systeme. Vorfalleröffnung, Planung und Ausführung von Jobs in Control M Enterprises und Mainframe, Start von Jobs in SAP...",
         tags: ["Team Lead", "SAP", "Control M"],
         color: "bg-cyan-600"
       }
@@ -1058,13 +1078,13 @@ const DATA = {
     education: [
       {
         institution: "UOC (Universitat Oberta de Catalunya)",
-        degree: "Systems Engineer", // Dejado en inglés como pediste duda, pero traducida descripción
+        degree: "Systems Engineer",
         period: "2012 - 2017",
         desc: "Programmiergrundlagen, Netzwerkmanagement und Betriebssysteme."
       },
       {
         institution: "Santa-Pau Pifma",
-        degree: "Höhere technische Ausbildung in Informatik", // Adaptación aproximada
+        degree: "Höhere technische Ausbildung in Informatik",
         period: "2006 - 2008",
         desc: "Höhere technische Ausbildung in Informatik (ASI)."
       }
@@ -1108,23 +1128,6 @@ const DATA = {
         status: "10K+ Follower",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
-      }
-    ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
       }
     ],
     techSkills: [
@@ -1718,7 +1721,7 @@ export default function App() {
                        </div>
                     </div>
                     
-                    <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                    <p className="text-gray-400 text-sm mb-4 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all">
                       {job.desc}
                     </p>
 

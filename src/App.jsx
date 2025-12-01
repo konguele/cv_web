@@ -400,7 +400,7 @@ const DATA = {
         {
           name: "Football",
           iconName: "Award",
-          desc: More than a sport, it has been my school of discipline and resilience. Playing at a club level since age 6 (CEU Ciutat Meridiana, Santa Perpetua), I learned the value of sacrifice and teamwork under pressure. Even in Switzerland (Urdorf), the ball was my universal language to overcome cultural barriers
+          desc: "More than a sport, it has been my school of discipline and resilience. Playing at a club level since age 6 (CEU Ciutat Meridiana, Santa Perpetua), I learned the value of sacrifice and teamwork under pressure. Even in Switzerland (Urdorf), the ball was my universal language to overcome cultural barriers."
         },
         {
           name: "Video Games",

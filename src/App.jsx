@@ -1130,23 +1130,6 @@ const DATA = {
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
       }
     ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
-      }
-    ],
     techSkills: [
       { name: "Linux / RHEL", level: 95 },
       { name: "Ansible / Automation", level: 90 },
@@ -1368,27 +1351,23 @@ export default function App() {
   const [lang, setLang] = useState('en'); // Default inicial
   
   useEffect(() => {
-    // 1. Detectar idioma: Divide la URL por '/' y toma el primer segmento
-    // Esto funciona para "/es", "/es/", "/es/algo"
-    const pathSegment = window.location.pathname.split('/')[1]; 
-    
+    // Detectar idioma basado en la URL
+    const path = window.location.pathname;
     let detectedLang = 'en'; // Default
     
-    // Lista de idiomas soportados
-    if (['es', 'ca', 'ch'].includes(pathSegment)) {
-      detectedLang = pathSegment;
-    }
+    if (path.includes('/es/')) detectedLang = 'es';
+    else if (path.includes('/ca/')) detectedLang = 'ca';
+    else if (path.includes('/ch/')) detectedLang = 'ch';
     
     setLang(detectedLang);
 
-    // 2. Scroll listener
+    // Scroll listener
     const handleScroll = () => {
         if (window.scrollY > 50 && !scrolled) setScrolled(true);
         if (window.scrollY <= 50 && scrolled) setScrolled(false);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // 3. Random images
     const shuffled = [...carouselSourceImages].sort(() => 0.5 - Math.random());
     setRandomImages(shuffled.slice(0, 4));
 

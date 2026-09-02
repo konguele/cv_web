@@ -66,7 +66,7 @@ const DATA = {
       description: "Portfolio de Juan José García Manzano. Ingeniero DevOps experto en Linux, Cloud (AWS/GCP), Automatización y creador de productos digitales como Bancfy.",
       keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zurich, Ingeniero"
     },
-    menu: ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Libros', 'Contacto'],
+    menu: ['Sobre Mí', 'Experiencia', 'Estudios', 'Proyectos', 'Skills', 'Contacto'],
     ui: {
       available: "🚀 Disponible para nuevos retos",
       contactBtn: "Contactar",
@@ -103,7 +103,6 @@ const DATA = {
       mindset: "Mindset & Soft Skills",
       coreStack: "Core Tech Stack",
       projects: "Mi pasión no se limita a la oficina. Me encanta construir productos desde cero, generar comunidad y explorar nuevas tecnologías.",
-      books: "Compartir conocimiento es otra de mis pasiones. Aquí puedes encontrar mis últimas publicaciones disponibles en Amazon.",
       contact: "Estoy siempre abierto a discutir nuevas oportunidades, ideas de producto o colaboraciones técnicas.",
       academic: "Formación Académica",
       certifications: "Certificaciones",
@@ -112,7 +111,6 @@ const DATA = {
     },
     personalInfo: {
       name: "Juan José García Manzano",
-      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
       email: "Juanjo.gmanzano@gmail.com",
       tagline: "Uniendo la solidez de la infraestructura Linux con la creatividad del desarrollo de producto.",
@@ -268,15 +266,19 @@ const DATA = {
         category: "Fintech App & Comunidad",
         iconName: "TrendingUp",
         description: "Más que una app de finanzas, es una experiencia. Bancfy busca cambiar la relación de las personas con su dinero.",
-        status: "En desarrollo",
+        status: "Publicado",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
+        links: [
+          { label: "Web Oficial", url: "https://www.bancfy.com/es" },
+          { label: "Android", url: "https://play.google.com/store/apps/details?id=com.stiluproject.bancfy&pcampaignid=web_share" },
+          { label: "iOS", url: "https://apps.apple.com/us/app/bancfy/id6756960727" }
+        ]
       },
       {
         title: "Jabalí Espacial",
         category: "Videojuego Móvil",
         iconName: "Gamepad2",
-        description: "Un videojuego arcade desarrollado íntegramente por mí. Un reto técnico y creativo.",
+        description: "Un videojuego arcade desarrollado íntegramentepor mí. Un reto técnico y creativo.",
         status: "Publicado",
         color: "from-purple-900 to-indigo-900",
         links: [
@@ -292,23 +294,6 @@ const DATA = {
         status: "10K+ Seguidores",
         color: "from-pink-900 to-rose-900",
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
-      }
-    ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
       }
     ],
     techSkills: [
@@ -332,7 +317,6 @@ const DATA = {
       experience: "Trayectoria Profesional",
       education: "Estudios & Certificaciones",
       projects: "Side Projects & Emprendimiento",
-      books: "Libros Publicados",
       contact: "Hablemos"
     }
   },
@@ -344,7 +328,7 @@ const DATA = {
       description: "Portfolio of Juan José García Manzano. DevOps Engineer expert in Linux, Cloud (AWS/GCP), Automation, and creator of digital products like Bancfy.",
       keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zurich, Engineer"
     },
-    menu: ['About Me', 'Experience', 'Education', 'Projects', 'Skills', 'Books', 'Contact'],
+    menu: ['About Me', 'Experience', 'Education', 'Projects', 'Skills', 'Contact'],
     ui: {
       available: "🚀 Available for new challenges",
       contactBtn: "Contact Me",
@@ -381,7 +365,6 @@ const DATA = {
       mindset: "Mindset & Soft Skills",
       coreStack: "Core Tech Stack",
       projects: "My passion is not limited to the office. I love building products from scratch, generating community, and exploring new technologies.",
-      books: "Sharing knowledge is another one of my passions. Here you can find my latest publications available on Amazon.",
       contact: "I am always open to discussing new opportunities, product ideas, or technical collaborations.",
       academic: "Academic Background",
       certifications: "Certifications",
@@ -390,7 +373,6 @@ const DATA = {
     },
     personalInfo: {
       name: "Juan José García Manzano",
-      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
       email: "Juanjo.gmanzano@gmail.com",
       tagline: "Merging the robustness of Linux infrastructure with the creativity of product development.",
@@ -546,9 +528,13 @@ const DATA = {
         category: "Fintech App & Community",
         iconName: "TrendingUp",
         description: "More than a finance app, it's an experience. Bancfy seeks to change people's relationship with their money.",
-        status: "In Development",
+        status: "Published",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Official Web", url: "https://www.bancfy.com/es" }]
+        links: [
+          { label: "Official Web", url: "https://www.bancfy.com/es" },
+          { label: "Android", url: "https://play.google.com/store/apps/details?id=com.stiluproject.bancfy&pcampaignid=web_share" },
+          { label: "iOS", url: "https://apps.apple.com/us/app/bancfy/id6756960727" }
+        ]
       },
       {
         title: "Space Warhog",
@@ -572,23 +558,6 @@ const DATA = {
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
       }
     ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
-      }
-    ],
     techSkills: [
       { name: "Linux / RHEL", level: 95 },
       { name: "Ansible / Automation", level: 90 },
@@ -610,7 +579,6 @@ const DATA = {
       experience: "Career Path",
       education: "Education & Certifications",
       projects: "Side Projects & Entrepreneurship",
-      books: "Published Books",
       contact: "Let's Talk"
     }
   },
@@ -622,7 +590,7 @@ const DATA = {
       description: "Portfoli de Juan José García Manzano. Enginyer DevOps expert en Linux, Cloud (AWS/GCP), Automatització i creador de productes digitals com Bancfy.",
       keywords: "DevOps, Linux, Project Manager, RHEL, Ansible, Cloud, Portfoli, Juanjo Garcia, Bancfy, Zurich, Enginyer"
     },
-    menu: ['Sobre Mi', 'Experiència', 'Estudis', 'Projectes', 'Skills', 'Llibres', 'Contacte'],
+    menu: ['Sobre Mi', 'Experiència', 'Estudis', 'Projectes', 'Skills', 'Contacte'],
     ui: {
       available: "🚀 Disponible per a nous reptes",
       contactBtn: "Contactar",
@@ -660,7 +628,6 @@ const DATA = {
       mindset: "Mentalitat i Soft Skills",
       coreStack: "Stack Tecnològic Principal",
       projects: "La meva passió no es limita a l'oficina. M'encanta construir productes des de zero, generar comunitat i explorar noves tecnologies.",
-      books: "Compartir coneixement és una altra de les meves passions. Aquí pots trobar les meves últimes publicacions disponibles a Amazon.",
       contact: "Estic sempre obert a discutir noves oportunitats, idees de producte o col·laboracions tècniques.",
       academic: "Formació Acadèmica",
       certifications: "Certificacions",
@@ -669,7 +636,6 @@ const DATA = {
     },
     personalInfo: {
       name: "Juan José García Manzano",
-      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
       email: "Juanjo.gmanzano@gmail.com",
       tagline: "Unint la solidesa de la infraestructura Linux amb la creativitat del desenvolupament de producte.",
@@ -741,7 +707,7 @@ const DATA = {
         period: "Maig 2021 - Set 2024",
         logo: "/images/six.jpg",
         desc: "Lideratge en migracions RHEL. Integració de Docker/OpenShift i migració a Azure.",
-        details: "Com a professional DevOps, vaig demostrar un fort lideratge gestionant projectes com la migració de RHEL7 a RHEL8, automatitzant processos de pegats i integrant Docker per a desplegaments. La meva experiència inclou programació en C++ i Bash, treball amb Artifactory i BMC Remedy. A més, vaig gestionar eines de contenidorització com Docker i Podman, plataformes d'orquestració com OpenShift, migració de servidors on-premise a Azure i solucions de monitorització com Splunk, assegurant operacions eficients.",
+        details: "Com a professional DevOps, vaig demostrar un fort lideratge gestionant projectes com la migració de RHEL7 a RHEL8, automatizando processos de pegats i integrant Docker per a desplegaments. La meva experiència inclou programació en C++ i Bash, treball amb Artifactory i BMC Remedy. A més, vaig gestionar eines de contenidorització com Docker i Podman, plataformes d'orquestració com OpenShift, migració de servidors on-premise a Azure i solucions de monitorització com Splunk, assegurant operacions eficients.",
         tags: ["OpenShift", "Docker", "Azure", "Splunk", "C++"],
         color: "bg-red-600"
       },
@@ -751,7 +717,7 @@ const DATA = {
         period: "Jul 2018 - Abr 2021",
         logo: "/images/burberry.avif",
         desc: "Enginyeria Linux (RedHat, SUSE), Scripting i Backups.",
-        details: "Realització de tasques des de la instal·lació de servidors en Linux (Redhat, SUSE), configuració i creació de sistemes de fitxers (FS), muntatge de volums, gestió d'usuaris. Creació de scripts en Ansible i Bash, resolució d'incidències, clústers i actualitzacions de sistemes/paquets. Migracions de servidors virtuals amb VMWare. Responsable de tasques de backup amb Data Protector, creació d'especificacions i resolució d'incidències de programari i maquinari.",
+        details: "Realització de tasques des de la instal·lació de servidors en Linux (Redhat, SUSE), configuració i creació de sistemes de fitxers (FS), muntatge de volums, gestió d'usuaris. Creació de scripts en Ansible i Bash, resolució d'incidències, clústers i actualitzacions de sistemes/paquetes. Migracions de servidors virtuals amb VMWare. Responsable de tasques de backup amb Data Protector, creació d'especificacions i resolució d'incidències de programari i maquinari.",
         tags: ["Linux", "Ansible", "VMWare", "Data Protector"],
         color: "bg-yellow-600"
       },
@@ -825,9 +791,13 @@ const DATA = {
         category: "Fintech App & Comunitat",
         iconName: "TrendingUp",
         description: "Més que una app de finances, és una experiència. Bancfy busca canviar la relació de les persones amb els seus diners.",
-        status: "En desenvolupament",
+        status: "Publicat",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Web Oficial", url: "https://www.bancfy.com/es" }]
+        links: [
+          { label: "Web Oficial", url: "https://www.bancfy.com/es" },
+          { label: "Android", url: "https://play.google.com/store/apps/details?id=com.stiluproject.bancfy&pcampaignid=web_share" },
+          { label: "iOS", url: "https://apps.apple.com/us/app/bancfy/id6756960727" }
+        ]
       },
       {
         title: "Jabalí Espacial",
@@ -851,23 +821,6 @@ const DATA = {
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
       }
     ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
-      }
-    ],
     techSkills: [
       { name: "Linux / RHEL", level: 95 },
       { name: "Ansible / Automation", level: 90 },
@@ -889,7 +842,6 @@ const DATA = {
       experience: "Trajectòria Professional",
       education: "Estudis & Certificacions",
       projects: "Side Projects & Emprenedoria",
-      books: "Llibres Publicats",
       contact: "Parlem"
     }
   },
@@ -901,7 +853,7 @@ const DATA = {
       description: "Portfolio von Juan José García Manzano. DevOps-Ingenieur, Experte für Linux, Cloud (AWS/GCP), Automatisierung und Schöpfer digitaler Produkte wie Bancfy.",
       keywords: "DevOps, Linux, Projektmanager, RHEL, Ansible, Cloud, Portfolio, Juanjo Garcia, Bancfy, Zürich, Ingenieur"
     },
-    menu: ['Über Mich', 'Erfahrung', 'Ausbildung', 'Projekte', 'Skills', 'Bücher', 'Kontakt'],
+    menu: ['Über Mich', 'Erfahrung', 'Ausbildung', 'Projekte', 'Skills', 'Kontakt'],
     ui: {
       available: "🚀 Verfügbar für neue Herausforderungen",
       contactBtn: "Kontaktieren",
@@ -939,7 +891,6 @@ const DATA = {
       mindset: "Mindset & Soft Skills",
       coreStack: "Core Tech Stack",
       projects: "Meine Leidenschaft beschränkt sich nicht auf das Büro. Ich liebe es, Produkte von Grund auf neu zu entwickeln und Gemeinschaften zu bilden.",
-      books: "Wissen zu teilen ist eine weitere meiner Leidenschaften. Hier finden Sie meine neuesten Veröffentlichungen auf Amazon.",
       contact: "Ich bin immer offen für Gespräche über neue Möglichkeiten, Produktideen oder technische Zusammenarbeit.",
       academic: "Ausbildung",
       certifications: "Zertifizierungen",
@@ -948,7 +899,6 @@ const DATA = {
     },
     personalInfo: {
       name: "Juan José García Manzano",
-      bookAuthor: "Juan José García",
       role: "DevOps Engineer & Project Manager",
       email: "Juanjo.gmanzano@gmail.com",
       tagline: "Die Robustheit von Linux-Infrastruktur mit der Kreativität der Produktentwicklung verbinden.",
@@ -958,7 +908,7 @@ const DATA = {
         {
           name: "Fußball",
           iconName: "Award",
-          desc: "Mehr als nur ein Sport – meine Schule für Disziplin und Resilienz. Als Vereinsspieler seit dem 6. Lebensjahr (CEU Ciutat Meridiana, Santa Perpetua) habe ich Opferbereitschaft und Teamarbeit unter Druck gelernt. Auch in der Schweiz (Urdorf) war der Ball meine universelle Sprache, um kulturelle Barrieren zu überwinden."
+          desc: "Mehr als nur ein Sport – meine Schule für Disziplin und Resilienz. Als Vereinsspieler seit dem 6. Lebensjahr (CEU Ciutat Meridiana, Santa Perpetua) habe ich Opferbereitschaft und Teamarbeit unter Druck gelernt. Auch in der Schweiz (Urdorf), der Ball war meine universelle Sprache, um kulturelle Barrieren zu überwinden."
         },
         {
           name: "Videospiele",
@@ -1104,9 +1054,13 @@ const DATA = {
         category: "Fintech App & Community",
         iconName: "TrendingUp",
         description: "Mehr als eine Finanz-App, ein Erlebnis. Bancfy versucht, die Beziehung der Menschen zu ihrem Geld zu verändern.",
-        status: "In Entwicklung",
+        status: "Veröffentlicht",
         color: "from-emerald-900 to-green-900",
-        links: [{ label: "Offizielle Web", url: "https://www.bancfy.com/es" }]
+        links: [
+          { label: "Offizielle Web", url: "https://www.bancfy.com/es" },
+          { label: "Android", url: "https://play.google.com/store/apps/details?id=com.stiluproject.bancfy&pcampaignid=web_share" },
+          { label: "iOS", url: "https://apps.apple.com/us/app/bancfy/id6756960727" }
+        ]
       },
       {
         title: "Space Warhog",
@@ -1130,23 +1084,6 @@ const DATA = {
         links: [{ label: "TikTok", url: "https://www.tiktok.com/@exitofracasando" }]
       }
     ],
-    books: [
-      {
-        title: "El éxito de fracasar",
-        url: "https://www.amazon.es/dp/B0DK8SF6DK",
-        image: "/images/fracasar.png"
-      },
-      {
-        title: "Cómo destruir España",
-        url: "https://www.amazon.es/dp/B0DKT43G4R",
-        image: "/images/Cómo destruir españa.jpg"
-      },
-      {
-        title: "Com destruir Catalunya",
-        url: "https://www.amazon.es/dp/B0DMFYV7W3",
-        image: "/images/Com destruir Catalunya.jpg"
-      }
-    ],
     techSkills: [
       { name: "Linux / RHEL", level: 95 },
       { name: "Ansible / Automation", level: 90 },
@@ -1168,7 +1105,6 @@ const DATA = {
       experience: "Beruflicher Werdegang",
       education: "Ausbildung & Zertifizierungen",
       projects: "Side Projects & Unternehmertum",
-      books: "Veröffentlichte Bücher",
       contact: "Lass uns reden"
     }
   }
@@ -1430,7 +1366,7 @@ export default function App() {
 
   const visibleExperience = expandedExperience ? content.experience : content.experience.slice(0, 3);
   // Mapeamos los titulos del menu a IDs para los anclas
-  const menuAnchors = ['sobre-mi', 'experiencia', 'estudios', 'proyectos', 'skills', 'libros', 'contacto'];
+  const menuAnchors = ['sobre-mi', 'experiencia', 'estudios', 'proyectos', 'skills', 'contacto'];
 
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans selection:bg-purple-500 selection:text-white overflow-x-hidden relative">
@@ -1889,46 +1825,6 @@ export default function App() {
             })}
           </div>
         </div>
-      </LazyLoadSection>
-
-      {/* BOOKS SECTION */}
-      <LazyLoadSection id="libros" className="py-24 relative z-10 overflow-hidden">
-         <div className="container mx-auto px-6">
-            <SectionTitle>{content.sectionTitles.books}</SectionTitle>
-            <p className="text-center text-gray-400 max-w-2xl mx-auto mb-12">
-               {content.sectionIntros.books}
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-               {content.books.map((book, idx) => (
-                  <a 
-                    key={idx} 
-                    href={book.url} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="block group relative"
-                  >
-                     <div className="absolute inset-0 rounded-[2rem] overflow-hidden z-0">
-                        <img src={book.image} alt={book.title} loading="lazy" className="w-full h-full object-cover opacity-30 blur-md scale-110 transition-transform duration-500 group-hover:scale-125" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-900/60" />
-                     </div>
-                     
-                     <div className="relative aspect-[2/3] bg-transparent rounded-[2rem] shadow-2xl transform transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-purple-500/20 border border-white/10 flex items-center justify-center overflow-hidden z-10">
-                        <div className="text-center z-10 px-6">
-                            <BookOpen size={48} className="mx-auto mb-4 text-purple-400 opacity-80" />
-                            <h4 className="text-xl font-bold font-serif leading-tight mb-2 text-white">{book.title}</h4>
-                            <span className="text-xs text-gray-400 uppercase tracking-widest">{content.personalInfo.bookAuthor}</span>
-                        </div>
-                        <div className="absolute inset-0 bg-purple-600/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span className="flex items-center gap-2 font-bold text-white">
-                                Ver en Amazon <ExternalLink size={16} />
-                            </span>
-                        </div>
-                     </div>
-                  </a>
-               ))}
-            </div>
-         </div>
       </LazyLoadSection>
 
       <div id="skills" />
